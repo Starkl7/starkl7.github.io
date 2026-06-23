@@ -553,7 +553,7 @@
 
 </div><!-- /dash-page -->
 
-<script src="../coinbase_ws.js?v=8"></script>
+<script src="../coinbase_ws.js?v=9"></script>
 <script>
 
 // ── FORMULA TOGGLE ────────────────────────────────────────────────────────────
@@ -816,7 +816,7 @@ function updateLiveMetrics() {
   const asEl       = document.getElementById('dm-as');
 
   if (fillRateEl) {
-    const elapsedMin = (Date.now() - s.sessionStart) / 60000;
+    const elapsedMin = (Date.now() - s.sessionResetTs) / 60000;
     const rate = elapsedMin > 0 ? s.fillCount / elapsedMin : 0;
     fillRateEl.textContent = rate.toFixed(1) + '/min';
     fillRateEl.className   = 'lf-value';
@@ -840,7 +840,7 @@ function updateLiveMetrics() {
   }
 
   if (uptimeEl) {
-    const sessionMs = Date.now() - s.sessionStart;
+    const sessionMs = Date.now() - s.sessionResetTs;
     const uptime    = sessionMs > 0 ? Math.min(s.bothSidesMs / sessionMs * 100, 100) : 0;
     uptimeEl.textContent = uptime.toFixed(1) + '%';
     uptimeEl.className   = 'lf-value ' + (uptime >= 80 ? 'positive' : uptime >= 50 ? '' : 'negative');

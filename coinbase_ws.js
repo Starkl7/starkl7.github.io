@@ -38,7 +38,8 @@ const CoinbaseWS = (() => {
     maxAbsInv: 0,          // peak |inventory| seen this session
     // ─────────────────────────────────────────────────────────────────
     lastTradePrice: null,
-    sessionStart: Date.now(),
+    sessionStart:   Date.now(),  // page-load time; never resets
+    sessionResetTs: Date.now(),  // resets on resetPaper(); denominator for fill rate & uptime
     connected: false,
     currentQuotes: null,
     openPrice: null,
@@ -361,6 +362,7 @@ const CoinbaseWS = (() => {
     state.pnlM2           = 0;
     state.bothSidesMs     = 0;
     state.lastTickTs      = null;
+    state.sessionResetTs  = Date.now();
     state.pendingAS       = [];
     state.asN             = 0;
     state.asMean          = 0;
