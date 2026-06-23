@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AS Market Maker Dashboard | Dhrubojeet Haldar</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    body { padding-top: 56px; }
+
+    .dash-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 56px;
+      z-index: 999;
+      background: rgba(10,14,20,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      justify-content: space-between;
+    }
+    .dash-nav-back {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .dash-nav-back:hover { color: var(--accent-blue); }
+
+    .dash-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .dash-title {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+    }
+    .dash-subtitle {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      font-family: var(--font-mono);
+    }
+
+    /* Panel */
+    .panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .panel-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .badge-static {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: var(--bg-tertiary);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .badge-live {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      padding: 3px 8px;
+      border-radius: 3px;
+      background: rgba(46,204,113,0.1);
+      color: var(--accent-green);
+      border: 1px solid rgba(46,204,113,0.3);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .live-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .live-dot.offline {
+      background: var(--text-muted);
+      animation: none;
+    }
+
+    /* Research metrics */
+    .research-metrics {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .rm-cell {
+      background: var(--bg-primary);
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .rm-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .rm-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .rm-value.negative { color: var(--accent-red); }
+    .rm-value.positive { color: var(--accent-green); }
+
+    /* Chart */
+    .chart-wrap {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 16px;
+      height: 240px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    /* Where it breaks */
+    .breaks-section { margin-bottom: 24px; }
+    .breaks-header {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--accent-red);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .breaks-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .breaks-section li {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .breaks-section li::before {
+      content: '●';
+      position: absolute;
+      left: 0;
+      color: var(--accent-red);
+      font-size: 0.5rem;
+      top: 3px;
+    }
+
+    /* Instrument disclaimer */
+    .disclaimer {
+      background: rgba(243,156,18,0.07);
+      border: 1px solid rgba(243,156,18,0.25);
+      border-radius: var(--border-radius);
+      padding: 12px 16px;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--accent-yellow);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .disclaimer strong { color: var(--accent-yellow); }
+
+    /* Live metrics row */
+    .live-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .lm-cell {
+      background: var(--bg-primary);
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .lm-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .lm-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-base);
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .lm-value.muted { color: var(--text-muted); }
+
+    /* Inventory bar */
+    .inventory-wrap {
+      margin-bottom: 24px;
+    }
+    .inventory-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .inventory-track {
+      height: 6px;
+      background: var(--bg-tertiary);
+      border-radius: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .inventory-fill {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      border-radius: 3px;
+      transition: left 0.3s, width 0.3s, background 0.3s;
+    }
+    .inventory-center {
+      position: absolute;
+      left: 50%;
+      top: -2px;
+      width: 2px;
+      height: 10px;
+      background: var(--text-muted);
+      transform: translateX(-50%);
+    }
+
+    /* Paper PnL chart */
+    .paper-chart-wrap {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 12px;
+      height: 160px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    /* Fills table */
+    .fills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      margin-bottom: 24px;
+    }
+    .fills-table th {
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .fills-table td {
+      padding: 5px 8px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(30,45,66,0.5);
+    }
+    .fills-table td.buy  { color: var(--accent-green); }
+    .fills-table td.sell { color: var(--accent-red); }
+    .fills-table td.flat { color: var(--accent-yellow); }
+
+    /* Footer stats */
+    .live-footer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .lf-item { text-align: center; }
+    .lf-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .lf-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--text-primary);
+    }
+    .lf-value.negative { color: var(--accent-red); }
+    .lf-value.positive { color: var(--accent-green); }
+
+    .reset-btn {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      background: none;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .reset-btn:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+
+    @media (max-width: 768px) {
+      .dash-page { padding: 24px 20px 60px; }
+      .dash-nav  { padding: 0 20px; }
+      .research-metrics { grid-template-columns: repeat(2, 1fr); }
+      .live-metrics     { grid-template-columns: repeat(2, 1fr); }
+      .live-footer      { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ───────────────────────────────────────────────────────── -->
+<nav class="dash-nav">
+  <a href="../index.html" class="dash-nav-back">← Back</a>
+  <a href="../index.html" class="nav-logo">D.H.</a>
+</nav>
+
+<div class="dash-page">
+
+  <div class="dash-title">Avellaneda-Stoikov Market Maker</div>
+  <div class="dash-subtitle">BTCUSD Perpetual Futures · Coincall · Jun 14 – Jun 23 2026</div>
+
+  <!-- ── PANEL A: RESEARCH RESULTS ────────────────────────────────── -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-label">Panel A — Research Results</span>
+      <span class="badge-static">Static · Coincall Walk-Forward</span>
+    </div>
+
+    <div class="research-metrics">
+      <div class="rm-cell">
+        <div class="rm-label">Mean Sharpe</div>
+        <div class="rm-value positive">1.84</div>
+      </div>
+      <div class="rm-cell">
+        <div class="rm-label">Win Rate</div>
+        <div class="rm-value positive">69.7%</div>
+      </div>
+      <div class="rm-cell">
+        <div class="rm-label">Mean RS / Fill</div>
+        <div class="rm-value positive">+$2.92</div>
+      </div>
+      <div class="rm-cell">
+        <div class="rm-label">Max Drawdown</div>
+        <div class="rm-value negative">-$15.53</div>
+      </div>
+      <div class="rm-cell">
+        <div class="rm-label">Net PnL (46,799 fills)</div>
+        <div class="rm-value positive">+$38.04</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <canvas id="dash-as-chart"></canvas>
+    </div>
+
+    <div class="breaks-section">
+      <div class="breaks-header">Where It Breaks</div>
+      <ul>
+        <li>Low-vol regime (W37): σ compression → tight reservation → adverse fills dominate</li>
+        <li>Absent queue model: no LOB depth awareness; fills treated without queue position logic</li>
+        <li>VPIN not incorporated — no toxicity filter on incoming flow</li>
+        <li>Results pre-rebate; maker rebate would improve net PnL</li>
+      </ul>
+    </div>
+
+    <div class="formula-block">
+      <button class="formula-toggle" onclick="toggleFormula(this)">Show Model Equations ↓</button>
+      <div class="formula-content" style="display:none">
+        <p>Reservation price:</p>
+        <div>$r = s - q \cdot \gamma \cdot \sigma^2 \cdot T$</div>
+        <p style="margin-top:10px">Optimal spread:</p>
+        <div>$\delta = \gamma \sigma^2 T + \dfrac{2}{\gamma} \ln\!\left(1 + \dfrac{\gamma}{\kappa}\right)$</div>
+        <p style="margin-top:10px">Fill intensity (MLE calibrated):</p>
+        <div>$\lambda(\delta) = A \cdot e^{-\kappa \delta}$</div>
+        <p style="margin-top:12px; font-size:0.65rem; color:var(--text-muted)">
+          γ = 0.1 (risk aversion) · T = 1/24 yr (vol-adaptive horizon) · κ calibrated via MLE on real fill tape
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PANEL B: LIVE DEMO ─────────────────────────────────────── -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-label">Panel B — Live Model Demonstration</span>
+      <span class="badge-live">
+        <span class="live-dot" id="ws-dot-dash"></span>
+        Live
+      </span>
+    </div>
+
+    <div class="disclaimer">
+      <strong>⚠ Instrument Note:</strong> Research data = BTCUSD perpetual futures (Coincall, Jun 14–Jun 23 2026).
+      This live demo runs on BTC-USD spot (Coinbase Advanced Trade). Different instruments, different microstructure.
+      Parameters are recalibrated from the live trade stream. Results are <strong>illustrative only</strong>.
+    </div>
+
+    <div class="live-metrics">
+      <div class="lm-cell">
+        <div class="lm-label">BTC-USD</div>
+        <div class="lm-value muted" id="dm-price">---.--</div>
+      </div>
+      <div class="lm-cell">
+        <div class="lm-label">Reservation Price</div>
+        <div class="lm-value muted" id="dm-reservation">---.--</div>
+      </div>
+      <div class="lm-cell">
+        <div class="lm-label">Opt Bid</div>
+        <div class="lm-value muted" id="dm-bid">---.--</div>
+      </div>
+      <div class="lm-cell">
+        <div class="lm-label">Opt Ask</div>
+        <div class="lm-value muted" id="dm-ask">---.--</div>
+      </div>
+    </div>
+
+    <div class="inventory-wrap">
+      <div class="inventory-label">
+        <span>Inventory</span>
+        <span id="dm-inventory-text">0.0000 BTC</span>
+      </div>
+      <div class="inventory-track">
+        <div class="inventory-fill" id="dm-inventory-fill" style="left:50%;width:0;background:var(--accent-blue)"></div>
+        <div class="inventory-center"></div>
+      </div>
+    </div>
+
+    <div class="paper-chart-wrap">
+      <canvas id="dm-pnl-chart"></canvas>
+    </div>
+
+    <table class="fills-table">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Side</th>
+          <th>Price</th>
+          <th>Size</th>
+          <th>Running PnL</th>
+        </tr>
+      </thead>
+      <tbody id="fills-body">
+        <tr>
+          <td colspan="5" style="color:var(--text-muted);text-align:center;padding:16px">
+            Waiting for fills…
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="live-footer">
+      <div class="lf-item">
+        <div class="lf-label">Fills</div>
+        <div class="lf-value" id="dm-fills">0</div>
+      </div>
+      <div class="lf-item">
+        <div class="lf-label">Paper PnL</div>
+        <div class="lf-value" id="dm-pnl">$0.00</div>
+      </div>
+      <div class="lf-item">
+        <div class="lf-label">Inventory</div>
+        <div class="lf-value" id="dm-inv">0.0000 BTC</div>
+      </div>
+      <div class="lf-item">
+        <div class="lf-label">κ (live MLE)</div>
+        <div class="lf-value" id="dm-kappa">—</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px">
+      <button class="reset-btn" id="reset-btn">Reset Paper Portfolio</button>
+    </div>
+  </div>
+
+</div><!-- /dash-page -->
+
+<script src="../coinbase_ws.js?v=6"></script>
+<script>
+
+// ── FORMULA TOGGLE ────────────────────────────────────────────────────────────
+function toggleFormula(btn) {
+  const content = btn.nextElementSibling;
+  const isOpen  = content.style.display !== 'none';
+  content.style.display = isOpen ? 'none' : 'block';
+  btn.textContent = isOpen
+    ? btn.textContent.replace('↑','↓')
+    : btn.textContent.replace('↓','↑');
+  if (!isOpen && window.renderMathInElement) {
+    renderMathInElement(content, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$',  right: '$',  display: false }
+      ]
+    });
+  }
+}
+
+// ── RESEARCH CHART ────────────────────────────────────────────────────────────
+async function initResearchChart() {
+  const canvas = document.getElementById('dash-as-chart');
+  if (!canvas) return;
+
+  let data;
+  try {
+    const res = await fetch('../data/as_pnl.json');
+    data = await res.json();
+  } catch(e) { return; }
+
+  if (!data.series || !data.series.length) return;
+
+  const labels         = data.series.map(d => 'W' + d.window);
+  const strategy       = data.series.map(d => d.cumulative_strategy);
+  const baseline       = data.series.map(d => d.cumulative_baseline);
+  const labeledWindows = data.series
+    .map((d, i) => ({ ...d, idx: i }))
+    .filter(d => d.label);
+
+  const annotationPlugin = {
+    id: 'annotations',
+    afterDraw(chart) {
+      if (!labeledWindows.length) return;
+      const meta = chart.getDatasetMeta(0);
+      const ctx  = chart.ctx;
+      ctx.save();
+      labeledWindows.forEach((win, i) => {
+        const point = meta.data[win.idx];
+        if (!point) return;
+        const x = point.x;
+        ctx.setLineDash([4, 4]);
+        ctx.strokeStyle = '#f39c12';
+        ctx.lineWidth   = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(x, chart.chartArea.top);
+        ctx.lineTo(x, chart.chartArea.bottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#f39c12';
+        ctx.font      = "10px 'IBM Plex Mono', monospace";
+        ctx.fillText(win.label, x + 4, chart.chartArea.top + 14 + i * 16);
+      });
+      ctx.restore();
+    }
+  };
+
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label:       'Strategy',
+          data:        strategy,
+          borderColor: '#4a9eff',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          tension:     0.2,
+          fill:        false
+        },
+        {
+          label:       'Fixed-Horizon Baseline',
+          data:        baseline,
+          borderColor: '#3d5166',
+          borderWidth: 1,
+          borderDash:  [4, 4],
+          pointRadius: 0,
+          tension:     0.2,
+          fill:        false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 400 },
+      plugins: {
+        legend: { display: true, labels: { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 10 }, boxWidth: 20 } },
+        tooltip: { callbacks: { label: ctx => ' $' + ctx.parsed.y.toFixed(2) } }
+      },
+      scales: {
+        x: { display: false },
+        y: {
+          display: true,
+          grid:  { color: 'rgba(30,45,66,0.6)' },
+          ticks: { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 10 }, callback: v => '$' + v }
+        }
+      }
+    },
+    plugins: labeledWindows.length ? [annotationPlugin] : []
+  });
+}
+
+// ── PAPER PnL CHART ───────────────────────────────────────────────────────────
+let paperChart   = null;
+let paperHistory = [];
+
+function initPaperChart() {
+  const canvas = document.getElementById('dm-pnl-chart');
+  if (!canvas) return;
+
+  paperChart = new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels:   [],
+      datasets: [{
+        data:        [],
+        borderColor: '#4a9eff',
+        borderWidth: 1.5,
+        pointRadius: 0,
+        tension:     0.3,
+        fill:        { target: 'origin', above: 'rgba(74,158,255,0.05)', below: 'rgba(231,76,60,0.05)' }
+      }]
+    },
+    options: {
+      responsive:          true,
+      maintainAspectRatio: false,
+      animation:           false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' $' + ctx.parsed.y.toFixed(4) } } },
+      scales: {
+        x: { display: false },
+        y: {
+          display: true,
+          grid:  { color: 'rgba(30,45,66,0.6)' },
+          ticks: { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 9 }, callback: v => '$' + v.toFixed(2) }
+        }
+      }
+    }
+  });
+}
+
+function updatePaperChart(pnl, time) {
+  if (!paperChart) return;
+  const label = new Date(time).toUTCString().slice(17, 22);
+  paperChart.data.labels.push(label);
+  paperChart.data.datasets[0].data.push(pnl);
+  if (paperChart.data.labels.length > 200) {
+    paperChart.data.labels.shift();
+    paperChart.data.datasets[0].data.shift();
+  }
+  paperChart.update('none');
+}
+
+// ── INVENTORY BAR ─────────────────────────────────────────────────────────────
+function updateInventoryBar(inv) {
+  const fill = document.getElementById('dm-inventory-fill');
+  const text = document.getElementById('dm-inventory-text');
+  if (!fill || !text) return;
+  const LIMIT   = 0.05;
+  const pct     = Math.min(Math.abs(inv) / LIMIT, 1) * 50;
+  const isLong  = inv >= 0;
+  fill.style.left       = isLong ? '50%' : (50 - pct) + '%';
+  fill.style.width      = pct + '%';
+  fill.style.background = isLong ? 'var(--accent-green)' : 'var(--accent-red)';
+  text.textContent      = (inv >= 0 ? '+' : '') + inv.toFixed(4) + ' BTC';
+}
+
+// ── FILLS TABLE ───────────────────────────────────────────────────────────────
+function addFillRow(fill) {
+  const tbody = document.getElementById('fills-body');
+  if (!tbody) return;
+
+  // Remove "waiting" row if present
+  if (tbody.rows.length === 1 && tbody.rows[0].cells.length === 1) {
+    tbody.innerHTML = '';
+  }
+
+  const sideClass = fill.side === 'BUY' ? 'buy' : fill.side === 'SELL' ? 'sell' : 'flat';
+  const time      = new Date(fill.time).toUTCString().slice(17, 25);
+  const pnl       = fill.runningPnL;
+  const pnlClass  = pnl >= 0 ? 'positive' : 'negative';
+
+  const row = tbody.insertRow(0);
+  row.innerHTML = `
+    <td>${time}</td>
+    <td class="${sideClass}">${fill.side}</td>
+    <td>$${fill.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+    <td>${fill.size.toFixed(8)}</td>
+    <td class="${pnlClass}">$${pnl.toFixed(4)}</td>
+  `;
+
+  // Keep last 10
+  while (tbody.rows.length > 10) tbody.deleteRow(tbody.rows.length - 1);
+}
+
+// ── LIVE METRIC UPDATES ───────────────────────────────────────────────────────
+function updateLiveMetrics() {
+  const s = CoinbaseWS.getState();
+
+  const priceEl = document.getElementById('dm-price');
+  const resEl   = document.getElementById('dm-reservation');
+  const bidEl   = document.getElementById('dm-bid');
+  const askEl   = document.getElementById('dm-ask');
+  const pnlEl   = document.getElementById('dm-pnl');
+  const invEl   = document.getElementById('dm-inv');
+  const fillsEl = document.getElementById('dm-fills');
+  const kappaEl = document.getElementById('dm-kappa');
+
+  const fmt = v => '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  if (priceEl && s.lastTradePrice) {
+    priceEl.textContent  = fmt(s.lastTradePrice);
+    priceEl.className    = 'lm-value';
+  }
+  if (resEl && s.currentQuotes) {
+    resEl.textContent = fmt(s.currentQuotes.reservation);
+    resEl.className   = 'lm-value';
+  }
+  if (bidEl && s.currentQuotes) {
+    bidEl.textContent = s.currentQuotes.optBid !== null ? fmt(s.currentQuotes.optBid) : '— suppressed';
+    bidEl.className   = s.currentQuotes.bidActive ? 'lm-value' : 'lm-value muted';
+  }
+  if (askEl && s.currentQuotes) {
+    askEl.textContent = s.currentQuotes.optAsk !== null ? fmt(s.currentQuotes.optAsk) : '— suppressed';
+    askEl.className   = s.currentQuotes.askActive ? 'lm-value' : 'lm-value muted';
+  }
+
+  const markPnL = s.paperPnL + s.paperInventory * (s.mid || 0);
+  if (pnlEl) {
+    pnlEl.textContent = '$' + markPnL.toFixed(4);
+    pnlEl.className   = 'lf-value ' + (markPnL >= 0 ? 'positive' : 'negative');
+  }
+  if (invEl) {
+    invEl.textContent = (s.paperInventory >= 0 ? '+' : '') + s.paperInventory.toFixed(4) + ' BTC';
+  }
+  if (fillsEl) {
+    const n = s.fillCount;
+    fillsEl.textContent = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K' : String(n);
+  }
+  if (kappaEl) {
+    kappaEl.textContent = s.kappa ? s.kappa.toFixed(4) : '—';
+  }
+
+  updateInventoryBar(s.paperInventory);
+}
+
+// ── WS DOT ───────────────────────────────────────────────────────────────────
+function syncDot() {
+  const dot = document.getElementById('ws-dot-dash');
+  if (!dot) return;
+  const connected = CoinbaseWS.getState().connected;
+  dot.className = connected ? 'live-dot' : 'live-dot offline';
+}
+
+// ── BOOT ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  initResearchChart();
+  initPaperChart();
+
+  CoinbaseWS.connect();
+
+  CoinbaseWS.on('tick', () => {
+    updateLiveMetrics();
+    syncDot();
+  });
+
+  CoinbaseWS.on('fill', fill => {
+    addFillRow(fill);
+    const s    = CoinbaseWS.getState();
+    const pnl  = s.paperPnL + s.paperInventory * (s.mid || 0);
+    updatePaperChart(pnl, fill.time);
+    updateLiveMetrics();
+  });
+
+  document.getElementById('reset-btn').addEventListener('click', () => {
+    CoinbaseWS.resetPaper();
+    paperChart.data.labels   = [];
+    paperChart.data.datasets[0].data = [];
+    paperChart.update('none');
+    document.getElementById('fills-body').innerHTML = `
+      <tr><td colspan="5" style="color:var(--text-muted);text-align:center;padding:16px">Waiting for fills…</td></tr>
+    `;
+    updateLiveMetrics();
+  });
+});
+</script>
+</body>
+</html>

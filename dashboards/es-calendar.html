@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES Calendar Spread Signal | Dhrubojeet Haldar</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    body { padding-top: 56px; }
+
+    .dash-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 56px;
+      z-index: 999;
+      background: rgba(10,14,20,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      justify-content: space-between;
+    }
+    .dash-nav-back {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .dash-nav-back:hover { color: var(--accent-blue); }
+
+    .dash-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .dash-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .dash-title {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+    }
+    .dash-updated {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+    .dash-subtitle {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      font-family: var(--font-mono);
+    }
+
+    .panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .panel-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    /* Z-score hero */
+    .zscore-hero {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+    .zscore-number {
+      font-family: var(--font-mono);
+      font-size: 3.5rem;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--text-primary);
+    }
+    .zscore-number.nodata { color: var(--text-muted); font-size: 1.5rem; }
+    .zscore-meta { display: flex; flex-direction: column; gap: 8px; }
+    .signal-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .signal-badge.neutral { background: rgba(122,144,168,0.15); color: var(--text-secondary); border: 1px solid var(--border); }
+    .signal-badge.long    { background: rgba(46,204,113,0.15);  color: var(--accent-green);   border: 1px solid rgba(46,204,113,0.3); }
+    .signal-badge.short   { background: rgba(231,76,60,0.15);   color: var(--accent-red);     border: 1px solid rgba(231,76,60,0.3); }
+    .signal-badge.nodata  { background: var(--bg-tertiary);     color: var(--text-muted);     border: 1px solid var(--border); }
+
+    .fv-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .fv-cell {
+      background: var(--bg-primary);
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .fv-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .fv-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--text-primary);
+    }
+    .fv-value.muted { color: var(--text-muted); }
+
+    /* Z-score chart */
+    .chart-wrap {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 16px;
+      height: 220px;
+      position: relative;
+    }
+    .pending-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+
+    /* Session & OOS stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .stats-box {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 20px;
+    }
+    .stats-box-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .stats-box-label.eu  { color: var(--accent-green); }
+    .stats-box-label.oos { color: var(--accent-blue); }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      margin-bottom: 8px;
+    }
+    .stat-key  { color: var(--text-secondary); }
+    .stat-val  { color: var(--text-primary); }
+    .stat-val.positive { color: var(--accent-green); }
+    .stat-val.small    { color: var(--accent-green); }
+
+    .ci-note {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .dash-page   { padding: 24px 20px 60px; }
+      .dash-nav    { padding: 0 20px; }
+      .fv-row      { grid-template-columns: 1fr; }
+      .stats-grid  { grid-template-columns: 1fr; }
+      .zscore-hero { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="dash-nav">
+  <a href="../index.html" class="dash-nav-back">← Back</a>
+  <a href="../index.html" class="nav-logo">D.H.</a>
+</nav>
+
+<div class="dash-page">
+
+  <div class="dash-header">
+    <div class="dash-title">ES Calendar Spread — Mean Reversion Signal</div>
+    <div class="dash-updated" id="updated-label">Updated: —</div>
+  </div>
+  <div class="dash-subtitle">Fair Value Deviation · SOFR + Div Yield + Expiry Differential · Entry at |z| &gt; 3.0</div>
+
+  <!-- Z-score + signal -->
+  <div class="panel">
+    <div class="panel-label">Current Signal State</div>
+
+    <div class="zscore-hero">
+      <div class="zscore-number nodata" id="zscore-display">NO DATA</div>
+      <div class="zscore-meta">
+        <span class="signal-badge nodata" id="signal-badge">NO DATA</span>
+        <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--text-muted)" id="contract-label">—</span>
+      </div>
+    </div>
+
+    <div class="fv-row">
+      <div class="fv-cell">
+        <div class="fv-label">Fair Value Spread</div>
+        <div class="fv-value muted" id="fv-display">—</div>
+      </div>
+      <div class="fv-cell">
+        <div class="fv-label">Observed Spread</div>
+        <div class="fv-value muted" id="obs-display">—</div>
+      </div>
+      <div class="fv-cell">
+        <div class="fv-label">Deviation</div>
+        <div class="fv-value muted" id="dev-display">—</div>
+      </div>
+    </div>
+
+    <!-- Z-score chart -->
+    <div class="chart-wrap">
+      <canvas id="zscore-chart" style="display:none"></canvas>
+      <div class="pending-state" id="zscore-pending">Daily z-score data pending — populate data/es_signal.json</div>
+    </div>
+  </div>
+
+  <!-- Session stats (static research results) -->
+  <div class="panel">
+    <div class="panel-label">Research Results — Sep 2024 – Jun 2025 · 4 Roll Windows</div>
+    <div class="stats-grid">
+      <div class="stats-box">
+        <div class="stats-box-label eu">European Session Edge</div>
+        <div class="stat-row">
+          <span class="stat-key">Sample size</span>
+          <span class="stat-val" id="eu-n">n = 170</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">p-value</span>
+          <span class="stat-val small" id="eu-p">0.0008</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">Avg P&amp;L / trade</span>
+          <span class="stat-val positive" id="eu-pnl">+$4.90</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">Consistency</span>
+          <span class="stat-val">Across all 4 roll windows</span>
+        </div>
+      </div>
+      <div class="stats-box">
+        <div class="stats-box-label oos">OOS Validation</div>
+        <div class="stat-row">
+          <span class="stat-key">Sample size</span>
+          <span class="stat-val" id="oos-n">n = 670</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">p-value</span>
+          <span class="stat-val small" id="oos-p">0.0265</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">Annualized Sharpe</span>
+          <span class="stat-val positive" id="oos-sharpe">+3.88</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-key">Net P&amp;L / lot</span>
+          <span class="stat-val positive">+$2.86</span>
+        </div>
+        <div class="ci-note" id="oos-ci">95% CI: [+1.38, +6.63] · net of $8.04/lot (exchange + NFA + broker)</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+async function init() {
+  let data;
+  try {
+    const res = await fetch('../data/es_signal.json');
+    data = await res.json();
+  } catch(e) { return; }
+
+  // Updated
+  if (data.last_updated) {
+    document.getElementById('updated-label').textContent =
+      'Updated: ' + new Date(data.last_updated).toUTCString().slice(0, 25);
+  }
+
+  // Contract label
+  if (data.front_contract && data.back_contract) {
+    document.getElementById('contract-label').textContent =
+      data.front_contract + ' / ' + data.back_contract;
+  }
+
+  // Z-score display
+  const zEl     = document.getElementById('zscore-display');
+  const badgeEl = document.getElementById('signal-badge');
+
+  if (data.z_score !== null && data.z_score !== undefined) {
+    const z      = data.z_score;
+    const absZ   = Math.abs(z);
+    const signal = data.signal || (absZ >= data.entry_threshold ? (z > 0 ? 'SHORT' : 'LONG') : 'NEUTRAL');
+
+    zEl.textContent = (z >= 0 ? '+' : '') + z.toFixed(2);
+    zEl.className   = 'zscore-number ' + (absZ >= data.entry_threshold ? (z > 0 ? 'text-red' : 'text-green') : '');
+
+    badgeEl.textContent = signal;
+    badgeEl.className   = 'signal-badge ' + signal.toLowerCase();
+  }
+
+  // FV row
+  if (data.fair_value_spread !== null) {
+    document.getElementById('fv-display').textContent  = data.fair_value_spread.toFixed(2);
+    document.getElementById('fv-display').className    = 'fv-value';
+  }
+  if (data.observed_spread !== null) {
+    document.getElementById('obs-display').textContent = data.observed_spread.toFixed(2);
+    document.getElementById('obs-display').className   = 'fv-value';
+  }
+  if (data.fair_value_spread !== null && data.observed_spread !== null) {
+    const dev = data.observed_spread - data.fair_value_spread;
+    document.getElementById('dev-display').textContent = (dev >= 0 ? '+' : '') + dev.toFixed(2);
+    document.getElementById('dev-display').className   = 'fv-value ' + (dev >= 0 ? 'positive' : 'negative');
+  }
+
+  // Session stats — update from JSON (already pre-filled with research results)
+  const ss = data.session_stats;
+  if (ss) {
+    if (ss.european) {
+      document.getElementById('eu-n').textContent   = 'n = ' + ss.european.n;
+      document.getElementById('eu-p').textContent   = ss.european.p_value.toFixed(4);
+      document.getElementById('eu-pnl').textContent = '+$' + ss.european.avg_pnl.toFixed(2);
+    }
+    if (ss.oos_summary || data.oos_summary) {
+      const oos = data.oos_summary || ss.oos_summary;
+      document.getElementById('oos-n').textContent      = 'n = ' + oos.n;
+      document.getElementById('oos-p').textContent      = oos.p_value.toFixed(4);
+      document.getElementById('oos-sharpe').textContent = '+' + oos.sharpe.toFixed(2);
+      document.getElementById('oos-ci').textContent     =
+        '95% CI: [+' + oos.sharpe_ci_low.toFixed(2) + ', +' + oos.sharpe_ci_high.toFixed(2) + '] · net of $8.04/lot (exchange + NFA + broker)';
+    }
+  }
+
+  // Z-score chart — only when time series data is present
+  if (data.zscore_series && data.zscore_series.length) {
+    document.getElementById('zscore-pending').style.display = 'none';
+    const canvas = document.getElementById('zscore-chart');
+    canvas.style.display = 'block';
+
+    const labels = data.zscore_series.map(d => d.date);
+    const values = data.zscore_series.map(d => d.z);
+    const threshold = data.entry_threshold || 3.0;
+
+    const thresholdPlugin = {
+      id: 'thresholds',
+      afterDraw(chart) {
+        const ctx = chart.ctx;
+        const { top, bottom, left, right } = chart.chartArea;
+
+        [threshold, -threshold].forEach(t => {
+          const yScale = chart.scales.y;
+          const y = yScale.getPixelForValue(t);
+          ctx.save();
+          ctx.setLineDash([6, 4]);
+          ctx.strokeStyle = 'rgba(74,158,255,0.4)';
+          ctx.lineWidth   = 1;
+          ctx.beginPath();
+          ctx.moveTo(left, y);
+          ctx.lineTo(right, y);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle = 'rgba(74,158,255,0.6)';
+          ctx.font      = "9px 'IBM Plex Mono', monospace";
+          ctx.fillText((t > 0 ? '+' : '') + t.toFixed(1), left + 4, y - 4);
+          ctx.restore();
+        });
+      }
+    };
+
+    new Chart(canvas, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          data:        values,
+          borderColor: '#4a9eff',
+          borderWidth: 1.5,
+          pointRadius: 0,
+          tension:     0.2,
+          fill:        { target: 'origin', above: 'rgba(46,204,113,0.05)', below: 'rgba(231,76,60,0.05)' }
+        }]
+      },
+      options: {
+        responsive:          true,
+        maintainAspectRatio: false,
+        animation:           { duration: 300 },
+        plugins: {
+          legend:  { display: false },
+          tooltip: { callbacks: { label: ctx => ' z = ' + ctx.parsed.y.toFixed(2) } }
+        },
+        scales: {
+          x: {
+            display: true,
+            ticks: {
+              color: '#3d5166',
+              font:  { family: "'IBM Plex Mono', monospace", size: 9 },
+              maxTicksLimit: 8,
+              callback: (_, i) => labels[i] ? labels[i].slice(5) : ''
+            },
+            grid: { display: false }
+          },
+          y: {
+            display: true,
+            grid:    { color: 'rgba(30,45,66,0.6)' },
+            ticks:   {
+              color: '#7a90a8',
+              font:  { family: "'IBM Plex Mono', monospace", size: 10 },
+              callback: v => v.toFixed(1)
+            }
+          }
+        }
+      },
+      plugins: [thresholdPlugin]
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

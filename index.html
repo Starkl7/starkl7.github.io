@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhrubojeet Haldar | Quant Researcher</title>
+  <meta name="description" content="Quant researcher specializing in vol regime transitions, market microstructure, and systematic L/S equity. MFM @ NC State.">
+  <meta property="og:title" content="Dhrubojeet Haldar | Quant Researcher">
+  <meta property="og:description" content="Quant researcher specializing in vol regime transitions, market microstructure, and systematic L/S equity.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]})"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ── TICKER BAR ──────────────────────────────────────────────── -->
+<div id="ticker-bar">
+  <div class="ticker-item">
+    <div class="ticker-dot" id="ws-dot"></div>
+    <span class="ticker-label">BTC-USD</span>
+    <span class="ticker-value" id="tb-price">---.--</span>
+    <span class="ticker-value" id="tb-change">--.--% </span>
+  </div>
+  <span class="ticker-sep">|</span>
+  <div class="ticker-item hide-mobile">
+    <span class="ticker-label">AS Reservation</span>
+    <span class="ticker-value" id="tb-reservation">---.--</span>
+  </div>
+  <span class="ticker-sep hide-mobile">|</span>
+  <div class="ticker-item hide-mobile">
+    <span class="ticker-label">Opt Spread</span>
+    <span class="ticker-value" id="tb-spread">---.--</span>
+  </div>
+  <span class="ticker-sep">|</span>
+  <div class="ticker-item">
+    <span class="ticker-label">Updated</span>
+    <span class="ticker-value mono" id="tb-time">--:--:-- UTC</span>
+  </div>
+</div>
+
+<!-- ── NAVIGATION ─────────────────────────────────────────────── -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">D.H.</a>
+    <ul class="nav-links">
+      <li><a href="#hero"       class="nav-text-link" data-section="hero">About</a></li>
+      <li><a href="#projects"   class="nav-text-link" data-section="projects">Projects</a></li>
+      <li><a href="#experience" class="nav-text-link" data-section="experience">Experience</a></li>
+      <li><a href="#writing"    class="nav-text-link" data-section="writing">Writing</a></li>
+      <li><a href="assets/resume_qt.pdf" class="nav-resume" download="Dhrubojeet_Haldar_Resume.pdf">Resume ↓</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── MAIN CONTENT ───────────────────────────────────────────── -->
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="hero-eyebrow">Quant Researcher &nbsp;·&nbsp; MFM @ NC State &nbsp;·&nbsp; Ex-Wells Fargo</div>
+          <h1 class="hero-title">
+            I study how volatility regime<br>
+            transitions create predictable<br>
+            structure in short-dated markets.
+          </h1>
+          <p class="hero-body">
+            Building systematic strategies across equity momentum,
+            futures microstructure, and crypto market-making.<br>
+            IIT Roorkee &rarr; Wells Fargo ($48B portfolio) &rarr; NC State.
+          </p>
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">View Projects →</a>
+            <a href="#writing"  class="btn btn-outline">Read Research →</a>
+            <a href="https://github.com/starkl7" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-chart-panel">
+            <div class="hero-chart-label">
+              <span>AS Market Maker</span> — BTCUSD P&amp;L (Walk-Forward, 105 windows)
+            </div>
+            <div class="hero-chart-wrap"><canvas id="hero-chart"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THESIS -->
+  <section id="thesis">
+    <div class="container">
+      <div class="thesis-grid">
+        <div class="thesis-cell">
+          <div class="thesis-cell-label">Markets</div>
+          <ul class="thesis-items">
+            <li>Crypto perp futures</li>
+            <li>ES calendar spreads</li>
+            <li>Russell 2000 momentum</li>
+            <li>Credit model diagnostics</li>
+          </ul>
+        </div>
+        <div class="thesis-cell">
+          <div class="thesis-cell-label">Methods</div>
+          <ul class="thesis-items">
+            <li>AS market-making</li>
+            <li>XGBoost L/S reclassifier</li>
+            <li>Mean reversion (z-score)</li>
+            <li>C++20 / Python</li>
+          </ul>
+        </div>
+        <div class="thesis-cell">
+          <div class="thesis-cell-label">Edge</div>
+          <ul class="thesis-items">
+            <li>Regime-aware parameter adaptation</li>
+            <li>Honest failure analysis</li>
+            <li>Real-tape fill replay</li>
+            <li>Walk-forward validation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-header">
+        <div class="section-label">Research &amp; Projects</div>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="market-making">Market-Making</button>
+          <button class="filter-btn" data-filter="systematic">Systematic</button>
+          <button class="filter-btn" data-filter="competition">Competition</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1: AS MARKET MAKER -->
+        <div class="project-card" data-category="market-making">
+          <div class="card-top">
+            <span class="card-tag">Market Microstructure</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag">C++20</span>
+              <span class="tech-tag">Databento</span>
+              <span class="tech-tag">Binance</span>
+            </div>
+          </div>
+          <div class="card-title">Avellaneda-Stoikov Market-Maker</div>
+          <div class="card-subtitle">BTCUSD Perpetual Futures · Coincall · Sep 2024 – Jun 2025</div>
+          <p class="card-thesis">
+            Inventory-aware market-maker on BTCUSD perpetual. MLE-calibrated fill intensity from real-tape replay (not Poisson simulation). Vol-adaptive horizon with hard inventory bounds (&plusmn;5 lots). 105 walk-forward windows.
+          </p>
+
+          <div class="card-chart-container">
+            <canvas id="as-chart"></canvas>
+          </div>
+
+          <div class="card-metrics">
+            <div>
+              <div class="metrics-col-label results">Key Results</div>
+              <div class="metric-row">
+                <span class="metric-key">Avg Spread</span>
+                <span class="metric-value">-$63.51 vs -$352.05</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Drawdown</span>
+                <span class="metric-value positive">↓ 47%</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Losses</span>
+                <span class="metric-value positive">↓ 58%</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Fills</span>
+                <span class="metric-value">936</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Net PnL</span>
+                <span class="metric-value negative">-$73.95</span>
+              </div>
+            </div>
+            <div>
+              <div class="metrics-col-label breaks">Where It Breaks</div>
+              <ul class="breaks-list">
+                <li>Low-vol regime (W37): σ compression → adverse fills dominate</li>
+                <li>Absent queue model — no LOB depth awareness</li>
+                <li>VPIN not incorporated — no toxicity filter</li>
+                <li>Results pre-rebate</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="formula-block">
+            <button class="formula-toggle" onclick="toggleFormula(this)">Show Model Equations ↓</button>
+            <div class="formula-content" style="display:none">
+              <p>Reservation price:</p>
+              <div>$r = s - q \cdot \gamma \cdot \sigma^2 \cdot T$</div>
+              <p style="margin-top:10px">Optimal spread:</p>
+              <div>$\delta = \gamma \sigma^2 T + \dfrac{2}{\gamma} \ln\!\left(1 + \dfrac{\gamma}{\kappa}\right)$</div>
+              <p style="margin-top:10px">Fill intensity (MLE calibrated):</p>
+              <div>$\lambda(\delta) = A \cdot e^{-\kappa \delta}$</div>
+            </div>
+          </div>
+
+          <div class="card-links">
+            <a href="dashboards/as-market-maker.html" class="card-link">Live Dashboard →</a>
+            <a href="https://github.com/starkl7/Crypto_MM" target="_blank" rel="noopener" class="card-link">GitHub →</a>
+            <span class="card-link disabled">Writeup in Progress</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: DEEP MOMENTUM -->
+        <div class="project-card" data-category="systematic">
+          <div class="card-top">
+            <span class="card-tag">Systematic Equity</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">XGBoost</span>
+              <span class="tech-tag">QuantConnect</span>
+              <span class="tech-tag">yfinance</span>
+            </div>
+          </div>
+          <div class="card-title">Russell 2000 Deep Momentum</div>
+          <div class="card-subtitle">XGBoost 4-Quadrant Long/Short Reclassifier · May – Jun 2026</div>
+          <p class="card-thesis">
+            Bimodality-motivated 4-quadrant XGBoost reclassifier on 12-1 momentum (Russell 2000, $10M notional, monthly rebalance). 10-member ensemble, 36-month rolling window, 19 cross-sectionally ranked features. Primary alpha: GL quadrant (bottom-decile reversal, +1.90%/mo) — orthogonal to the momentum factor.
+          </p>
+
+          <div class="card-chart-container">
+            <canvas id="momentum-chart"></canvas>
+          </div>
+
+          <div class="card-metrics">
+            <div>
+              <div class="metrics-col-label results">Key Results</div>
+              <div class="metric-row">
+                <span class="metric-key">Sharpe</span>
+                <span class="metric-value positive">0.235 vs 0.126</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">GL Alpha</span>
+                <span class="metric-value positive">+1.90%/mo</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Drawdown</span>
+                <span class="metric-value positive">-8.1pp</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Vol</span>
+                <span class="metric-value positive">↓ 40%</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Rebalances</span>
+                <span class="metric-value">147 (WF)</span>
+              </div>
+            </div>
+            <div>
+              <div class="metrics-col-label breaks">Where It Breaks</div>
+              <ul class="breaks-list">
+                <li>Post-2020 rate-hike beta drag (Sharpe +0.418 → -0.042)</li>
+                <li>L/S spread intact (+0.85% post vs +0.86% pre-2020) — not signal decay</li>
+                <li>vol_12m importance rose (0.071→0.116), displacing cross-sectional signals</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="formula-block">
+            <button class="formula-toggle" onclick="toggleFormula(this)">Show Model Equations ↓</button>
+            <div class="formula-content" style="display:none">
+              <p>12-1 momentum signal:</p>
+              <div>$\text{mom}_{12,1} = \frac{P_{t-21}}{P_{t-252}} - 1$</div>
+              <p style="margin-top:10px">4-quadrant classification (Winner/Loser × Growth/Value):</p>
+              <div>$Q_i = \text{XGB}(\mathbf{x}_i),\quad \mathbf{x}_i \in \mathbb{R}^{19}$, cross-sectionally ranked</div>
+              <p style="margin-top:10px">GL quadrant (bottom-decile reversal):</p>
+              <div>$\text{GL}: \text{mom}_{12,1} &lt; q_{10} \;\cap\; \hat{p}(\text{reversal}) &gt; \tau$</div>
+            </div>
+          </div>
+
+          <div class="card-links">
+            <a href="dashboards/momentum.html" class="card-link">Signal Dashboard →</a>
+            <a href="https://github.com/starkl7/DeepMomentum" target="_blank" rel="noopener" class="card-link">GitHub →</a>
+            <span class="card-link disabled">Writeup in Progress</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: ES CALENDAR -->
+        <div class="project-card" data-category="systematic">
+          <div class="card-top">
+            <span class="card-tag">Futures Microstructure</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Databento MBP-10</span>
+              <span class="tech-tag">SOFR</span>
+            </div>
+          </div>
+          <div class="card-title">ES Futures Calendar Spread Mean-Reversion</div>
+          <div class="card-subtitle">Fair Value Deviation · Sep 2024 – Jun 2025 · 4 Roll Windows</div>
+          <p class="card-thesis">
+            Fair Value deviation-based mean-reversion on ES calendar spread (SOFR + div yield + expiry differential). Databento MBP-10 nanosecond data. High-conviction entry at |z_fill| &gt; 3 (bias-corrected). European session is a structural alpha source across all 4 roll windows.
+          </p>
+
+          <div class="card-chart-container">
+            <canvas id="es-chart"></canvas>
+          </div>
+
+          <div class="card-metrics">
+            <div>
+              <div class="metrics-col-label results">Key Results</div>
+              <div class="metric-row">
+                <span class="metric-key">Net P&amp;L/lot</span>
+                <span class="metric-value positive">+$2.86</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">EU Session</span>
+                <span class="metric-value positive">+$4.9/trade (n=170)</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">EU p-value</span>
+                <span class="metric-value positive">0.0008</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">OOS Sharpe</span>
+                <span class="metric-value positive">+3.88 [1.38, 6.63]</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">OOS p-value</span>
+                <span class="metric-value positive">0.0265 (n=670)</span>
+              </div>
+            </div>
+            <div>
+              <div class="metrics-col-label breaks">Where It Breaks</div>
+              <ul class="breaks-list">
+                <li>Roll window dependency — signal computed per expiry cycle</li>
+                <li>Cost sensitive: $8.04/lot (exchange + NFA + broker) already baked in</li>
+                <li>European session edge may compress as roll approaches expiry</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="formula-block">
+            <button class="formula-toggle" onclick="toggleFormula(this)">Show Model Equations ↓</button>
+            <div class="formula-content" style="display:none">
+              <p>Fair value of calendar spread:</p>
+              <div>$FV = S \cdot e^{(r - q)(T_2 - T_1)}$</div>
+              <p style="margin-top:10px">Deviation z-score (bias-corrected):</p>
+              <div>$z = \dfrac{(\text{Observed} - FV) - \mu_{\text{bias}}}{\hat{\sigma}_{\text{rolling}}}$</div>
+              <p style="margin-top:10px">Entry signal (high-conviction):</p>
+              <div>$|z_{\text{fill}}| > 3.0$</div>
+            </div>
+          </div>
+
+          <div class="card-links">
+            <a href="dashboards/es-calendar.html" class="card-link">Signal Dashboard →</a>
+            <a href="https://github.com/starkl7/Futures_Roll_Over" target="_blank" rel="noopener" class="card-link">GitHub →</a>
+            <span class="card-link disabled">Writeup in Progress</span>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: IMC PROSPERITY -->
+        <div class="project-card" data-category="competition">
+          <div class="card-top">
+            <span class="card-tag">Competition</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Manual Trading</span>
+            </div>
+          </div>
+          <div class="card-title">IMC Trading Prosperity 4</div>
+          <div class="card-subtitle">Algorithmic Trading Competition · March 2026 · ~18,000 Teams</div>
+          <p class="card-thesis">
+            Ranked 42nd globally in Phase 1 (~18k teams); achieved final rank of ~900 (top 5%) across all participants. Multi-product market with synthetic derivatives, ETF arbitrage, and manual trading rounds.
+          </p>
+
+          <div class="card-metrics" style="margin-top: 8px;">
+            <div>
+              <div class="metrics-col-label results">Key Results</div>
+              <div class="metric-row">
+                <span class="metric-key">Phase 1 Rank</span>
+                <span class="metric-value positive">42 / ~18,000</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Overall Rank</span>
+                <span class="metric-value">~900 (top 5%)</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-key">Percentile</span>
+                <span class="metric-value positive">Top 5%</span>
+              </div>
+            </div>
+            <div>
+              <div class="metrics-col-label breaks">Where It Breaks</div>
+              <ul class="breaks-list">
+                <li>Phase 1 → Phase 2 rank drop (42 → ~900): manual trading rounds penalized automated-only strategies</li>
+                <li>Later rounds introduced cross-product dependencies not captured in Phase 1 models</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="formula-block" style="margin-top:16px">
+            <button class="formula-toggle" onclick="toggleFormula(this)">Strategy Notes ↓</button>
+            <div class="formula-content" style="display:none">
+              <p>Phase 1 — primary edge: market-making on synthetic products with mean-reverting spreads. Inventory bounds applied. ETF basket arbitrage when component mispricing exceeded transaction costs.</p>
+              <p style="margin-top:8px">Phase 2 onward — manual trading rounds introduced execution timing as a skill variable; automated position logic required adaptation to dynamic product introductions.</p>
+              <p style="margin-top:8px">No public repo — competition code under IMC terms.</p>
+            </div>
+          </div>
+
+          <div class="card-links">
+            <span class="card-link disabled">No Public Repo</span>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label">Experience</div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-date">06/2026 – Present</div>
+          <div class="timeline-title">Avellaneda-Stoikov C++ Market Maker</div>
+          <div class="timeline-org">NC State · Financial Mathematics Department</div>
+          <ul class="timeline-bullets">
+            <li>See Projects above</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">03/2026</div>
+          <div class="timeline-title">IMC Trading Prosperity 4</div>
+          <div class="timeline-org">Algorithmic Trading Competition</div>
+          <ul class="timeline-bullets">
+            <li>Ranked 42nd globally in Phase 1 (~18,000 teams)</li>
+            <li>Final rank ~900 — top 5% overall</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">08/2025 – 12/2026</div>
+          <div class="timeline-title">Master of Financial Mathematics</div>
+          <div class="timeline-org">North Carolina State University &nbsp;·&nbsp; GPA 3.82 / 4.0</div>
+          <ul class="timeline-bullets">
+            <li>Stochastic Calculus for Finance · Options &amp; Derivatives Pricing</li>
+            <li>Monte Carlo Methods · Statistical Learning · Statistical Inference</li>
+            <li>Linear Models &amp; Regression · Probability &amp; Stochastics for Finance</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">06/2023 – 07/2025</div>
+          <div class="timeline-title">Quantitative Model Solutions Specialist</div>
+          <div class="timeline-org">Wells Fargo &nbsp;·&nbsp; Bangalore, India</div>
+          <ul class="timeline-bullets">
+            <li>Diagnosed regime-conditional signal decay in Cards ($48B) credit models using KS and PSI drift metrics</li>
+            <li>Identified feature-level drift predicting scoring model instability ahead of formal model review cycles</li>
+            <li>Quantified model sensitivity to macro and behavioral regime shifts across multi-million-record datasets</li>
+            <li>Manager's Spotlight Award</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">07/2019 – 07/2023</div>
+          <div class="timeline-title">B.Tech, Computer Science</div>
+          <div class="timeline-org">Indian Institute of Technology, Roorkee</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="container">
+      <div class="section-label">Writing &amp; Research Notes</div>
+      <div class="writing-grid" id="writing-grid">
+        <!-- Populated by main.js from Substack RSS -->
+        <!-- Fallback cards shown while loading -->
+        <div class="writing-card pending">
+          <div class="writing-date mono">Coming soon</div>
+          <div class="writing-title">AS Market Maker — Walk-Forward Results &amp; Regime Analysis</div>
+          <div class="writing-desc">Deep dive into the W37 low-vol regime failure, fill intensity calibration, and what a queue model would change.</div>
+          <div class="writing-footer">
+            <span class="writing-tag">Market Microstructure</span>
+            <span class="writing-cta">In progress</span>
+          </div>
+        </div>
+        <div class="writing-card pending">
+          <div class="writing-date mono">Coming soon</div>
+          <div class="writing-title">Why the GL Quadrant Works: Bimodality in 12-1 Momentum</div>
+          <div class="writing-desc">The bottom-decile reversal effect is orthogonal to the momentum factor. Here's the decomposition.</div>
+          <div class="writing-footer">
+            <span class="writing-tag">Systematic Equity</span>
+            <span class="writing-cta">In progress</span>
+          </div>
+        </div>
+        <div class="writing-card pending">
+          <div class="writing-date mono">Coming soon</div>
+          <div class="writing-title">European Session Alpha in ES Calendar Spreads</div>
+          <div class="writing-desc">Why p = 0.0008 across 4 roll windows, and how the drift-4h gate halved σ per trade.</div>
+          <div class="writing-footer">
+            <span class="writing-tag">Futures Microstructure</span>
+            <span class="writing-cta">In progress</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-name">Dhrubojeet Haldar</div>
+      <div class="contact-meta">Targeting: <span>Quant Trading · Quant Research · Market Making</span></div>
+      <div class="contact-meta">Available: <span>December 2026</span></div>
+      <div class="contact-links">
+        <a href="mailto:dhaldar@ncsu.edu"                                       class="contact-link">dhaldar@ncsu.edu</a>
+        <a href="https://www.linkedin.com/in/dhrubo17/" target="_blank" rel="noopener" class="contact-link">LinkedIn ↗</a>
+        <a href="https://github.com/starkl7"            target="_blank" rel="noopener" class="contact-link">GitHub ↗</a>
+        <a href="https://substack.com/@starkl7"         target="_blank" rel="noopener" class="contact-link">Substack ↗</a>
+        <a href="assets/resume_qt.pdf" download="Dhrubojeet_Haldar_Resume.pdf" class="contact-link">Resume PDF ↓</a>
+      </div>
+      <div class="footer-meta">
+        Built with plain HTML/CSS/JS · Deployed on GitHub Pages<br>
+        Live data: Coinbase Advanced Trade API · Signals updated via GitHub Actions
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="coinbase_ws.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

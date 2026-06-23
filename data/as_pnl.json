@@ -1,0 +1,1308 @@
+{
+  "windows": 185,
+  "data_source": "Coincall BTCUSD Perpetual \u2013 Coincall_OB futures_ws",
+  "period": "Jun 14 \u2013 Jun 23 2026",
+  "total_fills": 46799,
+  "net_pnl_strategy": 38.0405,
+  "note": "W37 = low-vol regime, AS spread collapses to touch",
+  "series": [
+    {
+      "window": 1,
+      "strategy_pnl": 0.6453,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 0.6453,
+      "cumulative_baseline": 0.0
+    },
+    {
+      "window": 2,
+      "strategy_pnl": 0.7155,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 1.3608,
+      "cumulative_baseline": 0.0
+    },
+    {
+      "window": 3,
+      "strategy_pnl": 0.7597,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 2.1205,
+      "cumulative_baseline": 0.0
+    },
+    {
+      "window": 4,
+      "strategy_pnl": 0.9493,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 3.0698,
+      "cumulative_baseline": 0.0
+    },
+    {
+      "window": 5,
+      "strategy_pnl": 0.9518,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 4.0216,
+      "cumulative_baseline": 0.0
+    },
+    {
+      "window": 6,
+      "strategy_pnl": 2.071,
+      "baseline_pnl": -6.642,
+      "cumulative_strategy": 6.0926,
+      "cumulative_baseline": -6.642
+    },
+    {
+      "window": 7,
+      "strategy_pnl": 2.0433,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.1359,
+      "cumulative_baseline": -6.642
+    },
+    {
+      "window": 8,
+      "strategy_pnl": 0.6021,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.738,
+      "cumulative_baseline": -6.642
+    },
+    {
+      "window": 9,
+      "strategy_pnl": 1.3581,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 10.0961,
+      "cumulative_baseline": -6.642
+    },
+    {
+      "window": 10,
+      "strategy_pnl": 2.4525,
+      "baseline_pnl": -6.6856,
+      "cumulative_strategy": 12.5486,
+      "cumulative_baseline": -13.3276
+    },
+    {
+      "window": 11,
+      "strategy_pnl": -5.5916,
+      "baseline_pnl": 55.262,
+      "cumulative_strategy": 6.957,
+      "cumulative_baseline": 41.9344
+    },
+    {
+      "window": 12,
+      "strategy_pnl": -0.0258,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 6.9312,
+      "cumulative_baseline": 41.9344
+    },
+    {
+      "window": 13,
+      "strategy_pnl": 0.0996,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.0308,
+      "cumulative_baseline": 41.9344
+    },
+    {
+      "window": 14,
+      "strategy_pnl": 0.3846,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.4154,
+      "cumulative_baseline": 41.9344
+    },
+    {
+      "window": 15,
+      "strategy_pnl": 0.4617,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.8771,
+      "cumulative_baseline": 41.9344
+    },
+    {
+      "window": 16,
+      "strategy_pnl": -0.2891,
+      "baseline_pnl": 6.1367,
+      "cumulative_strategy": 7.588,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 17,
+      "strategy_pnl": 0.1468,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.7348,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 18,
+      "strategy_pnl": 0.1453,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.8801,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 19,
+      "strategy_pnl": -0.1521,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.728,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 20,
+      "strategy_pnl": 0.1867,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.9147,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 21,
+      "strategy_pnl": 0.0039,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.9186,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 22,
+      "strategy_pnl": -0.2513,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.6673,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 23,
+      "strategy_pnl": -0.3144,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.3529,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 24,
+      "strategy_pnl": 0.1959,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.5488,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 25,
+      "strategy_pnl": 0.2494,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.7982,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 26,
+      "strategy_pnl": -0.062,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.7362,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 27,
+      "strategy_pnl": 0.4281,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.1643,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 28,
+      "strategy_pnl": 0.0062,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.1705,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 29,
+      "strategy_pnl": 0.2451,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.4156,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 30,
+      "strategy_pnl": 0.1801,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.5957,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 31,
+      "strategy_pnl": -0.0174,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.5783,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 32,
+      "strategy_pnl": -0.0023,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.576,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 33,
+      "strategy_pnl": 0.3918,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.9678,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 34,
+      "strategy_pnl": -0.2856,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.6822,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 35,
+      "strategy_pnl": 0.0951,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.7773,
+      "cumulative_baseline": 48.0711
+    },
+    {
+      "window": 36,
+      "strategy_pnl": 2.6053,
+      "baseline_pnl": -0.0027,
+      "cumulative_strategy": 11.3826,
+      "cumulative_baseline": 48.0684
+    },
+    {
+      "window": 37,
+      "strategy_pnl": 1.7203,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 13.1029,
+      "cumulative_baseline": 48.0684
+    },
+    {
+      "window": 38,
+      "strategy_pnl": 0.7479,
+      "baseline_pnl": -50.585,
+      "cumulative_strategy": 13.8508,
+      "cumulative_baseline": -2.5166,
+      "label": "W37: Low-vol adverse inventory"
+    },
+    {
+      "window": 39,
+      "strategy_pnl": -0.2847,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 13.5661,
+      "cumulative_baseline": -2.5166
+    },
+    {
+      "window": 40,
+      "strategy_pnl": -0.4326,
+      "baseline_pnl": 0.0091,
+      "cumulative_strategy": 13.1335,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 41,
+      "strategy_pnl": -0.2592,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 12.8743,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 42,
+      "strategy_pnl": 0.3316,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 13.2059,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 43,
+      "strategy_pnl": 0.5083,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 13.7142,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 44,
+      "strategy_pnl": -0.4872,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 13.227,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 45,
+      "strategy_pnl": 0.0623,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 13.2893,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 46,
+      "strategy_pnl": -1.2285,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 12.0608,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 47,
+      "strategy_pnl": -0.066,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 11.9948,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 48,
+      "strategy_pnl": 0.3697,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 12.3645,
+      "cumulative_baseline": -2.5075
+    },
+    {
+      "window": 49,
+      "strategy_pnl": -1.848,
+      "baseline_pnl": -7.3407,
+      "cumulative_strategy": 10.5165,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 50,
+      "strategy_pnl": -1.4609,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 9.0556,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 51,
+      "strategy_pnl": -1.8694,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.1862,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 52,
+      "strategy_pnl": 0.4554,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.6416,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 53,
+      "strategy_pnl": -0.1734,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.4682,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 54,
+      "strategy_pnl": 0.3482,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.8164,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 55,
+      "strategy_pnl": 0.0569,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 7.8733,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 56,
+      "strategy_pnl": 0.3671,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.2404,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 57,
+      "strategy_pnl": 0.5052,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.7456,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 58,
+      "strategy_pnl": -0.1632,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.5824,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 59,
+      "strategy_pnl": -0.5407,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.0417,
+      "cumulative_baseline": -9.8482
+    },
+    {
+      "window": 60,
+      "strategy_pnl": -10.9937,
+      "baseline_pnl": -76.8226,
+      "cumulative_strategy": -2.952,
+      "cumulative_baseline": -86.6708,
+      "label": "W59: VPIN spike \u2013 high adverse flow"
+    },
+    {
+      "window": 61,
+      "strategy_pnl": 0.2707,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -2.6813,
+      "cumulative_baseline": -86.6708
+    },
+    {
+      "window": 62,
+      "strategy_pnl": -15.4319,
+      "baseline_pnl": -21.2362,
+      "cumulative_strategy": -18.1132,
+      "cumulative_baseline": -107.907,
+      "label": "W61: Worst single window historically"
+    },
+    {
+      "window": 63,
+      "strategy_pnl": -0.2262,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.3394,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 64,
+      "strategy_pnl": 0.231,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.1084,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 65,
+      "strategy_pnl": -0.439,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.5474,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 66,
+      "strategy_pnl": 0.2797,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.2677,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 67,
+      "strategy_pnl": 0.1717,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.096,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 68,
+      "strategy_pnl": 1.0411,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -17.0549,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 69,
+      "strategy_pnl": -0.9384,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -17.9933,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 70,
+      "strategy_pnl": -0.03,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.0233,
+      "cumulative_baseline": -107.907
+    },
+    {
+      "window": 71,
+      "strategy_pnl": -3.2998,
+      "baseline_pnl": -22.1784,
+      "cumulative_strategy": -21.3231,
+      "cumulative_baseline": -130.0854
+    },
+    {
+      "window": 72,
+      "strategy_pnl": -6.9698,
+      "baseline_pnl": 45.1173,
+      "cumulative_strategy": -28.2929,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 73,
+      "strategy_pnl": 0.2446,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.0483,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 74,
+      "strategy_pnl": 0.0295,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.0188,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 75,
+      "strategy_pnl": 0.4445,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -27.5743,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 76,
+      "strategy_pnl": -0.1733,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -27.7476,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 77,
+      "strategy_pnl": 0.0208,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -27.7268,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 78,
+      "strategy_pnl": 0.0491,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -27.6777,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 79,
+      "strategy_pnl": -0.1158,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -27.7935,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 80,
+      "strategy_pnl": -0.194,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -27.9875,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 81,
+      "strategy_pnl": -0.022,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.0095,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 82,
+      "strategy_pnl": 0.0579,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -27.9516,
+      "cumulative_baseline": -84.9681
+    },
+    {
+      "window": 83,
+      "strategy_pnl": -0.2317,
+      "baseline_pnl": 15.1954,
+      "cumulative_strategy": -28.1833,
+      "cumulative_baseline": -69.7727
+    },
+    {
+      "window": 84,
+      "strategy_pnl": -0.1616,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.3449,
+      "cumulative_baseline": -69.7727
+    },
+    {
+      "window": 85,
+      "strategy_pnl": 0.1554,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.1895,
+      "cumulative_baseline": -69.7727
+    },
+    {
+      "window": 86,
+      "strategy_pnl": -0.1274,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.3169,
+      "cumulative_baseline": -69.7727
+    },
+    {
+      "window": 87,
+      "strategy_pnl": -0.3271,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.644,
+      "cumulative_baseline": -69.7727
+    },
+    {
+      "window": 88,
+      "strategy_pnl": -0.1644,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -28.8084,
+      "cumulative_baseline": -69.7727
+    },
+    {
+      "window": 89,
+      "strategy_pnl": -4.0275,
+      "baseline_pnl": -2.9385,
+      "cumulative_strategy": -32.8359,
+      "cumulative_baseline": -72.7112
+    },
+    {
+      "window": 90,
+      "strategy_pnl": 0.2101,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -32.6258,
+      "cumulative_baseline": -72.7112
+    },
+    {
+      "window": 91,
+      "strategy_pnl": -0.3901,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -33.0159,
+      "cumulative_baseline": -72.7112
+    },
+    {
+      "window": 92,
+      "strategy_pnl": 0.4711,
+      "baseline_pnl": -6.278,
+      "cumulative_strategy": -32.5448,
+      "cumulative_baseline": -78.9892
+    },
+    {
+      "window": 93,
+      "strategy_pnl": -1.4416,
+      "baseline_pnl": 5.2314,
+      "cumulative_strategy": -33.9864,
+      "cumulative_baseline": -73.7578
+    },
+    {
+      "window": 94,
+      "strategy_pnl": -0.1612,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -34.1476,
+      "cumulative_baseline": -73.7578
+    },
+    {
+      "window": 95,
+      "strategy_pnl": 0.3736,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -33.774,
+      "cumulative_baseline": -73.7578
+    },
+    {
+      "window": 96,
+      "strategy_pnl": -0.0677,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -33.8417,
+      "cumulative_baseline": -73.7578
+    },
+    {
+      "window": 97,
+      "strategy_pnl": 0.9475,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -32.8942,
+      "cumulative_baseline": -73.7578
+    },
+    {
+      "window": 98,
+      "strategy_pnl": 2.0449,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -30.8493,
+      "cumulative_baseline": -73.7578
+    },
+    {
+      "window": 99,
+      "strategy_pnl": 1.0242,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -29.8251,
+      "cumulative_baseline": -73.7578
+    },
+    {
+      "window": 100,
+      "strategy_pnl": 1.135,
+      "baseline_pnl": -6.3569,
+      "cumulative_strategy": -28.6901,
+      "cumulative_baseline": -80.1147
+    },
+    {
+      "window": 101,
+      "strategy_pnl": 1.8563,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -26.8338,
+      "cumulative_baseline": -80.1147
+    },
+    {
+      "window": 102,
+      "strategy_pnl": 1.1411,
+      "baseline_pnl": 6.2987,
+      "cumulative_strategy": -25.6927,
+      "cumulative_baseline": -73.816
+    },
+    {
+      "window": 103,
+      "strategy_pnl": 0.3276,
+      "baseline_pnl": -0.1252,
+      "cumulative_strategy": -25.3651,
+      "cumulative_baseline": -73.9412
+    },
+    {
+      "window": 104,
+      "strategy_pnl": 1.2911,
+      "baseline_pnl": -0.0091,
+      "cumulative_strategy": -24.074,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 105,
+      "strategy_pnl": 2.0223,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -22.0517,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 106,
+      "strategy_pnl": 1.2128,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -20.8389,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 107,
+      "strategy_pnl": 1.9621,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.8768,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 108,
+      "strategy_pnl": 0.3591,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.5177,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 109,
+      "strategy_pnl": 1.4302,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -17.0875,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 110,
+      "strategy_pnl": 1.6752,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -15.4123,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 111,
+      "strategy_pnl": -0.0302,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -15.4425,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 112,
+      "strategy_pnl": -2.9893,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.4318,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 113,
+      "strategy_pnl": -3.333,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -21.7648,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 114,
+      "strategy_pnl": 0.7505,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -21.0143,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 115,
+      "strategy_pnl": 0.8644,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -20.1499,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 116,
+      "strategy_pnl": 0.4372,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -19.7127,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 117,
+      "strategy_pnl": 0.5103,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -19.2024,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 118,
+      "strategy_pnl": -0.3176,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -19.52,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 119,
+      "strategy_pnl": -0.2506,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -19.7706,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 120,
+      "strategy_pnl": 0.2204,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -19.5502,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 121,
+      "strategy_pnl": 0.2069,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -19.3433,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 122,
+      "strategy_pnl": 0.4927,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.8506,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 123,
+      "strategy_pnl": 0.3705,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.4801,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 124,
+      "strategy_pnl": -0.029,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.5091,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 125,
+      "strategy_pnl": 0.1178,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -18.3913,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 126,
+      "strategy_pnl": 0.6182,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -17.7731,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 127,
+      "strategy_pnl": 0.6253,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -17.1478,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 128,
+      "strategy_pnl": 1.3852,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -15.7626,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 129,
+      "strategy_pnl": 1.7363,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -14.0263,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 130,
+      "strategy_pnl": 1.1276,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -12.8987,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 131,
+      "strategy_pnl": 0.2844,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -12.6143,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 132,
+      "strategy_pnl": 0.0004,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -12.6139,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 133,
+      "strategy_pnl": 0.2139,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -12.4,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 134,
+      "strategy_pnl": 0.4103,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -11.9897,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 135,
+      "strategy_pnl": 0.45,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -11.5397,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 136,
+      "strategy_pnl": 0.3303,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -11.2094,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 137,
+      "strategy_pnl": 0.3574,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -10.852,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 138,
+      "strategy_pnl": 1.2512,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -9.6008,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 139,
+      "strategy_pnl": 1.0248,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -8.576,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 140,
+      "strategy_pnl": 0.8243,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -7.7517,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 141,
+      "strategy_pnl": 0.6122,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -7.1395,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 142,
+      "strategy_pnl": 1.2097,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -5.9298,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 143,
+      "strategy_pnl": 0.496,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -5.4338,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 144,
+      "strategy_pnl": 1.1361,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -4.2977,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 145,
+      "strategy_pnl": 0.4487,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -3.849,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 146,
+      "strategy_pnl": 2.0097,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -1.8393,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 147,
+      "strategy_pnl": 1.6573,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": -0.182,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 148,
+      "strategy_pnl": 1.0246,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 0.8426,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 149,
+      "strategy_pnl": 1.2628,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 2.1054,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 150,
+      "strategy_pnl": 3.6888,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 5.7942,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 151,
+      "strategy_pnl": 2.7539,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 8.5481,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 152,
+      "strategy_pnl": 2.3331,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 10.8812,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 153,
+      "strategy_pnl": 0.2347,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 11.1159,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 154,
+      "strategy_pnl": -0.1363,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 10.9796,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 155,
+      "strategy_pnl": -1.9726,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 9.007,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 156,
+      "strategy_pnl": 2.7519,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 11.7589,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 157,
+      "strategy_pnl": 0.8966,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 12.6555,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 158,
+      "strategy_pnl": 2.2871,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 14.9426,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 159,
+      "strategy_pnl": 1.2272,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 16.1698,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 160,
+      "strategy_pnl": 1.0877,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 17.2575,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 161,
+      "strategy_pnl": 0.8795,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 18.137,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 162,
+      "strategy_pnl": 2.9216,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 21.0586,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 163,
+      "strategy_pnl": 3.0535,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 24.1121,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 164,
+      "strategy_pnl": 1.5705,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 25.6826,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 165,
+      "strategy_pnl": 0.4985,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 26.1811,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 166,
+      "strategy_pnl": 0.0446,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 26.2257,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 167,
+      "strategy_pnl": 0.9626,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 27.1883,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 168,
+      "strategy_pnl": 0.6846,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 27.8729,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 169,
+      "strategy_pnl": 1.4605,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 29.3334,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 170,
+      "strategy_pnl": 0.0405,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 29.3739,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 171,
+      "strategy_pnl": 1.2726,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 30.6465,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 172,
+      "strategy_pnl": 0.6347,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 31.2812,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 173,
+      "strategy_pnl": 0.7856,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 32.0668,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 174,
+      "strategy_pnl": 1.1699,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 33.2367,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 175,
+      "strategy_pnl": 1.1869,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 34.4236,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 176,
+      "strategy_pnl": 1.6186,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 36.0422,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 177,
+      "strategy_pnl": 1.2455,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 37.2877,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 178,
+      "strategy_pnl": 0.8385,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 38.1262,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 179,
+      "strategy_pnl": 0.4694,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 38.5956,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 180,
+      "strategy_pnl": -1.6203,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 36.9753,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 181,
+      "strategy_pnl": -0.2187,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 36.7566,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 182,
+      "strategy_pnl": -0.0127,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 36.7439,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 183,
+      "strategy_pnl": 1.2293,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 37.9732,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 184,
+      "strategy_pnl": -1.0394,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 36.9338,
+      "cumulative_baseline": -73.9503
+    },
+    {
+      "window": 185,
+      "strategy_pnl": 1.1067,
+      "baseline_pnl": 0.0,
+      "cumulative_strategy": 38.0405,
+      "cumulative_baseline": -73.9503
+    }
+  ]
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Russell 2000 Momentum Signal | Dhrubojeet Haldar</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    body { padding-top: 56px; }
+
+    .dash-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 56px;
+      z-index: 999;
+      background: rgba(10,14,20,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      justify-content: space-between;
+    }
+    .dash-nav-back {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .dash-nav-back:hover { color: var(--accent-blue); }
+
+    .dash-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    .dash-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .dash-title {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+    }
+    .dash-updated {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+    .dash-subtitle {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      font-family: var(--font-mono);
+    }
+
+    .panel {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .panel-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .chart-wrap {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 16px;
+      height: 260px;
+      position: relative;
+    }
+
+    .pending-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+    }
+
+    /* Position tables */
+    .positions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .pos-table-wrap { }
+    .pos-table-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .pos-table-label.long  { color: var(--accent-green); }
+    .pos-table-label.short { color: var(--accent-red); }
+
+    .pos-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+    }
+    .pos-table th {
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 6px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-weight: 400;
+    }
+    .pos-table td {
+      padding: 5px 8px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(30,45,66,0.4);
+    }
+    .pos-table td.quad {
+      font-size: 0.6rem;
+      color: var(--accent-blue);
+      letter-spacing: 0.05em;
+    }
+    .pos-table td.mom-pos { color: var(--accent-green); }
+    .pos-table td.mom-neg { color: var(--accent-red); }
+
+    .empty-table {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      padding: 20px 8px;
+      text-align: center;
+    }
+
+    /* GL insight box */
+    .insight-box {
+      background: rgba(74,158,255,0.05);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: var(--border-radius);
+      padding: 20px;
+    }
+    .insight-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--accent-blue);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .insight-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .is-cell { }
+    .is-label {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 4px;
+    }
+    .is-value {
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      color: var(--accent-green);
+      font-weight: 500;
+    }
+    .insight-note {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Regime note */
+    .regime-note {
+      background: rgba(243,156,18,0.06);
+      border: 1px solid rgba(243,156,18,0.2);
+      border-radius: var(--border-radius);
+      padding: 12px 16px;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--accent-yellow);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .dash-page    { padding: 24px 20px 60px; }
+      .dash-nav     { padding: 0 20px; }
+      .positions-grid { grid-template-columns: 1fr; }
+      .insight-stats  { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="dash-nav">
+  <a href="../index.html" class="dash-nav-back">← Back</a>
+  <a href="../index.html" class="nav-logo">D.H.</a>
+</nav>
+
+<div class="dash-page">
+
+  <div class="dash-header">
+    <div class="dash-title">Russell 2000 Deep Momentum — Signal Dashboard</div>
+    <div class="dash-updated" id="updated-label">Updated: —</div>
+  </div>
+  <div class="dash-subtitle">XGBoost 4-Quadrant L/S Reclassifier · $10M Notional · Monthly Rebalance</div>
+
+  <!-- Equity curve -->
+  <div class="panel">
+    <div class="panel-label">Walk-Forward Equity Curve (147 Rebalances)</div>
+    <div class="chart-wrap">
+      <canvas id="mom-equity-chart" style="display:none"></canvas>
+      <div class="pending-state" id="mom-pending">Signal data not yet loaded — populate data/momentum_signal.json</div>
+    </div>
+  </div>
+
+  <!-- Positions -->
+  <div class="panel">
+    <div class="panel-label">Current Portfolio Signal</div>
+    <div class="positions-grid">
+      <div class="pos-table-wrap">
+        <div class="pos-table-label long">Current Long (GL Quadrant)</div>
+        <table class="pos-table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Quadrant</th>
+              <th>12-1 Mom</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody id="long-body">
+            <tr><td colspan="4" class="empty-table">No signal data</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pos-table-wrap">
+        <div class="pos-table-label short">Current Short (GW Quadrant)</div>
+        <table class="pos-table">
+          <thead>
+            <tr>
+              <th>Ticker</th>
+              <th>Quadrant</th>
+              <th>12-1 Mom</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody id="short-body">
+            <tr><td colspan="4" class="empty-table">No signal data</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- GL Insight -->
+  <div class="panel">
+    <div class="panel-label">GL Quadrant — Primary Alpha Source</div>
+    <div class="insight-box">
+      <div class="insight-label">Bottom-Decile Reversal Effect</div>
+      <div class="insight-stats">
+        <div class="is-cell">
+          <div class="is-label">GL Avg Return</div>
+          <div class="is-value">+1.90%/mo</div>
+        </div>
+        <div class="is-cell">
+          <div class="is-label">Post-2020 Spread</div>
+          <div class="is-value">+0.85%/mo</div>
+        </div>
+        <div class="is-cell">
+          <div class="is-label">Pre-2020 Spread</div>
+          <div class="is-value">+0.86%/mo</div>
+        </div>
+      </div>
+      <div class="insight-note">
+        GL quadrant alpha is orthogonal to the momentum factor — bottom-decile reversal survives even as cross-sectional momentum signals are displaced post-2020. The L/S spread is intact (+0.85% post vs +0.86% pre-2020); the Sharpe collapse (+0.418 → -0.042) is rate-hike beta drag, not signal decay.
+      </div>
+    </div>
+  </div>
+
+  <!-- Regime note -->
+  <div class="regime-note" id="regime-note" style="display:none">
+    <strong>Regime Note:</strong> <span id="regime-note-text"></span>
+  </div>
+
+</div>
+
+<script>
+async function init() {
+  let data;
+  try {
+    const res = await fetch('../data/momentum_signal.json');
+    data = await res.json();
+  } catch(e) { return; }
+
+  // Updated label
+  if (data.last_updated) {
+    document.getElementById('updated-label').textContent =
+      'Updated: ' + new Date(data.last_updated).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+  }
+
+  // Regime note
+  if (data.post_2020_note) {
+    const noteEl = document.getElementById('regime-note');
+    document.getElementById('regime-note-text').textContent = data.post_2020_note;
+    noteEl.style.display = 'block';
+  }
+
+  // Equity curve
+  if (data.equity_curve && data.equity_curve.length) {
+    document.getElementById('mom-pending').style.display = 'none';
+    const canvas = document.getElementById('mom-equity-chart');
+    canvas.style.display = 'block';
+
+    const labels   = data.equity_curve.map(d => d.date);
+    const strategy = data.equity_curve.map(d => d.strategy);
+    const baseline = data.equity_curve.map(d => d.baseline);
+
+    const post2020Plugin = {
+      id: 'post2020',
+      beforeDraw(chart) {
+        const idx = labels.findIndex(l => l >= '2020-01');
+        if (idx < 0) return;
+        const meta = chart.getDatasetMeta(0);
+        if (!meta.data[idx]) return;
+        const x   = meta.data[idx].x;
+        const ctx = chart.ctx;
+        const { top, bottom, right } = chart.chartArea;
+        ctx.save();
+        ctx.fillStyle = 'rgba(243,156,18,0.06)';
+        ctx.fillRect(x, top, right - x, bottom - top);
+        ctx.fillStyle = '#f39c12';
+        ctx.font      = "10px 'IBM Plex Mono', monospace";
+        ctx.fillText('Rate-hike beta drag', x + 6, top + 14);
+        ctx.restore();
+      }
+    };
+
+    new Chart(canvas, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label:       'Strategy',
+            data:        strategy,
+            borderColor: '#4a9eff',
+            borderWidth: 1.5,
+            pointRadius: 0,
+            tension:     0.3,
+            fill:        false
+          },
+          {
+            label:       'Russell 2000 (IWM)',
+            data:        baseline,
+            borderColor: '#3d5166',
+            borderWidth: 1,
+            borderDash:  [4, 4],
+            pointRadius: 0,
+            tension:     0.3,
+            fill:        false
+          }
+        ]
+      },
+      options: {
+        responsive:          true,
+        maintainAspectRatio: false,
+        animation:           { duration: 400 },
+        plugins: {
+          legend: {
+            display: true,
+            labels: { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 10 }, boxWidth: 20 }
+          },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.parsed.y.toFixed(3) + 'x' } }
+        },
+        scales: {
+          x: {
+            display: true,
+            ticks: {
+              color: '#3d5166',
+              font:  { family: "'IBM Plex Mono', monospace", size: 9 },
+              maxTicksLimit: 8,
+              callback: (_, i) => labels[i] ? labels[i].slice(0, 7) : ''
+            },
+            grid: { display: false }
+          },
+          y: {
+            display:  true,
+            grid:     { color: 'rgba(30,45,66,0.6)' },
+            ticks:    {
+              color: '#7a90a8',
+              font:  { family: "'IBM Plex Mono', monospace", size: 10 },
+              callback: v => v.toFixed(2) + 'x'
+            }
+          }
+        }
+      },
+      plugins: [post2020Plugin]
+    });
+  }
+
+  // Long positions
+  const longBody = document.getElementById('long-body');
+  if (data.long_positions && data.long_positions.length) {
+    longBody.innerHTML = '';
+    data.long_positions.forEach(p => {
+      const row = longBody.insertRow();
+      row.innerHTML = `
+        <td>${p.ticker}</td>
+        <td class="quad">${p.quadrant}</td>
+        <td class="${p.momentum_12_1 >= 0 ? 'mom-pos' : 'mom-neg'}">${(p.momentum_12_1 * 100).toFixed(1)}%</td>
+        <td>${(p.weight * 100).toFixed(1)}%</td>
+      `;
+    });
+  }
+
+  // Short positions
+  const shortBody = document.getElementById('short-body');
+  if (data.short_positions && data.short_positions.length) {
+    shortBody.innerHTML = '';
+    data.short_positions.forEach(p => {
+      const row = shortBody.insertRow();
+      row.innerHTML = `
+        <td>${p.ticker}</td>
+        <td class="quad">${p.quadrant}</td>
+        <td class="${p.momentum_12_1 >= 0 ? 'mom-pos' : 'mom-neg'}">${(p.momentum_12_1 * 100).toFixed(1)}%</td>
+        <td>${(p.weight * 100).toFixed(1)}%</td>
+      `;
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

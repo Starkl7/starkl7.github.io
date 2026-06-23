@@ -1,0 +1,15 @@
+{
+  "last_updated": null,
+  "front_contract": null,
+  "back_contract": null,
+  "fair_value_spread": null,
+  "observed_spread": null,
+  "z_score": null,
+  "signal": "NO DATA",
+  "entry_threshold": 3.0,
+  "session_stats": {
+    "european": {"n": 170, "p_value": 0.0008, "avg_pnl": 4.9},
+    "us": {"n": 500, "p_value": 0.41, "avg_pnl": 0.8}
+  },
+  "oos_summary": {"n": 670, "p_value": 0.0265, "sharpe": 3.88, "sharpe_ci_low": 1.38, "sharpe_ci_high": 6.63}
+}

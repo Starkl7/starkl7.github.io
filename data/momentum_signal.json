@@ -1,0 +1,11 @@
+{
+  "last_updated": null,
+  "rebalance_date": null,
+  "portfolio_size": 10000000,
+  "long_positions": [],
+  "short_positions": [],
+  "equity_curve": [],
+  "regime_flag": null,
+  "sharpe_rolling_12m": null,
+  "post_2020_note": ""
+}
