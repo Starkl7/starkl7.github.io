@@ -106,6 +106,18 @@ const CoinbaseWS = (() => {
         if (state.openPrice === null) state.openPrice = price;
         state.lastTradePrice = price;
 
+        // Guard against stale L2 book. state.mid is only set by handleBookUpdate,
+        // which can lag the trade tape during rapid moves. A trade at P is ground
+        // truth: any bestBid above P should have been consumed already. If the
+        // deviation exceeds our own quoted spread (or $5 before quotes exist),
+        // the book is lagging — snap mid to the trade price so quotes stay
+        // anchored to actual market activity rather than a stale book level.
+        if (state.mid !== null) {
+          const drift = Math.abs(price - state.mid);
+          const threshold = state.currentQuotes ? state.currentQuotes.spread : 5;
+          if (drift > threshold) state.mid = price;
+        }
+
         // 1. Check fill against quotes that were posted BEFORE this trade.
         //    Updating sigma/quotes first would be look-ahead bias.
         simulateFill(price, size, now);
