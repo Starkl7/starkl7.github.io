@@ -24,6 +24,19 @@ const CoinbaseWS = (() => {
     paperPnL: 0,
     paperFills: [],   // trimmed to last 50; use fillCount for totals
     fillCount: 0,
+    // ── rolling metrics ──────────────────────────────────────────────
+    totalFillVolume: 0,    // BTC traded (both sides)
+    prevRunningPnL:  0,    // last fill's runningPnL for Welford delta
+    pnlN:    0,            // Welford count of fill-to-fill deltas
+    pnlMean: 0,            // Welford running mean
+    pnlM2:   0,            // Welford sum of squared deviations
+    bothSidesMs:  0,       // ms elapsed with both quotes active
+    lastTickTs:   null,    // timestamp of last WS message (for uptime)
+    pendingAS:    [],      // [{midAtFill, side, time}] — awaiting 5s horizon
+    asN:    0,             // count of matured AS measurements
+    asMean: 0,             // running mean adverse-selection cost (bps)
+    maxAbsInv: 0,          // peak |inventory| seen this session
+    // ─────────────────────────────────────────────────────────────────
     lastTradePrice: null,
     sessionStart: Date.now(),
     connected: false,
@@ -94,6 +107,16 @@ const CoinbaseWS = (() => {
 
   // ── TRADE TAPE ──────────────────────────────────────────────────
   function handleTrade(msg) {
+    // Uptime: accumulate time spent with both quotes active, once per message.
+    const msgNow = Date.now();
+    if (state.lastTickTs !== null && state.currentQuotes) {
+      const dt = msgNow - state.lastTickTs;
+      if (state.currentQuotes.bidActive && state.currentQuotes.askActive) {
+        state.bothSidesMs += dt;
+      }
+    }
+    state.lastTickTs = msgNow;
+
     for (const event of (msg.events || [])) {
       for (const trade of (event.trades || [])) {
         const price     = parseFloat(trade.price);
@@ -134,6 +157,7 @@ const CoinbaseWS = (() => {
         recomputeASQuotes();
       }
     }
+    processAdverseSelection();
     updateTickerBar();
     emit('tick', { ...state.currentQuotes, mid: state.mid, price: state.lastTradePrice });
   }
@@ -226,10 +250,52 @@ const CoinbaseWS = (() => {
 
     if (fill) {
       state.fillCount++;
+
+      // Volume
+      state.totalFillVolume += fillSize;
+
+      // Per-fill Sharpe — Welford's online mean/variance of fill-to-fill PnL delta
+      if (state.fillCount >= 2) {
+        const delta = fill.runningPnL - state.prevRunningPnL;
+        state.pnlN++;
+        const d = delta - state.pnlMean;
+        state.pnlMean += d / state.pnlN;
+        state.pnlM2   += d * (delta - state.pnlMean);
+      }
+      state.prevRunningPnL = fill.runningPnL;
+
+      // Queue 5-second adverse-selection measurement
+      if (state.mid !== null) {
+        state.pendingAS.push({ midAtFill: state.mid, side: fill.side, time: fill.time });
+        if (state.pendingAS.length > 500) state.pendingAS.shift();
+      }
+
+      // Peak inventory
+      const absInv = Math.abs(state.paperInventory);
+      if (absInv > state.maxAbsInv) state.maxAbsInv = absInv;
+
       state.paperFills.push(fill);
       if (state.paperFills.length > 50) state.paperFills.shift();
       emit('fill', fill);
     }
+  }
+
+  // ── ADVERSE SELECTION ────────────────────────────────────────────
+  // Called after every trade batch. Matures any pending measurements whose
+  // 5-second horizon has passed and folds them into a running mean (bps).
+  // AS cost < 0 → mid moved in our favour after the fill (good).
+  // AS cost > 0 → mid moved against us — classic adverse selection (bad).
+  function processAdverseSelection() {
+    if (!state.pendingAS.length || !state.mid) return;
+    const now = Date.now();
+    state.pendingAS = state.pendingAS.filter(entry => {
+      if (now - entry.time < 5000) return true;
+      const driftBps = (state.mid - entry.midAtFill) / entry.midAtFill * 10000;
+      const asCost   = entry.side === 'BUY' ? -driftBps : driftBps;
+      state.asN++;
+      state.asMean += (asCost - state.asMean) / state.asN;
+      return false;
+    });
   }
 
   // ── TICKER BAR UI ────────────────────────────────────────────────
@@ -284,10 +350,21 @@ const CoinbaseWS = (() => {
   }
 
   function resetPaper() {
-    state.paperInventory = 0;
-    state.paperPnL       = 0;
-    state.paperFills     = [];
-    state.fillCount      = 0;
+    state.paperInventory  = 0;
+    state.paperPnL        = 0;
+    state.paperFills      = [];
+    state.fillCount       = 0;
+    state.totalFillVolume = 0;
+    state.prevRunningPnL  = 0;
+    state.pnlN            = 0;
+    state.pnlMean         = 0;
+    state.pnlM2           = 0;
+    state.bothSidesMs     = 0;
+    state.lastTickTs      = null;
+    state.pendingAS       = [];
+    state.asN             = 0;
+    state.asMean          = 0;
+    state.maxAbsInv       = 0;
   }
 
   function getState() { return state; }

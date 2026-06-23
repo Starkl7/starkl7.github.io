@@ -523,6 +523,28 @@
         <div class="lf-value" id="dm-kappa">—</div>
       </div>
     </div>
+    <div class="live-footer" style="margin-top:8px">
+      <div class="lf-item">
+        <div class="lf-label">Fill Rate</div>
+        <div class="lf-value muted" id="dm-fillrate">—</div>
+      </div>
+      <div class="lf-item">
+        <div class="lf-label">Volume</div>
+        <div class="lf-value muted" id="dm-volume">—</div>
+      </div>
+      <div class="lf-item">
+        <div class="lf-label">Sharpe</div>
+        <div class="lf-value muted" id="dm-sharpe">—</div>
+      </div>
+      <div class="lf-item">
+        <div class="lf-label">Uptime</div>
+        <div class="lf-value muted" id="dm-uptime">—</div>
+      </div>
+      <div class="lf-item">
+        <div class="lf-label">AS (5s)</div>
+        <div class="lf-value muted" id="dm-as">—</div>
+      </div>
+    </div>
 
     <div style="margin-top:16px">
       <button class="reset-btn" id="reset-btn">Reset Paper Portfolio</button>
@@ -531,7 +553,7 @@
 
 </div><!-- /dash-page -->
 
-<script src="../coinbase_ws.js?v=7"></script>
+<script src="../coinbase_ws.js?v=8"></script>
 <script>
 
 // ── FORMULA TOGGLE ────────────────────────────────────────────────────────────
@@ -784,6 +806,54 @@ function updateLiveMetrics() {
   }
   if (kappaEl) {
     kappaEl.textContent = s.kappa ? s.kappa.toFixed(4) : '—';
+  }
+
+  // ── rolling metrics ───────────────────────────────────────────────
+  const fillRateEl = document.getElementById('dm-fillrate');
+  const volEl      = document.getElementById('dm-volume');
+  const sharpeEl   = document.getElementById('dm-sharpe');
+  const uptimeEl   = document.getElementById('dm-uptime');
+  const asEl       = document.getElementById('dm-as');
+
+  if (fillRateEl) {
+    const elapsedMin = (Date.now() - s.sessionStart) / 60000;
+    const rate = elapsedMin > 0 ? s.fillCount / elapsedMin : 0;
+    fillRateEl.textContent = rate.toFixed(1) + '/min';
+    fillRateEl.className   = 'lf-value';
+  }
+
+  if (volEl) {
+    volEl.textContent = s.totalFillVolume.toFixed(5) + ' BTC';
+    volEl.className   = 'lf-value';
+  }
+
+  if (sharpeEl) {
+    if (s.pnlN >= 2) {
+      const std    = Math.sqrt(s.pnlM2 / (s.pnlN - 1));
+      const sharpe = std > 0 ? s.pnlMean / std : 0;
+      sharpeEl.textContent = sharpe.toFixed(2);
+      sharpeEl.className   = 'lf-value ' + (sharpe >= 0 ? 'positive' : 'negative');
+    } else {
+      sharpeEl.textContent = '—';
+      sharpeEl.className   = 'lf-value muted';
+    }
+  }
+
+  if (uptimeEl) {
+    const sessionMs = Date.now() - s.sessionStart;
+    const uptime    = sessionMs > 0 ? Math.min(s.bothSidesMs / sessionMs * 100, 100) : 0;
+    uptimeEl.textContent = uptime.toFixed(1) + '%';
+    uptimeEl.className   = 'lf-value ' + (uptime >= 80 ? 'positive' : uptime >= 50 ? '' : 'negative');
+  }
+
+  if (asEl) {
+    if (s.asN >= 3) {
+      asEl.textContent = (s.asMean > 0 ? '+' : '') + s.asMean.toFixed(1) + ' bps';
+      asEl.className   = 'lf-value ' + (s.asMean <= 0 ? 'positive' : 'negative');
+    } else {
+      asEl.textContent = '—';
+      asEl.className   = 'lf-value muted';
+    }
   }
 
   updateInventoryBar(s.paperInventory);
