@@ -88,7 +88,7 @@
         <div class="hero-right">
           <div class="hero-chart-panel">
             <div class="hero-chart-label">
-              <span>AS Market Maker</span> — BTCUSD P&amp;L (Walk-Forward, 105 windows)
+              <span>AS Market Maker</span> — BTCUSD P&amp;L (Walk-Forward, 185 windows)
             </div>
             <div class="hero-chart-wrap"><canvas id="hero-chart"></canvas></div>
           </div>
@@ -154,13 +154,13 @@
             <div class="card-tech-tags">
               <span class="tech-tag">C++20</span>
               <span class="tech-tag">Databento</span>
-              <span class="tech-tag">Binance</span>
+              <span class="tech-tag">Coincall</span>
             </div>
           </div>
           <div class="card-title">Avellaneda-Stoikov Market-Maker</div>
-          <div class="card-subtitle">BTCUSD Perpetual Futures · Coincall · Sep 2024 – Jun 2025</div>
+          <div class="card-subtitle">BTCUSD Perpetual Futures · Coincall · Jun 14–23 2026</div>
           <p class="card-thesis">
-            Inventory-aware market-maker on BTCUSD perpetual. MLE-calibrated fill intensity from real-tape replay (not Poisson simulation). Vol-adaptive horizon with hard inventory bounds (&plusmn;5 lots). 105 walk-forward windows.
+            Inventory-aware market-maker on BTCUSD perpetual. MLE-calibrated fill intensity from real-tape replay (not Poisson simulation). Vol-adaptive stationary horizon τ with hard inventory bounds (&plusmn;5 lots). 185 walk-forward windows.
           </p>
 
           <div class="card-chart-container">
@@ -171,33 +171,33 @@
             <div>
               <div class="metrics-col-label results">Key Results</div>
               <div class="metric-row">
-                <span class="metric-key">Avg Spread</span>
-                <span class="metric-value">-$63.51 vs -$352.05</span>
+                <span class="metric-key">Net PnL (v4)</span>
+                <span class="metric-value positive">+$38.04</span>
               </div>
               <div class="metric-row">
-                <span class="metric-key">Drawdown</span>
-                <span class="metric-value positive">↓ 47%</span>
+                <span class="metric-key">Mean Sharpe</span>
+                <span class="metric-value positive">1.84</span>
               </div>
               <div class="metric-row">
-                <span class="metric-key">Losses</span>
-                <span class="metric-value positive">↓ 58%</span>
+                <span class="metric-key">Profitable</span>
+                <span class="metric-value positive">69.7% of windows</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">Fills</span>
-                <span class="metric-value">936</span>
+                <span class="metric-value">46,799</span>
               </div>
               <div class="metric-row">
-                <span class="metric-key">Net PnL</span>
+                <span class="metric-key">vs v2 baseline</span>
                 <span class="metric-value negative">-$73.95</span>
               </div>
             </div>
             <div>
               <div class="metrics-col-label breaks">Where It Breaks</div>
               <ul class="breaks-list">
-                <li>Low-vol regime (W37): σ compression → adverse fills dominate</li>
-                <li>Absent queue model — no LOB depth awareness</li>
-                <li>VPIN not incorporated — no toxicity filter</li>
-                <li>Results pre-rebate</li>
+                <li>No queue-position model — any fill at a touched price assumed ours; optimistic at scale</li>
+                <li>~49% stale-quote fills at vol_budget=0.5 — PnL is a lower bound (price-improved in real LOB)</li>
+                <li>No maker rebates modelled — reported PnL is a lower bound if rebate schedule applies</li>
+                <li>Funding rate f = 0 — perpetual carry not wired into reservation price</li>
               </ul>
             </div>
           </div>
@@ -206,11 +206,13 @@
             <button class="formula-toggle" onclick="toggleFormula(this)">Show Model Equations ↓</button>
             <div class="formula-content" style="display:none">
               <p>Reservation price:</p>
-              <div>$r = s - q \cdot \gamma \cdot \sigma^2 \cdot T$</div>
-              <p style="margin-top:10px">Optimal spread:</p>
-              <div>$\delta = \gamma \sigma^2 T + \dfrac{2}{\gamma} \ln\!\left(1 + \dfrac{\gamma}{\kappa}\right)$</div>
+              <div>$r = s - q \cdot (\gamma\sigma^2 + f) \cdot \tau$</div>
+              <p style="margin-top:10px">Optimal half-spread:</p>
+              <div>$\delta^* = \tfrac{1}{2}\gamma\sigma^2\tau + \dfrac{1}{\gamma} \ln\!\left(1 + \dfrac{\gamma}{\kappa}\right)$</div>
+              <p style="margin-top:10px">Vol-scaled stationary horizon:</p>
+              <div>$\tau = B \,/\, (\gamma \cdot \sigma^\alpha)$</div>
               <p style="margin-top:10px">Fill intensity (MLE calibrated):</p>
-              <div>$\lambda(\delta) = A \cdot e^{-\kappa \delta}$</div>
+              <div>$\Lambda(\delta) = A \cdot e^{-\kappa \delta}$</div>
             </div>
           </div>
 
