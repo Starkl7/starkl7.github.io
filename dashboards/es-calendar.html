@@ -205,6 +205,33 @@
       margin-top: 6px;
     }
 
+    /* Historical replay note */
+    .replay-note {
+      background: rgba(243,156,18,0.06);
+      border: 1px solid rgba(243,156,18,0.2);
+      border-radius: var(--border-radius);
+      padding: 10px 16px;
+      margin-bottom: 24px;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--accent-yellow);
+      line-height: 1.6;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .replay-badge {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(243,156,18,0.15);
+      border: 1px solid rgba(243,156,18,0.3);
+      border-radius: 3px;
+      padding: 2px 7px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
     @media (max-width: 768px) {
       .dash-page   { padding: 24px 20px 60px; }
       .dash-nav    { padding: 0 20px; }
@@ -227,7 +254,12 @@
     <div class="dash-title">ES Calendar Spread — Mean Reversion Signal</div>
     <div class="dash-updated" id="updated-label">Updated: —</div>
   </div>
-  <div class="dash-subtitle">Fair Value Deviation · SOFR + Div Yield + Expiry Differential · Entry at |z| &gt; 3.0</div>
+  <div class="dash-subtitle">Fair Value Deviation · SOFR + Div Yield + Expiry Differential · Entry at |z| &gt; 2.5</div>
+
+  <div class="replay-note">
+    <span class="replay-badge">Historical Replay</span>
+    <span id="replay-window-text">Signal state reflects last bar of the W1 research window (Sep 2024). No live data feed — Databento tick data is exchange-gated.</span>
+  </div>
 
   <!-- Z-score + signal -->
   <div class="panel">
@@ -256,45 +288,54 @@
       </div>
     </div>
 
-    <!-- Z-score chart -->
+    <!-- Spread vs FV chart -->
     <div class="chart-wrap">
-      <canvas id="zscore-chart" style="display:none"></canvas>
-      <div class="pending-state" id="zscore-pending">Daily z-score data pending — populate data/es_signal.json</div>
+      <canvas id="spread-fv-chart" style="display:none"></canvas>
+      <div class="pending-state" id="spread-fv-pending">Loading…</div>
+    </div>
+  </div>
+
+  <!-- Equity curve -->
+  <div class="panel">
+    <div class="panel-label">Cumulative Net P&amp;L — V1 vs Ungated (10-lot, W1→W4)</div>
+    <div class="chart-wrap" style="height:220px">
+      <canvas id="equity-chart" style="display:none"></canvas>
+      <div class="pending-state" id="equity-pending">Equity curve loading…</div>
     </div>
   </div>
 
   <!-- Session stats (static research results) -->
   <div class="panel">
-    <div class="panel-label">Research Results — Sep 2024 – Jun 2025 · 4 Roll Windows</div>
+    <div class="panel-label">Research Results — Sep 2024 – Jun 2025 · OOS: W3+W4</div>
     <div class="stats-grid">
       <div class="stats-box">
-        <div class="stats-box-label eu">European Session Edge</div>
+        <div class="stats-box-label eu">European Session Edge (OOS V1)</div>
         <div class="stat-row">
           <span class="stat-key">Sample size</span>
-          <span class="stat-val" id="eu-n">n = 170</span>
+          <span class="stat-val" id="eu-n">n = 90</span>
         </div>
         <div class="stat-row">
           <span class="stat-key">p-value</span>
-          <span class="stat-val small" id="eu-p">0.0008</span>
+          <span class="stat-val small" id="eu-p">0.0130</span>
         </div>
         <div class="stat-row">
-          <span class="stat-key">Avg P&amp;L / trade</span>
-          <span class="stat-val positive" id="eu-pnl">+$4.90</span>
+          <span class="stat-key">Avg P&amp;L / lot</span>
+          <span class="stat-val positive" id="eu-pnl">+$3.90</span>
         </div>
         <div class="stat-row">
           <span class="stat-key">Consistency</span>
-          <span class="stat-val">Across all 4 roll windows</span>
+          <span class="stat-val">Positive in all 4 roll windows</span>
         </div>
       </div>
       <div class="stats-box">
-        <div class="stats-box-label oos">OOS Validation</div>
+        <div class="stats-box-label oos">OOS V1 (All Sessions, W3+W4)</div>
         <div class="stat-row">
           <span class="stat-key">Sample size</span>
-          <span class="stat-val" id="oos-n">n = 670</span>
+          <span class="stat-val" id="oos-n">n = 299</span>
         </div>
         <div class="stat-row">
           <span class="stat-key">p-value</span>
-          <span class="stat-val small" id="oos-p">0.0265</span>
+          <span class="stat-val small" id="oos-p">0.0060</span>
         </div>
         <div class="stat-row">
           <span class="stat-key">Annualized Sharpe</span>
@@ -302,9 +343,9 @@
         </div>
         <div class="stat-row">
           <span class="stat-key">Net P&amp;L / lot</span>
-          <span class="stat-val positive">+$2.86</span>
+          <span class="stat-val positive">+$2.47</span>
         </div>
-        <div class="ci-note" id="oos-ci">95% CI: [+1.38, +6.63] · net of $8.04/lot (exchange + NFA + broker)</div>
+        <div class="ci-note" id="oos-ci">90% CI: [+1.38, +6.63] · net of $8.04/lot (exchange + NFA + broker)</div>
       </div>
     </div>
   </div>
@@ -322,7 +363,13 @@ async function init() {
   // Updated
   if (data.last_updated) {
     document.getElementById('updated-label').textContent =
-      'Updated: ' + new Date(data.last_updated).toUTCString().slice(0, 25);
+      'Last bar: ' + new Date(data.last_updated).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric', timeZone:'UTC' });
+  }
+
+  // Research window label in replay note
+  if (data.research_window) {
+    document.getElementById('replay-window-text').textContent =
+      'Signal state reflects last bar of ' + data.research_window + '. No live data feed — Databento tick data is exchange-gated.';
   }
 
   // Contract label
@@ -362,55 +409,59 @@ async function init() {
     document.getElementById('dev-display').className   = 'fv-value ' + (dev >= 0 ? 'positive' : 'negative');
   }
 
-  // Session stats — update from JSON (already pre-filled with research results)
+  // Session stats — update from JSON
   const ss = data.session_stats;
-  if (ss) {
-    if (ss.european) {
-      document.getElementById('eu-n').textContent   = 'n = ' + ss.european.n;
-      document.getElementById('eu-p').textContent   = ss.european.p_value.toFixed(4);
-      document.getElementById('eu-pnl').textContent = '+$' + ss.european.avg_pnl.toFixed(2);
-    }
-    if (ss.oos_summary || data.oos_summary) {
-      const oos = data.oos_summary || ss.oos_summary;
-      document.getElementById('oos-n').textContent      = 'n = ' + oos.n;
-      document.getElementById('oos-p').textContent      = oos.p_value.toFixed(4);
-      document.getElementById('oos-sharpe').textContent = '+' + oos.sharpe.toFixed(2);
-      document.getElementById('oos-ci').textContent     =
-        '95% CI: [+' + oos.sharpe_ci_low.toFixed(2) + ', +' + oos.sharpe_ci_high.toFixed(2) + '] · net of $8.04/lot (exchange + NFA + broker)';
-    }
+  if (ss && ss.european) {
+    document.getElementById('eu-n').textContent   = 'n = ' + ss.european.n;
+    document.getElementById('eu-p').textContent   = ss.european.p_value.toFixed(4);
+    document.getElementById('eu-pnl').textContent = '+$' + ss.european.avg_pnl.toFixed(2);
+  }
+  if (data.oos_summary) {
+    const oos = data.oos_summary;
+    document.getElementById('oos-n').textContent      = 'n = ' + oos.n;
+    document.getElementById('oos-p').textContent      = oos.p_value.toFixed(4);
+    document.getElementById('oos-sharpe').textContent = '+' + oos.sharpe.toFixed(2);
+    document.getElementById('oos-ci').textContent     =
+      '90% CI: [+' + oos.sharpe_ci_low.toFixed(2) + ', +' + oos.sharpe_ci_high.toFixed(2) + '] · net of $8.04/lot (exchange + NFA + broker)';
   }
 
-  // Z-score chart — only when time series data is present
-  if (data.zscore_series && data.zscore_series.length) {
-    document.getElementById('zscore-pending').style.display = 'none';
-    const canvas = document.getElementById('zscore-chart');
+  // Spread vs Fair Value chart
+  const sfv = data.spread_vs_fv;
+  if (sfv && sfv.dates && sfv.spread && sfv.spread.length) {
+    document.getElementById('spread-fv-pending').style.display = 'none';
+    const canvas = document.getElementById('spread-fv-chart');
     canvas.style.display = 'block';
 
-    const labels = data.zscore_series.map(d => d.date);
-    const values = data.zscore_series.map(d => d.z);
-    const threshold = data.entry_threshold || 3.0;
+    // x-axis labels: show MM-DD for data days, blank for gap nulls
+    const labels = sfv.dates.map(d => d ? d.slice(5) : '');
 
-    const thresholdPlugin = {
-      id: 'thresholds',
+    // Window-start labels from full dates
+    const wStarts = sfv.window_starts || {};
+    const xLabels = sfv.dates.map(d => {
+      if (!d) return '';
+      if (d === wStarts.W1) return 'W1';
+      if (d === wStarts.W2) return 'W2';
+      if (d === wStarts.W3) return 'W3';
+      if (d === wStarts.W4) return 'W4';
+      return d.slice(5);
+    });
+
+    // Window-start ticks (W1/W2/W3/W4) are already in xLabels;
+    // a gap-line plugin draws vertical separators at the null positions.
+    const gapPlugin = {
+      id: 'windowGaps',
       afterDraw(chart) {
-        const ctx = chart.ctx;
-        const { top, bottom, left, right } = chart.chartArea;
-
-        [threshold, -threshold].forEach(t => {
-          const yScale = chart.scales.y;
-          const y = yScale.getPixelForValue(t);
+        const ctx  = chart.ctx;
+        const meta = chart.getDatasetMeta(0);
+        const { top, bottom } = chart.chartArea;
+        sfv.dates.forEach((d, i) => {
+          if (d !== null || !meta.data[i]) return;
+          const x = meta.data[i].x;
           ctx.save();
-          ctx.setLineDash([6, 4]);
-          ctx.strokeStyle = 'rgba(74,158,255,0.4)';
+          ctx.strokeStyle = 'rgba(122,144,168,0.2)';
           ctx.lineWidth   = 1;
-          ctx.beginPath();
-          ctx.moveTo(left, y);
-          ctx.lineTo(right, y);
-          ctx.stroke();
-          ctx.setLineDash([]);
-          ctx.fillStyle = 'rgba(74,158,255,0.6)';
-          ctx.font      = "9px 'IBM Plex Mono', monospace";
-          ctx.fillText((t > 0 ? '+' : '') + t.toFixed(1), left + 4, y - 4);
+          ctx.setLineDash([3, 3]);
+          ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x, bottom); ctx.stroke();
           ctx.restore();
         });
       }
@@ -419,23 +470,46 @@ async function init() {
     new Chart(canvas, {
       type: 'line',
       data: {
-        labels,
-        datasets: [{
-          data:        values,
-          borderColor: '#4a9eff',
-          borderWidth: 1.5,
-          pointRadius: 0,
-          tension:     0.2,
-          fill:        { target: 'origin', above: 'rgba(46,204,113,0.05)', below: 'rgba(231,76,60,0.05)' }
-        }]
+        labels: xLabels,
+        datasets: [
+          {
+            label:           'Observed Spread',
+            data:            sfv.spread,
+            borderColor:     '#4a9eff',
+            borderWidth:     1.5,
+            pointRadius:     0,
+            tension:         0.2,
+            spanGaps:        false,
+            fill:            '+1',
+            backgroundColor: 'rgba(74,158,255,0.08)',
+          },
+          {
+            label:       'Fair Value  (SOFR carry)',
+            data:        sfv.fv,
+            borderColor: '#2ecc71',
+            borderWidth: 1.5,
+            borderDash:  [5, 4],
+            pointRadius: 0,
+            tension:     0.2,
+            spanGaps:    false,
+            fill:        false,
+          }
+        ]
       },
       options: {
         responsive:          true,
         maintainAspectRatio: false,
         animation:           { duration: 300 },
         plugins: {
-          legend:  { display: false },
-          tooltip: { callbacks: { label: ctx => ' z = ' + ctx.parsed.y.toFixed(2) } }
+          legend: {
+            display: true,
+            labels:  { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 10 }, boxWidth: 20 }
+          },
+          tooltip: {
+            callbacks: {
+              label: ctx => ' ' + ctx.dataset.label + ': ' + (ctx.parsed.y != null ? ctx.parsed.y.toFixed(2) + ' pts' : '—')
+            }
+          }
         },
         scales: {
           x: {
@@ -443,8 +517,17 @@ async function init() {
             ticks: {
               color: '#3d5166',
               font:  { family: "'IBM Plex Mono', monospace", size: 9 },
-              maxTicksLimit: 8,
-              callback: (_, i) => labels[i] ? labels[i].slice(5) : ''
+              autoSkip:     false,
+              maxRotation:  0,
+              callback: (_, i) => {
+                const l = xLabels[i];
+                // Always show window-start labels; show every other date label
+                if (!l) return '';
+                if (['W1','W2','W3','W4'].includes(l)) return l;
+                // Show alternate dates to avoid crowding
+                const dateIdx = sfv.dates.slice(0, i + 1).filter(Boolean).length;
+                return dateIdx % 2 === 0 ? l : '';
+              }
             },
             grid: { display: false }
           },
@@ -454,12 +537,136 @@ async function init() {
             ticks:   {
               color: '#7a90a8',
               font:  { family: "'IBM Plex Mono', monospace", size: 10 },
-              callback: v => v.toFixed(1)
+              callback: v => v.toFixed(0) + ' pt'
             }
           }
         }
       },
-      plugins: [thresholdPlugin]
+      plugins: [gapPlugin]
+    });
+  }
+
+  // ── Equity curve — V1 vs Ungated ─────────────────────────────────────────
+  const ec = data.equity_curve;
+  if (ec && ec.dates && ec.v1 && ec.v1.length) {
+    document.getElementById('equity-pending').style.display = 'none';
+    const ecCanvas = document.getElementById('equity-chart');
+    ecCanvas.style.display = 'block';
+
+    const labels   = ec.dates;
+    const splitIdx = labels.indexOf(ec.is_oos_split);
+    const wStarts  = ec.window_starts || {};
+
+    // Format date labels: show only window-start dates and the zero anchor
+    const xLabels = labels.map(d => {
+      if (d === '2024-09-11') return 'W1';
+      if (d === wStarts.W2)   return 'W2';
+      if (d === wStarts.W3)   return 'W3';
+      if (d === wStarts.W4)   return 'W4';
+      return d.slice(5);   // MM-DD
+    });
+
+    const annotationPlugin = {
+      id: 'ecAnnotations',
+      afterDraw(chart) {
+        const ctx  = chart.ctx;
+        const { top, bottom } = chart.chartArea;
+        const meta = chart.getDatasetMeta(0);
+
+        // IS/OOS split line
+        if (splitIdx >= 0 && meta.data[splitIdx]) {
+          const x = meta.data[splitIdx].x;
+          ctx.save();
+          ctx.setLineDash([5, 4]);
+          ctx.strokeStyle = 'rgba(122,144,168,0.5)';
+          ctx.lineWidth   = 1;
+          ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x, bottom); ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle = '#7a90a8';
+          ctx.font      = "9px 'IBM Plex Mono', monospace";
+          ctx.textAlign = 'right';
+          ctx.fillText('IS', x - 4, top + 10);
+          ctx.textAlign = 'left';
+          ctx.fillText('OOS', x + 4, top + 10);
+          ctx.restore();
+        }
+
+        // Zero reference line
+        const yScale = chart.scales.y;
+        const y0 = yScale.getPixelForValue(0);
+        ctx.save();
+        ctx.strokeStyle = 'rgba(122,144,168,0.25)';
+        ctx.lineWidth   = 1;
+        ctx.beginPath();
+        ctx.moveTo(chart.chartArea.left, y0);
+        ctx.lineTo(chart.chartArea.right, y0);
+        ctx.stroke();
+        ctx.restore();
+      }
+    };
+
+    new Chart(ecCanvas, {
+      type: 'line',
+      data: {
+        labels: xLabels,
+        datasets: [
+          {
+            label:       'V1 (drift gate)',
+            data:        ec.v1,
+            borderColor: '#4a9eff',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension:     0.15,
+            fill:        false,
+          },
+          {
+            label:       'Ungated',
+            data:        ec.ungated,
+            borderColor: '#3d5166',
+            borderWidth: 1.5,
+            borderDash:  [5, 4],
+            pointRadius: 0,
+            tension:     0.15,
+            fill:        false,
+          }
+        ]
+      },
+      options: {
+        responsive:          true,
+        maintainAspectRatio: false,
+        animation:           { duration: 400 },
+        plugins: {
+          legend: {
+            display: true,
+            labels:  { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 10 }, boxWidth: 20 }
+          },
+          tooltip: {
+            callbacks: {
+              label: ctx => {
+                const v = ctx.parsed.y;
+                return ' ' + ctx.dataset.label + ': $' + v.toLocaleString('en-US', { maximumFractionDigits: 0 });
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            display: true,
+            ticks:   { color: '#3d5166', font: { family: "'IBM Plex Mono', monospace", size: 9 }, maxRotation: 0 },
+            grid:    { display: false }
+          },
+          y: {
+            display: true,
+            grid:    { color: 'rgba(30,45,66,0.6)' },
+            ticks:   {
+              color: '#7a90a8',
+              font:  { family: "'IBM Plex Mono', monospace", size: 10 },
+              callback: v => '$' + (v >= 0 ? '' : '-') + Math.abs(v).toLocaleString('en-US', { maximumFractionDigits: 0 })
+            }
+          }
+        }
+      },
+      plugins: [annotationPlugin]
     });
   }
 }

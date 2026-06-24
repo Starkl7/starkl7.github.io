@@ -232,11 +232,11 @@
     <div class="dash-title">Russell 2000 Deep Momentum — Signal Dashboard</div>
     <div class="dash-updated" id="updated-label">Updated: —</div>
   </div>
-  <div class="dash-subtitle">XGBoost 4-Quadrant L/S Reclassifier · $10M Notional · Monthly Rebalance</div>
+  <div class="dash-subtitle">v2 Hybrid — XGBoost · Vol Scaling · Persistence Gate · Market State Gate · $10M Notional · Monthly Rebalance</div>
 
   <!-- Equity curve -->
   <div class="panel">
-    <div class="panel-label">Walk-Forward Equity Curve (147 Rebalances)</div>
+    <div class="panel-label">Walk-Forward Equity Curve (159 Rebalances — Oct 2012 – Dec 2025)</div>
     <div class="chart-wrap">
       <canvas id="mom-equity-chart" style="display:none"></canvas>
       <div class="pending-state" id="mom-pending">Signal data not yet loaded — populate data/momentum_signal.json</div>
@@ -248,7 +248,7 @@
     <div class="panel-label">Current Portfolio Signal</div>
     <div class="positions-grid">
       <div class="pos-table-wrap">
-        <div class="pos-table-label long">Current Long (GL Quadrant)</div>
+        <div class="pos-table-label long">Long Book — GW + GL (top 15 by |12-1 mom|)</div>
         <table class="pos-table">
           <thead>
             <tr>
@@ -264,7 +264,7 @@
         </table>
       </div>
       <div class="pos-table-wrap">
-        <div class="pos-table-label short">Current Short (GW Quadrant)</div>
+        <div class="pos-table-label short">Short Book — BW + BL (top 15 by |12-1 mom|)</div>
         <table class="pos-table">
           <thead>
             <tr>
@@ -293,16 +293,16 @@
           <div class="is-value">+1.90%/mo</div>
         </div>
         <div class="is-cell">
-          <div class="is-label">Post-2020 Spread</div>
-          <div class="is-value">+0.85%/mo</div>
+          <div class="is-label">GW Avg Return</div>
+          <div class="is-value">+1.66%/mo</div>
         </div>
         <div class="is-cell">
-          <div class="is-label">Pre-2020 Spread</div>
-          <div class="is-value">+0.86%/mo</div>
+          <div class="is-label">L/S Spread</div>
+          <div class="is-value">+0.78%/mo</div>
         </div>
       </div>
       <div class="insight-note">
-        GL quadrant alpha is orthogonal to the momentum factor — bottom-decile reversal survives even as cross-sectional momentum signals are displaced post-2020. The L/S spread is intact (+0.85% post vs +0.86% pre-2020); the Sharpe collapse (+0.418 → -0.042) is rate-hike beta drag, not signal decay.
+        GL is the largest single alpha source (+1.90%/mo) — the bottom-decile reversal trade exceeds GW (+1.66%/mo), driving a positive L/S spread (+0.78%/mo). XGB probability spread (GW−GL) = +0.0004 — the model acts as a volatility-regime filter, not a stock picker; GL alpha is structural rather than predictive. In the v2 hybrid, the persistence gate drops the GL leg when its 2-month realized return turns negative, concentrating capital in GW during those windows.
       </div>
     </div>
   </div>
@@ -318,7 +318,7 @@
 async function init() {
   let data;
   try {
-    const res = await fetch('../data/momentum_signal.json');
+    const res = await fetch('../data/momentum_signal.json', { cache: 'no-store' });
     data = await res.json();
   } catch(e) { return; }
 
@@ -360,7 +360,7 @@ async function init() {
         ctx.fillRect(x, top, right - x, bottom - top);
         ctx.fillStyle = '#f39c12';
         ctx.font      = "10px 'IBM Plex Mono', monospace";
-        ctx.fillText('Rate-hike beta drag', x + 6, top + 14);
+        ctx.fillText('Rate-hike beta drag — persistence gate active', x + 6, top + 14);
         ctx.restore();
       }
     };
@@ -371,7 +371,7 @@ async function init() {
         labels,
         datasets: [
           {
-            label:       'Strategy',
+            label:       'v2 Hybrid (XGBoost + Overlays)',
             data:        strategy,
             borderColor: '#4a9eff',
             borderWidth: 1.5,
@@ -380,7 +380,7 @@ async function init() {
             fill:        false
           },
           {
-            label:       'Russell 2000 (IWM)',
+            label:       'Phase 1 Baseline (J-T 12-1 Momentum)',
             data:        baseline,
             borderColor: '#3d5166',
             borderWidth: 1,

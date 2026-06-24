@@ -18,3 +18,7 @@ __pycache__/
 
 # Node
 node_modules/
+
+# Large LEAN backtest result exports (source for generate scripts, not served)
+data/Phase*_final*.json
+data/Phase*_wfv*.json

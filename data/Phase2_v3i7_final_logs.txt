@@ -1,0 +1,614 @@
+2009-08-01 00:00:00 Launching analysis for c9902db217ddd10a1c62c13a482965ef with LEAN Engine v2.5.0.0.17868
+2009-08-03 10:00:00 2009-08: <20 eligible — skip
+2009-09-01 10:00:00 2009-09: <20 eligible — skip
+2009-10-01 10:00:00 2009-10: <20 eligible — skip
+2009-11-02 10:00:00 2009-11: <20 eligible — skip
+2009-12-01 10:00:00 2009-12: <20 eligible — skip
+2010-01-04 10:00:00 2010-01: <20 eligible — skip
+2010-02-01 10:00:00 2010-02: <20 eligible — skip
+2010-03-01 10:00:00 2010-03: <20 eligible — skip
+2010-04-01 10:00:00 2010-04: <20 eligible — skip
+2010-05-03 10:00:00 2010-05: <20 eligible — skip
+2010-06-01 10:00:00 2010-06: <20 eligible — skip
+2010-07-01 10:00:00 2010-07: <20 eligible — skip
+2010-08-02 10:00:00 2010-08: <20 eligible — skip
+2010-09-01 10:00:00 2010-09: <20 eligible — skip
+2010-10-01 10:00:00 2010-10: warming up (0/24 mo)
+2010-11-01 10:00:00 2010-11: warming up (1/24 mo)
+2010-12-01 10:00:00 2010-12: warming up (2/24 mo)
+2011-01-03 10:00:00 2011-01: warming up (3/24 mo)
+2011-02-01 10:00:00 2011-02: warming up (4/24 mo)
+2011-03-01 10:00:00 2011-03: warming up (5/24 mo)
+2011-04-01 10:00:00 2011-04: warming up (6/24 mo)
+2011-05-02 10:00:00 2011-05: warming up (7/24 mo)
+2011-06-01 10:00:00 2011-06: warming up (8/24 mo)
+2011-07-01 10:00:00 2011-07: warming up (9/24 mo)
+2011-08-01 10:00:00 2011-08: warming up (10/24 mo)
+2011-09-01 10:00:00 2011-09: warming up (11/24 mo)
+2011-10-03 10:00:00 2011-10: warming up (12/24 mo)
+2011-11-01 10:00:00 2011-11: warming up (13/24 mo)
+2011-12-01 10:00:00 2011-12: warming up (14/24 mo)
+2012-01-03 10:00:00 2012-01: warming up (15/24 mo)
+2012-02-01 10:00:00 2012-02: warming up (16/24 mo)
+2012-03-01 10:00:00 2012-03: warming up (17/24 mo)
+2012-04-02 10:00:00 2012-04: warming up (18/24 mo)
+2012-05-01 10:00:00 2012-05: warming up (19/24 mo)
+2012-06-01 10:00:00 2012-06: warming up (20/24 mo)
+2012-07-02 10:00:00 2012-07: warming up (21/24 mo)
+2012-08-01 10:00:00 2012-08: warming up (22/24 mo)
+2012-09-04 10:00:00 2012-09: warming up (23/24 mo)
+2012-10-01 10:00:00 Warning: market orders on daily resolution data sent during market hours are automatically converted into MarketOnClose orders (or MarketOnOpen near the close) to avoid filling at the stale previous close. Note: in live trading this conversion is not applied, as the order fills at the current market price.
+2012-10-01 10:00:00   DIAG 2012-10 | prob_spread=+0.018 (GW=0.537 GL=0.519) | quad_ret GW=+nan BW=+nan GL=+nan BL=+nan | beta L=+1.09 S=-1.74 net=-0.66 | gates GL=ON BW=ON scale=1.00x | nan: ev_ebitda=55%  gross_margin=33%  net_income_growth=29%  pe=25%
+2012-10-01 10:00:00 2012-10  LONG=109 (GW=98 GL=11)  SHORT=115 (BW=14 BL=101)  mkt=UP(+32%)  scale=1.00x  train=24mo
+2012-11-01 10:00:00 Warning: Portfolio rebalance result ignored as it resulted in a single share trade recommendation which can generate high fees. To disable minimum order size checks please set self.settings.minimum_order_margin_portfolio_percentage = 0.
+2012-11-01 10:00:00   DIAG 2012-11 | prob_spread=-0.006 (GW=0.520 GL=0.526) | quad_ret GW=+0.001 BW=-0.079 GL=-0.090 BL=-0.057 | beta L=+1.12 S=-1.31 net=-0.19 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=54%  gross_margin=32%  net_income_growth=28%  pe=24%
+2012-11-01 10:00:00 2012-11  LONG=50 (GW=44 GL=6)  SHORT=166 (BW=64 BL=102)  mkt=UP(+12%)  scale=1.20x  train=25mo
+2012-12-03 10:00:00   DIAG 2012-12 | prob_spread=+0.011 (GW=0.528 GL=0.517) | quad_ret GW=+0.015 BW=+0.012 GL=+0.095 BL=+0.004 | beta L=+1.09 S=-1.19 net=-0.10 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=54%  gross_margin=32%  net_income_growth=28%  pe=23%
+2012-12-03 10:00:00 2012-12  LONG=84 (GW=84 GL=0*)  SHORT=105 (BW=0 BL=105*)  mkt=UP(+13%)  scale=1.20x  train=26mo
+2013-01-02 10:00:00   DIAG 2013-01 | prob_spread=+0.005 (GW=0.528 GL=0.523) | quad_ret GW=+0.025 BW=+0.061 GL=+0.050 BL=+0.052 | beta L=+1.05 S=-1.20 net=-0.15 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=54%  gross_margin=33%  net_income_growth=27%  pe=24%
+2013-01-02 10:00:00 2013-01  LONG=94 (GW=86 GL=8)  SHORT=104 (BW=0 BL=104*)  mkt=UP(+16%)  scale=1.20x  train=27mo
+2013-02-01 10:00:00   DIAG 2013-02 | prob_spread=-0.000 (GW=0.535 GL=0.536) | quad_ret GW=+0.086 BW=+0.065 GL=+0.131 BL=+0.041 | beta L=+1.08 S=-1.30 net=-0.22 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=54%  gross_margin=33%  net_income_growth=28%  pe=24%
+2013-02-01 10:00:00 2013-02  LONG=110 (GW=102 GL=8)  SHORT=124 (BW=15 BL=109)  mkt=UP(+16%)  scale=1.20x  train=28mo
+2013-03-01 10:00:00   DIAG 2013-03 | prob_spread=+0.012 (GW=0.527 GL=0.516) | quad_ret GW=+0.011 BW=-0.002 GL=-0.000 BL=+0.012 | beta L=+1.39 S=-1.27 net=+0.12 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=53%  gross_margin=32%  net_income_growth=28%  pe=24%
+2013-03-01 10:00:00 2013-03  LONG=100 (GW=91 GL=9)  SHORT=130 (BW=24 BL=106)  mkt=UP(+12%)  scale=1.20x  train=29mo
+2013-04-01 10:00:00   DIAG 2013-04 | prob_spread=+0.008 (GW=0.537 GL=0.529) | quad_ret GW=+0.063 BW=+0.058 GL=-0.021 BL=+0.031 | beta L=+1.40 S=-1.17 net=+0.23 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=53%  gross_margin=32%  net_income_growth=28%  pe=24%
+2013-04-01 10:00:00 2013-04  LONG=112 (GW=102 GL=10)  SHORT=120 (BW=14 BL=106)  mkt=UP(+15%)  scale=1.20x  train=30mo
+2013-05-01 10:00:00   DIAG 2013-05 | prob_spread=-0.007 (GW=0.531 GL=0.539) | quad_ret GW=+0.004 BW=+0.075 GL=-0.012 BL=-0.024 | beta L=+1.69 S=-1.43 net=+0.26 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=54%  gross_margin=32%  net_income_growth=28%  pe=23%
+2013-05-01 10:00:00 2013-05  LONG=98 (GW=98 GL=0*)  SHORT=118 (BW=17 BL=101)  mkt=UP(+17%)  scale=1.20x  train=31mo
+2013-06-03 10:00:00   DIAG 2013-06 | prob_spread=+0.014 (GW=0.536 GL=0.522) | quad_ret GW=+0.037 BW=+0.049 GL=+0.061 BL=+0.110 | beta L=+1.57 S=-1.42 net=+0.14 | gates GL=OFF BW=ON scale=1.50x | nan: ev_ebitda=54%  gross_margin=32%  net_income_growth=28%  pe=24%
+2013-06-03 10:00:00 2013-06  LONG=99 (GW=99 GL=0*)  SHORT=122 (BW=18 BL=104)  mkt=UP(+31%)  scale=1.50x  train=32mo
+2013-07-01 10:00:00   DIAG 2013-07 | prob_spread=+0.003 (GW=0.529 GL=0.526) | quad_ret GW=-0.006 BW=-0.014 GL=-0.010 BL=+0.011 | beta L=+1.22 S=-1.03 net=+0.18 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=53%  gross_margin=32%  net_income_growth=28%  pe=23%
+2013-07-01 10:00:00 2013-07  LONG=118 (GW=98 GL=20)  SHORT=116 (BW=19 BL=97)  mkt=UP(+27%)  scale=1.50x  train=33mo
+2013-08-01 10:00:00   DIAG 2013-08 | prob_spread=-0.001 (GW=0.531 GL=0.533) | quad_ret GW=+0.094 BW=+0.164 GL=+0.099 BL=+0.089 | beta L=+1.20 S=-1.07 net=+0.13 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=54%  gross_margin=33%  net_income_growth=28%  pe=23%
+2013-08-01 10:00:00 2013-08  LONG=122 (GW=107 GL=15)  SHORT=118 (BW=13 BL=105)  mkt=UP(+34%)  scale=1.50x  train=34mo
+2013-09-03 10:00:00   DIAG 2013-09 | prob_spread=-0.002 (GW=0.518 GL=0.521) | quad_ret GW=-0.034 BW=-0.115 GL=-0.038 BL=-0.008 | beta L=+1.59 S=-1.58 net=+0.02 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=55%  gross_margin=33%  net_income_growth=29%  pe=24%
+2013-09-03 10:00:00 2013-09  LONG=67 (GW=37 GL=30)  SHORT=179 (BW=86 BL=93)  mkt=UP(+25%)  scale=1.50x  train=35mo
+2013-10-01 10:00:00   DIAG 2013-10 | prob_spread=-0.001 (GW=0.526 GL=0.527) | quad_ret GW=+0.094 BW=+0.081 GL=+0.055 BL=+0.061 | beta L=+1.38 S=-1.42 net=-0.04 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=55%  gross_margin=33%  net_income_growth=30%  pe=24%
+2013-10-01 10:00:00 2013-10  LONG=126 (GW=103 GL=23)  SHORT=124 (BW=22 BL=102)  mkt=UP(+29%)  scale=1.50x  train=36mo
+2013-11-01 10:00:00   DIAG 2013-11 | prob_spread=-0.003 (GW=0.523 GL=0.525) | quad_ret GW=+0.027 BW=-0.012 GL=+0.026 BL=+0.006 | beta L=+1.31 S=-1.23 net=+0.08 | gates GL=ON BW=OFF scale=1.50x | nan: ev_ebitda=54%  gross_margin=33%  net_income_growth=28%  pe=23%
+2013-11-01 10:00:00 2013-11  LONG=115 (GW=81 GL=34)  SHORT=92 (BW=0 BL=92*)  mkt=UP(+35%)  scale=1.50x  train=36mo
+2013-12-02 10:00:00   DIAG 2013-12 | prob_spread=+0.005 (GW=0.523 GL=0.518) | quad_ret GW=+0.044 BW=+0.036 GL=+0.089 BL=+0.041 | beta L=+1.62 S=-1.43 net=+0.19 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=54%  gross_margin=32%  net_income_growth=29%  pe=23%
+2013-12-02 10:00:00 2013-12  LONG=118 (GW=90 GL=28)  SHORT=138 (BW=38 BL=100)  mkt=UP(+41%)  scale=1.50x  train=36mo
+2014-01-02 10:00:00   DIAG 2014-01 | prob_spread=-0.011 (GW=0.523 GL=0.534) | quad_ret GW=+0.014 BW=+0.005 GL=+0.045 BL=+0.029 | beta L=+1.32 S=-1.13 net=+0.20 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=53%  gross_margin=31%  net_income_growth=28%  pe=23%
+2014-01-02 10:00:00 2014-01  LONG=113 (GW=81 GL=32)  SHORT=149 (BW=50 BL=99)  mkt=UP(+35%)  scale=1.50x  train=36mo
+2014-02-03 10:00:00   DIAG 2014-02 | prob_spread=-0.008 (GW=0.521 GL=0.529) | quad_ret GW=-0.023 BW=+0.050 GL=-0.026 BL=-0.038 | beta L=+1.44 S=-1.34 net=+0.09 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=53%  gross_margin=32%  net_income_growth=28%  pe=23%
+2014-02-03 10:00:00 2014-02  LONG=92 (GW=65 GL=27)  SHORT=172 (BW=67 BL=105)  mkt=UP(+26%)  scale=1.50x  train=36mo
+2014-03-03 10:00:00   DIAG 2014-03 | prob_spread=-0.001 (GW=0.517 GL=0.518) | quad_ret GW=+0.067 BW=+0.061 GL=+0.050 BL=+0.050 | beta L=+1.37 S=-1.46 net=-0.08 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=53%  gross_margin=32%  net_income_growth=28%  pe=23%
+2014-03-03 10:00:00 2014-03  LONG=97 (GW=68 GL=29)  SHORT=167 (BW=64 BL=103)  mkt=UP(+31%)  scale=1.50x  train=36mo
+2014-04-01 10:00:00   DIAG 2014-04 | prob_spread=-0.008 (GW=0.519 GL=0.527) | quad_ret GW=-0.055 BW=-0.058 GL=+0.033 BL=-0.007 | beta L=+1.57 S=-1.76 net=-0.19 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=53%  gross_margin=31%  net_income_growth=28%  pe=23%
+2014-04-01 10:00:00 2014-04  LONG=88 (GW=39 GL=49)  SHORT=178 (BW=94 BL=84)  mkt=UP(+27%)  scale=1.50x  train=36mo
+2014-05-01 10:00:00   DIAG 2014-05 | prob_spread=-0.003 (GW=0.524 GL=0.527) | quad_ret GW=-0.047 BW=-0.081 GL=-0.004 BL=-0.049 | beta L=+1.38 S=-2.09 net=-0.72 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=52%  gross_margin=31%  net_income_growth=26%  pe=22%
+2014-05-01 10:00:00 2014-05  LONG=82 (GW=36 GL=46)  SHORT=178 (BW=94 BL=84)  mkt=UP(+24%)  scale=1.50x  train=36mo
+2014-06-02 10:00:00   DIAG 2014-06 | prob_spread=-0.001 (GW=0.524 GL=0.525) | quad_ret GW=+0.011 BW=+0.007 GL=+0.024 BL=+0.002 | beta L=+1.80 S=-1.88 net=-0.08 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=52%  gross_margin=31%  net_income_growth=26%  pe=22%
+2014-06-02 10:00:00 2014-06  LONG=75 (GW=40 GL=35)  SHORT=94 (BW=0 BL=94*)  mkt=UP(+17%)  scale=1.20x  train=36mo
+2014-07-01 10:00:00   DIAG 2014-07 | prob_spread=-0.002 (GW=0.522 GL=0.525) | quad_ret GW=+0.069 BW=+0.084 GL=+0.036 BL=+0.063 | beta L=+1.88 S=-1.81 net=+0.07 | gates GL=ON BW=OFF scale=1.50x | nan: ev_ebitda=52%  gross_margin=31%  net_income_growth=26%  pe=21%
+2014-07-01 10:00:00 2014-07  LONG=95 (GW=49 GL=46)  SHORT=78 (BW=0 BL=78*)  mkt=UP(+22%)  scale=1.50x  train=36mo
+2014-08-01 10:00:00   DIAG 2014-08 | prob_spread=-0.005 (GW=0.542 GL=0.546) | quad_ret GW=-0.037 BW=-0.115 GL=-0.054 BL=-0.072 | beta L=+1.87 S=-1.44 net=+0.43 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=51%  gross_margin=30%  net_income_growth=25%  pe=20%
+2014-08-01 10:00:00 2014-08  LONG=158 (GW=80 GL=78)  SHORT=86 (BW=42 BL=44)  mkt=UP(+7%)  scale=1.20x  train=36mo
+2014-09-02 10:00:00   DIAG 2014-09 | prob_spread=-0.003 (GW=0.525 GL=0.528) | quad_ret GW=+0.081 BW=+0.077 GL=+0.061 BL=+0.007 | beta L=+1.32 S=-1.19 net=+0.13 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=53%  gross_margin=31%  net_income_growth=28%  pe=22%
+2014-09-02 10:00:00 2014-09  LONG=56 (GW=56 GL=0*)  SHORT=83 (BW=0 BL=83*)  mkt=UP(+18%)  scale=1.20x  train=36mo
+2014-10-01 10:00:00   DIAG 2014-10 | prob_spread=+0.002 (GW=0.549 GL=0.547) | quad_ret GW=-0.077 BW=-0.062 GL=-0.078 BL=-0.081 | beta L=+1.41 S=-0.78 net=+0.63 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=52%  gross_margin=30%  net_income_growth=27%  pe=22%
+2014-10-01 10:00:00 2014-10  LONG=160 (GW=59 GL=101)  SHORT=26 (BW=0 BL=26*)  mkt=UP(+3%)  scale=1.20x  train=36mo
+2014-11-03 10:00:00   DIAG 2014-11 | prob_spread=-0.008 (GW=0.522 GL=0.530) | quad_ret GW=+0.050 BW=+0.041 GL=+0.015 BL=+0.021 | beta L=+1.27 S=-1.39 net=-0.12 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=52%  gross_margin=31%  net_income_growth=27%  pe=21%
+2014-11-03 10:00:00 2014-11  LONG=54 (GW=54 GL=0*)  SHORT=182 (BW=78 BL=104)  mkt=UP(+9%)  scale=1.20x  train=36mo
+2014-12-01 10:00:00   DIAG 2014-12 | prob_spread=-0.006 (GW=0.517 GL=0.523) | quad_ret GW=-0.010 BW=-0.027 GL=-0.011 BL=-0.005 | beta L=+1.13 S=-1.73 net=-0.60 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=52%  gross_margin=30%  net_income_growth=26%  pe=21%
+2014-12-01 10:00:00 2014-12  LONG=62 (GW=62 GL=0*)  SHORT=98 (BW=0 BL=98*)  mkt=UP(+4%)  scale=1.20x  train=36mo
+2015-01-02 10:00:00   DIAG 2015-01 | prob_spread=-0.010 (GW=0.518 GL=0.527) | quad_ret GW=+0.019 BW=+0.016 GL=+0.081 BL=+0.016 | beta L=+1.37 S=-1.58 net=-0.21 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=52%  gross_margin=30%  net_income_growth=27%  pe=21%
+2015-01-02 10:00:00 2015-01  LONG=94 (GW=61 GL=33)  SHORT=172 (BW=72 BL=100)  mkt=UP(+6%)  scale=1.20x  train=36mo
+2015-02-02 10:00:00   DIAG 2015-02 | prob_spread=-0.011 (GW=0.515 GL=0.526) | quad_ret GW=-0.030 BW=-0.010 GL=-0.089 BL=-0.068 | beta L=+1.30 S=-1.46 net=-0.15 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=52%  gross_margin=30%  net_income_growth=27%  pe=21%
+2015-02-02 10:00:00 2015-02  LONG=96 (GW=64 GL=32)  SHORT=99 (BW=0 BL=99*)  mkt=UP(+5%)  scale=1.20x  train=36mo
+2015-03-02 10:00:00   DIAG 2015-03 | prob_spread=-0.009 (GW=0.521 GL=0.530) | quad_ret GW=+0.052 BW=+0.057 GL=+0.123 BL=+0.116 | beta L=+1.04 S=-1.45 net=-0.42 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=52%  gross_margin=30%  net_income_growth=27%  pe=21%
+2015-03-02 10:00:00 2015-03  LONG=73 (GW=73 GL=0*)  SHORT=172 (BW=59 BL=113)  mkt=UP(+6%)  scale=1.20x  train=36mo
+2015-04-01 10:00:00   DIAG 2015-04 | prob_spread=-0.018 (GW=0.514 GL=0.532) | quad_ret GW=+0.033 BW=+0.016 GL=+0.034 BL=-0.038 | beta L=+0.95 S=-0.87 net=+0.08 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=52%  gross_margin=30%  net_income_growth=27%  pe=21%
+2015-04-01 10:00:00 2015-04  LONG=105 (GW=60 GL=45)  SHORT=161 (BW=73 BL=88)  mkt=UP(+7%)  scale=1.20x  train=36mo
+2015-05-01 10:00:00   DIAG 2015-05 | prob_spread=-0.010 (GW=0.516 GL=0.526) | quad_ret GW=-0.057 BW=-0.047 GL=+0.077 BL=+0.061 | beta L=+1.07 S=-1.40 net=-0.33 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=51%  gross_margin=30%  net_income_growth=26%  pe=20%
+2015-05-01 10:00:00 2015-05  LONG=104 (GW=59 GL=45)  SHORT=162 (BW=74 BL=88)  mkt=UP(+10%)  scale=1.20x  train=36mo
+2015-06-01 10:00:00   DIAG 2015-06 | prob_spread=-0.018 (GW=0.520 GL=0.538) | quad_ret GW=+0.033 BW=+0.085 GL=-0.014 BL=-0.027 | beta L=+1.35 S=-0.84 net=+0.51 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=51%  gross_margin=30%  net_income_growth=26%  pe=20%
+2015-06-01 10:00:00 2015-06  LONG=104 (GW=51 GL=53)  SHORT=80 (BW=0 BL=80*)  mkt=UP(+11%)  scale=1.20x  train=36mo
+2015-07-01 10:00:00   DIAG 2015-07 | prob_spread=-0.008 (GW=0.521 GL=0.529) | quad_ret GW=+0.012 BW=+0.021 GL=-0.014 BL=-0.003 | beta L=+1.30 S=-1.27 net=+0.03 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=51%  gross_margin=30%  net_income_growth=27%  pe=21%
+2015-07-01 10:00:00 2015-07  LONG=123 (GW=64 GL=59)  SHORT=139 (BW=67 BL=72)  mkt=UP(+5%)  scale=1.20x  train=36mo
+2015-08-03 10:00:00   DIAG 2015-08 | prob_spread=-0.005 (GW=0.520 GL=0.525) | quad_ret GW=+0.008 BW=+0.012 GL=-0.095 BL=-0.108 | beta L=+1.12 S=-1.47 net=-0.35 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=50%  gross_margin=30%  net_income_growth=26%  pe=19%
+2015-08-03 10:00:00 2015-08  LONG=84 (GW=84 GL=0*)  SHORT=121 (BW=46 BL=75)  mkt=UP(+13%)  scale=1.20x  train=36mo
+2015-09-01 10:00:00   DIAG 2015-09 | prob_spread=-0.004 (GW=0.516 GL=0.520) | quad_ret GW=-0.050 BW=-0.106 GL=-0.034 BL=-0.054 | beta L=+1.05 S=-1.02 net=+0.04 | gates GL=OFF BW=ON scale=0.50x | nan: ev_ebitda=51%  gross_margin=30%  net_income_growth=27%  pe=21%
+2015-09-01 10:00:00 2015-09  LONG=58 (GW=58 GL=0*)  SHORT=203 (BW=81 BL=122)  mkt=DN(-0%)  scale=0.50x  train=36mo
+2015-10-01 10:00:00   DIAG 2015-10 | prob_spread=+0.026 (GW=0.526 GL=0.500) | quad_ret GW=-0.056 BW=-0.114 GL=-0.144 BL=-0.130 | beta L=+0.84 S=-0.98 net=-0.15 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=51%  gross_margin=31%  net_income_growth=27%  pe=20%
+2015-10-01 10:00:00 2015-10  LONG=38 (GW=38 GL=0*)  SHORT=135 (BW=0 BL=135*)  mkt=UP(+3%)  scale=1.20x  train=36mo
+2015-11-02 10:00:00   DIAG 2015-11 | prob_spread=-0.000 (GW=0.529 GL=0.529) | quad_ret GW=+0.021 BW=+0.049 GL=+nan BL=+0.118 | beta L=+1.10 S=-2.06 net=-0.96 | gates GL=OFF BW=OFF scale=0.87x | nan: ev_ebitda=50%  gross_margin=30%  net_income_growth=26%  pe=20%
+2015-11-02 10:00:00 2015-11  LONG=46 (GW=46 GL=0*)  SHORT=129 (BW=0 BL=129*)  mkt=UP(+0%)  scale=0.87x  train=36mo
+2015-12-01 10:00:00   DIAG 2015-12 | prob_spread=-0.004 (GW=0.517 GL=0.521) | quad_ret GW=+0.031 BW=+0.064 GL=+0.149 BL=+0.037 | beta L=+1.25 S=-1.63 net=-0.38 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=50%  gross_margin=30%  net_income_growth=26%  pe=20%
+2015-12-01 10:00:00 2015-12  LONG=83 (GW=83 GL=0*)  SHORT=94 (BW=0 BL=94*)  mkt=UP(+5%)  scale=1.20x  train=36mo
+2016-01-04 10:00:00   DIAG 2016-01 | prob_spread=-0.001 (GW=0.523 GL=0.524) | quad_ret GW=-0.056 BW=-0.046 GL=-0.053 BL=-0.059 | beta L=+1.07 S=-0.98 net=+0.09 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=51%  gross_margin=30%  net_income_growth=25%  pe=20%
+2016-01-04 10:00:00 2016-01  LONG=56 (GW=53 GL=3)  SHORT=210 (BW=80 BL=130)  mkt=DN(-4%)  scale=0.50x  train=36mo
+2016-02-01 10:00:00   DIAG 2016-02 | prob_spread=+0.007 (GW=0.521 GL=0.515) | quad_ret GW=-0.118 BW=-0.164 GL=-0.039 BL=-0.164 | beta L=+1.31 S=-1.56 net=-0.25 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=50%  gross_margin=30%  net_income_growth=25%  pe=19%
+2016-02-01 10:00:00 2016-02  LONG=110 (GW=78 GL=32)  SHORT=152 (BW=53 BL=99)  mkt=DN(-10%)  scale=0.50x  train=36mo
+2016-03-01 10:00:00   DIAG 2016-03 | prob_spread=-0.010 (GW=0.517 GL=0.527) | quad_ret GW=-0.018 BW=-0.005 GL=+0.042 BL=+0.024 | beta L=+1.09 S=-1.93 net=-0.84 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=50%  gross_margin=30%  net_income_growth=24%  pe=19%
+2016-03-01 10:00:00 2016-03  LONG=48 (GW=48 GL=0*)  SHORT=63 (BW=0 BL=63*)  mkt=DN(-16%)  scale=0.50x  train=36mo
+2016-04-01 10:00:00   DIAG 2016-04 | prob_spread=-0.007 (GW=0.515 GL=0.521) | quad_ret GW=+0.051 BW=+0.078 GL=+0.120 BL=+0.103 | beta L=+1.51 S=-2.13 net=-0.62 | gates GL=ON BW=OFF scale=0.50x | nan: ev_ebitda=50%  gross_margin=30%  net_income_growth=25%  pe=19%
+2016-04-01 10:00:00 2016-04  LONG=135 (GW=81 GL=54)  SHORT=78 (BW=0 BL=78*)  mkt=DN(-10%)  scale=0.50x  train=36mo
+2016-05-02 10:00:00   DIAG 2016-05 | prob_spread=-0.017 (GW=0.511 GL=0.529) | quad_ret GW=+0.008 BW=+0.025 GL=+0.085 BL=+0.133 | beta L=+1.62 S=-1.93 net=-0.31 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=50%  gross_margin=29%  net_income_growth=25%  pe=19%
+2016-05-02 10:00:00 2016-05  LONG=85 (GW=46 GL=39)  SHORT=177 (BW=85 BL=92)  mkt=DN(-7%)  scale=0.50x  train=36mo
+2016-06-01 10:00:00   DIAG 2016-06 | prob_spread=-0.011 (GW=0.513 GL=0.524) | quad_ret GW=+0.033 BW=+0.013 GL=+0.052 BL=-0.060 | beta L=+1.62 S=-1.64 net=-0.03 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=50%  gross_margin=29%  net_income_growth=25%  pe=19%
+2016-06-01 10:00:00 2016-06  LONG=88 (GW=55 GL=33)  SHORT=174 (BW=76 BL=98)  mkt=DN(-6%)  scale=0.50x  train=36mo
+2016-07-01 10:00:00   DIAG 2016-07 | prob_spread=-0.025 (GW=0.521 GL=0.546) | quad_ret GW=+0.010 BW=+0.031 GL=-0.018 BL=-0.004 | beta L=+1.10 S=-1.57 net=-0.47 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=49%  gross_margin=30%  net_income_growth=25%  pe=19%
+2016-07-01 10:00:00 2016-07  LONG=73 (GW=66 GL=7)  SHORT=187 (BW=64 BL=123)  mkt=DN(-6%)  scale=0.50x  train=36mo
+2016-08-01 10:00:00   DIAG 2016-08 | prob_spread=-0.009 (GW=0.513 GL=0.522) | quad_ret GW=+0.051 BW=+0.050 GL=+0.151 BL=+0.079 | beta L=+1.40 S=-1.27 net=+0.13 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=49%  gross_margin=29%  net_income_growth=24%  pe=18%
+2016-08-01 10:00:00 2016-08  LONG=125 (GW=48 GL=77)  SHORT=133 (BW=81 BL=52)  mkt=UP(+0%)  scale=1.20x  train=36mo
+2016-09-01 10:00:00   DIAG 2016-09 | prob_spread=-0.011 (GW=0.516 GL=0.527) | quad_ret GW=-0.010 BW=+0.014 GL=+0.049 BL=+0.051 | beta L=+2.21 S=-2.07 net=+0.14 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=48%  gross_margin=29%  net_income_growth=26%  pe=19%
+2016-09-01 10:00:00 2016-09  LONG=92 (GW=27 GL=65)  SHORT=176 (BW=107 BL=69)  mkt=UP(+10%)  scale=1.20x  train=36mo
+2016-10-03 10:00:00   DIAG 2016-10 | prob_spread=-0.013 (GW=0.525 GL=0.538) | quad_ret GW=+0.020 BW=+0.033 GL=+0.070 BL=+0.030 | beta L=+1.29 S=-1.66 net=-0.38 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=48%  gross_margin=29%  net_income_growth=25%  pe=18%
+2016-10-03 10:00:00 2016-10  LONG=49 (GW=45 GL=4)  SHORT=225 (BW=92 BL=133)  mkt=UP(+14%)  scale=1.20x  train=36mo
+2016-11-01 10:00:00   DIAG 2016-11 | prob_spread=-0.001 (GW=0.522 GL=0.523) | quad_ret GW=-0.042 BW=-0.069 GL=-0.070 BL=-0.114 | beta L=+1.52 S=-1.97 net=-0.45 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=47%  gross_margin=28%  net_income_growth=24%  pe=17%
+2016-11-01 10:00:00 2016-11  LONG=55 (GW=35 GL=20)  SHORT=207 (BW=96 BL=111)  mkt=UP(+2%)  scale=1.20x  train=36mo
+2016-12-01 10:00:00   DIAG 2016-12 | prob_spread=-0.018 (GW=0.522 GL=0.540) | quad_ret GW=+0.126 BW=+0.139 GL=+0.148 BL=+0.122 | beta L=+1.61 S=-2.65 net=-1.03 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=48%  gross_margin=29%  net_income_growth=24%  pe=18%
+2016-12-01 10:00:00 2016-12  LONG=33 (GW=33 GL=0*)  SHORT=66 (BW=0 BL=66*)  mkt=UP(+13%)  scale=1.20x  train=36mo
+2017-01-03 10:00:00   DIAG 2017-01 | prob_spread=-0.003 (GW=0.520 GL=0.523) | quad_ret GW=+0.006 BW=-0.003 GL=+0.042 BL=+0.033 | beta L=+1.70 S=-1.54 net=+0.16 | gates GL=ON BW=ON scale=1.42x | nan: ev_ebitda=48%  gross_margin=30%  net_income_growth=24%  pe=17%
+2017-01-03 10:00:00 2017-01  LONG=54 (GW=28 GL=26)  SHORT=230 (BW=114 BL=116)  mkt=UP(+25%)  scale=1.42x  train=36mo
+2017-02-01 10:00:00   DIAG 2017-02 | prob_spread=+0.002 (GW=0.524 GL=0.521) | quad_ret GW=+0.049 BW=+0.017 GL=+0.003 BL=+0.032 | beta L=+2.43 S=-2.43 net=+0.00 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=47%  gross_margin=30%  net_income_growth=23%  pe=17%
+2017-02-01 10:00:00 2017-02  LONG=64 (GW=41 GL=23)  SHORT=216 (BW=99 BL=117)  mkt=UP(+37%)  scale=1.50x  train=36mo
+2017-03-01 10:00:00   DIAG 2017-03 | prob_spread=-0.020 (GW=0.516 GL=0.536) | quad_ret GW=-0.001 BW=-0.008 GL=+0.034 BL=+0.057 | beta L=+2.43 S=-2.49 net=-0.06 | gates GL=ON BW=ON scale=1.39x | nan: ev_ebitda=47%  gross_margin=29%  net_income_growth=23%  pe=17%
+2017-03-01 10:00:00 2017-03  LONG=77 (GW=32 GL=45)  SHORT=201 (BW=107 BL=94)  mkt=UP(+33%)  scale=1.39x  train=36mo
+2017-04-03 10:00:00   DIAG 2017-04 | prob_spread=-0.000 (GW=0.522 GL=0.523) | quad_ret GW=-0.012 BW=-0.002 GL=+0.025 BL=+0.064 | beta L=+1.38 S=-1.98 net=-0.60 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=47%  gross_margin=29%  net_income_growth=23%  pe=17%
+2017-04-03 10:00:00 2017-04  LONG=78 (GW=24 GL=54)  SHORT=202 (BW=116 BL=86)  mkt=UP(+27%)  scale=1.50x  train=36mo
+2017-05-01 10:00:00   DIAG 2017-05 | prob_spread=-0.001 (GW=0.515 GL=0.516) | quad_ret GW=-0.010 BW=-0.012 GL=-0.003 BL=+0.003 | beta L=+1.52 S=-1.56 net=-0.04 | gates GL=ON BW=OFF scale=1.50x | nan: ev_ebitda=46%  gross_margin=28%  net_income_growth=22%  pe=16%
+2017-05-01 10:00:00 2017-05  LONG=83 (GW=35 GL=48)  SHORT=90 (BW=0 BL=90*)  mkt=UP(+26%)  scale=1.50x  train=36mo
+2017-06-01 10:00:00   DIAG 2017-06 | prob_spread=-0.006 (GW=0.512 GL=0.518) | quad_ret GW=-0.011 BW=-0.016 GL=+0.009 BL=-0.061 | beta L=+1.56 S=-1.47 net=+0.09 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=45%  gross_margin=28%  net_income_growth=22%  pe=16%
+2017-06-01 10:00:00 2017-06  LONG=81 (GW=36 GL=45)  SHORT=91 (BW=0 BL=91*)  mkt=UP(+20%)  scale=1.20x  train=36mo
+2017-07-03 10:00:00   DIAG 2017-07 | prob_spread=-0.003 (GW=0.520 GL=0.522) | quad_ret GW=+0.034 BW=+0.044 GL=+0.095 BL=+0.053 | beta L=+1.30 S=-1.33 net=-0.03 | gates GL=ON BW=OFF scale=1.50x | nan: ev_ebitda=45%  gross_margin=28%  net_income_growth=21%  pe=16%
+2017-07-03 10:00:00 2017-07  LONG=59 (GW=33 GL=26)  SHORT=106 (BW=0 BL=106*)  mkt=UP(+24%)  scale=1.50x  train=36mo
+2017-08-01 10:00:00   DIAG 2017-08 | prob_spread=+0.006 (GW=0.519 GL=0.514) | quad_ret GW=+0.025 BW=+0.043 GL=-0.028 BL=+0.012 | beta L=+1.44 S=-1.72 net=-0.28 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=45%  gross_margin=28%  net_income_growth=21%  pe=16%
+2017-08-01 10:00:00 2017-08  LONG=100 (GW=55 GL=45)  SHORT=160 (BW=75 BL=85)  mkt=UP(+18%)  scale=1.20x  train=36mo
+2017-09-01 10:00:00   DIAG 2017-09 | prob_spread=-0.000 (GW=0.517 GL=0.517) | quad_ret GW=+0.014 BW=+0.052 GL=-0.032 BL=-0.046 | beta L=+1.36 S=-1.43 net=-0.07 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=45%  gross_margin=28%  net_income_growth=21%  pe=16%
+2017-09-01 10:00:00 2017-09  LONG=105 (GW=54 GL=51)  SHORT=151 (BW=74 BL=77)  mkt=UP(+15%)  scale=1.20x  train=36mo
+2017-10-02 10:00:00   DIAG 2017-10 | prob_spread=-0.005 (GW=0.519 GL=0.524) | quad_ret GW=+0.056 BW=+0.092 GL=+0.102 BL=+0.110 | beta L=+1.74 S=-1.15 net=+0.59 | gates GL=OFF BW=ON scale=1.50x | nan: ev_ebitda=44%  gross_margin=28%  net_income_growth=22%  pe=16%
+2017-10-02 10:00:00 2017-10  LONG=13 (GW=13 GL=0*)  SHORT=209 (BW=125 BL=84)  mkt=UP(+21%)  scale=1.50x  train=36mo
+2017-11-01 10:00:00   DIAG 2017-11 | prob_spread=+0.013 (GW=0.524 GL=0.511) | quad_ret GW=+0.026 BW=-0.001 GL=-0.050 BL=-0.078 | beta L=+1.86 S=-2.07 net=-0.21 | gates GL=ON BW=ON scale=1.37x | nan: ev_ebitda=43%  gross_margin=28%  net_income_growth=22%  pe=16%
+2017-11-01 10:00:00 2017-11  LONG=92 (GW=66 GL=26)  SHORT=180 (BW=70 BL=110)  mkt=UP(+29%)  scale=1.37x  train=36mo
+2017-12-01 10:00:00   DIAG 2017-12 | prob_spread=+0.014 (GW=0.527 GL=0.513) | quad_ret GW=+0.012 BW=+0.011 GL=+0.007 BL=+0.074 | beta L=+1.70 S=-1.14 net=+0.56 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=43%  gross_margin=28%  net_income_growth=23%  pe=16%
+2017-12-01 10:00:00 2017-12  LONG=88 (GW=70 GL=18)  SHORT=186 (BW=67 BL=119)  mkt=UP(+19%)  scale=1.20x  train=36mo
+2018-01-02 10:00:00   DIAG 2018-01 | prob_spread=+0.003 (GW=0.516 GL=0.513) | quad_ret GW=+0.013 BW=+0.016 GL=+0.113 BL=+0.028 | beta L=+1.85 S=-1.87 net=-0.02 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=43%  gross_margin=28%  net_income_growth=23%  pe=16%
+2018-01-02 10:00:00 2018-01  LONG=47 (GW=47 GL=0*)  SHORT=203 (BW=91 BL=112)  mkt=UP(+15%)  scale=1.20x  train=36mo
+2018-02-01 10:00:00   DIAG 2018-02 | prob_spread=+0.004 (GW=0.513 GL=0.509) | quad_ret GW=+0.034 BW=+0.053 GL=+0.016 BL=-0.001 | beta L=+1.32 S=-1.49 net=-0.18 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=43%  gross_margin=27%  net_income_growth=21%  pe=16%
+2018-02-01 10:00:00 2018-02  LONG=78 (GW=59 GL=19)  SHORT=192 (BW=76 BL=116)  mkt=UP(+17%)  scale=1.20x  train=36mo
+2018-03-01 10:00:00   DIAG 2018-03 | prob_spread=-0.014 (GW=0.512 GL=0.526) | quad_ret GW=-0.031 BW=-0.019 GL=-0.041 BL=-0.043 | beta L=+1.00 S=-0.98 net=+0.03 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=43%  gross_margin=27%  net_income_growth=21%  pe=16%
+2018-03-01 10:00:00 2018-03  LONG=102 (GW=35 GL=67)  SHORT=172 (BW=102 BL=70)  mkt=UP(+9%)  scale=1.20x  train=36mo
+2018-04-02 10:00:00   DIAG 2018-04 | prob_spread=-0.015 (GW=0.510 GL=0.526) | quad_ret GW=+0.010 BW=-0.011 GL=+0.006 BL=+0.024 | beta L=+0.88 S=-0.99 net=-0.11 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=42%  gross_margin=27%  net_income_growth=21%  pe=15%
+2018-04-02 10:00:00 2018-04  LONG=36 (GW=36 GL=0*)  SHORT=173 (BW=101 BL=72)  mkt=UP(+12%)  scale=1.20x  train=36mo
+2018-05-01 10:00:00   DIAG 2018-05 | prob_spread=-0.011 (GW=0.516 GL=0.527) | quad_ret GW=+0.031 BW=+0.012 GL=+0.024 BL=-0.009 | beta L=+1.17 S=-0.90 net=+0.26 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=42%  gross_margin=27%  net_income_growth=21%  pe=15%
+2018-05-01 10:00:00 2018-05  LONG=63 (GW=63 GL=0*)  SHORT=66 (BW=0 BL=66*)  mkt=UP(+11%)  scale=1.20x  train=36mo
+2018-06-01 10:00:00   DIAG 2018-06 | prob_spread=+0.010 (GW=0.523 GL=0.512) | quad_ret GW=+0.121 BW=+0.074 GL=+0.093 BL=+0.090 | beta L=+0.89 S=-0.75 net=+0.14 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=42%  gross_margin=27%  net_income_growth=22%  pe=16%
+2018-06-01 10:00:00 2018-06  LONG=108 (GW=69 GL=39)  SHORT=166 (BW=68 BL=98)  mkt=UP(+19%)  scale=1.20x  train=36mo
+2018-07-02 10:00:00   DIAG 2018-07 | prob_spread=+0.010 (GW=0.523 GL=0.514) | quad_ret GW=+0.022 BW=-0.001 GL=+0.016 BL=+0.013 | beta L=+1.26 S=-1.08 net=+0.18 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=42%  gross_margin=28%  net_income_growth=21%  pe=15%
+2018-07-02 10:00:00 2018-07  LONG=114 (GW=66 GL=48)  SHORT=154 (BW=68 BL=86)  mkt=UP(+18%)  scale=1.20x  train=36mo
+2018-08-01 10:00:00   DIAG 2018-08 | prob_spread=+0.002 (GW=0.514 GL=0.512) | quad_ret GW=+0.020 BW=-0.000 GL=+0.014 BL=-0.010 | beta L=+1.39 S=-1.40 net=-0.01 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=41%  gross_margin=27%  net_income_growth=21%  pe=15%
+2018-08-01 10:00:00 2018-08  LONG=121 (GW=63 GL=58)  SHORT=141 (BW=68 BL=73)  mkt=UP(+18%)  scale=1.20x  train=36mo
+2018-09-04 10:00:00   DIAG 2018-09 | prob_spread=+0.010 (GW=0.531 GL=0.520) | quad_ret GW=+0.135 BW=+0.032 GL=+0.042 BL=+0.084 | beta L=+1.23 S=-0.95 net=+0.27 | gates GL=ON BW=OFF scale=1.50x | nan: ev_ebitda=41%  gross_margin=27%  net_income_growth=23%  pe=16%
+2018-09-04 10:00:00 2018-09  LONG=145 (GW=83 GL=62)  SHORT=76 (BW=0 BL=76*)  mkt=UP(+25%)  scale=1.50x  train=36mo
+2018-10-01 10:00:00   DIAG 2018-10 | prob_spread=+0.012 (GW=0.530 GL=0.518) | quad_ret GW=-0.034 BW=-0.017 GL=-0.027 BL=-0.025 | beta L=+1.30 S=-1.34 net=-0.04 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=41%  gross_margin=27%  net_income_growth=23%  pe=16%
+2018-10-01 10:00:00 2018-10  LONG=142 (GW=79 GL=63)  SHORT=134 (BW=59 BL=75)  mkt=UP(+15%)  scale=1.20x  train=36mo
+2018-11-01 10:00:00   DIAG 2018-11 | prob_spread=-0.021 (GW=0.529 GL=0.551) | quad_ret GW=-0.110 BW=-0.141 GL=-0.117 BL=-0.188 | beta L=+1.04 S=-1.46 net=-0.42 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=41%  gross_margin=28%  net_income_growth=23%  pe=16%
+2018-11-01 10:00:00 2018-11  LONG=116 (GW=28 GL=88)  SHORT=158 (BW=109 BL=49)  mkt=UP(+2%)  scale=1.20x  train=36mo
+2018-12-03 10:00:00   DIAG 2018-12 | prob_spread=-0.005 (GW=0.524 GL=0.529) | quad_ret GW=-0.029 BW=-0.016 GL=+0.008 BL=+0.061 | beta L=+1.18 S=-1.58 net=-0.39 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=40%  gross_margin=27%  net_income_growth=22%  pe=16%
+2018-12-03 10:00:00 2018-12  LONG=63 (GW=63 GL=0*)  SHORT=66 (BW=0 BL=66*)  mkt=UP(+1%)  scale=1.20x  train=36mo
+2019-01-02 10:00:00   DIAG 2019-01 | prob_spread=-0.007 (GW=0.528 GL=0.535) | quad_ret GW=-0.095 BW=-0.143 GL=-0.154 BL=-0.200 | beta L=+1.15 S=-1.23 net=-0.08 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=39%  gross_margin=26%  net_income_growth=21%  pe=15%
+2019-01-02 10:00:00 2019-01  LONG=22 (GW=22 GL=0*)  SHORT=77 (BW=0 BL=77*)  mkt=DN(-11%)  scale=0.50x  train=36mo
+2019-02-01 10:00:00   DIAG 2019-02 | prob_spread=-0.023 (GW=0.515 GL=0.538) | quad_ret GW=+0.056 BW=+0.132 GL=+0.239 BL=+0.229 | beta L=+0.91 S=-1.37 net=-0.45 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=39%  gross_margin=26%  net_income_growth=21%  pe=15%
+2019-02-01 10:00:00 2019-02  LONG=11 (GW=11 GL=0*)  SHORT=65 (BW=0 BL=65*)  mkt=DN(-4%)  scale=0.50x  train=36mo
+2019-03-01 10:00:00   DIAG 2019-03 | prob_spread=-0.004 (GW=0.519 GL=0.523) | quad_ret GW=+0.080 BW=+0.039 GL=+0.068 BL=+0.111 | beta L=+1.54 S=-1.61 net=-0.08 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=39%  gross_margin=26%  net_income_growth=21%  pe=15%
+2019-03-01 10:00:00 2019-03  LONG=127 (GW=68 GL=59)  SHORT=63 (BW=0 BL=63*)  mkt=UP(+6%)  scale=1.20x  train=36mo
+2019-04-01 10:00:00   DIAG 2019-04 | prob_spread=-0.002 (GW=0.524 GL=0.526) | quad_ret GW=-0.012 BW=-0.008 GL=+0.001 BL=-0.036 | beta L=+1.87 S=-2.34 net=-0.47 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=39%  gross_margin=26%  net_income_growth=22%  pe=15%
+2019-04-01 10:00:00 2019-04  LONG=125 (GW=69 GL=56)  SHORT=121 (BW=54 BL=67)  mkt=UP(+2%)  scale=1.20x  train=36mo
+2019-05-01 10:00:00   DIAG 2019-05 | prob_spread=+0.030 (GW=0.544 GL=0.514) | quad_ret GW=+0.027 BW=+0.035 GL=+0.050 BL=+0.006 | beta L=+1.69 S=-1.94 net=-0.25 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=39%  gross_margin=26%  net_income_growth=22%  pe=15%
+2019-05-01 10:00:00 2019-05  LONG=128 (GW=89 GL=39)  SHORT=116 (BW=33 BL=83)  mkt=UP(+5%)  scale=1.20x  train=36mo
+2019-06-03 10:00:00   DIAG 2019-06 | prob_spread=-0.016 (GW=0.517 GL=0.533) | quad_ret GW=-0.031 BW=-0.088 GL=-0.070 BL=-0.148 | beta L=+1.69 S=-1.62 net=+0.07 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=38%  gross_margin=26%  net_income_growth=22%  pe=16%
+2019-06-03 10:00:00 2019-06  LONG=99 (GW=35 GL=64)  SHORT=143 (BW=86 BL=57)  mkt=DN(-9%)  scale=0.50x  train=36mo
+2019-07-01 10:00:00   DIAG 2019-07 | prob_spread=+0.017 (GW=0.533 GL=0.517) | quad_ret GW=+0.063 BW=+0.073 GL=+0.107 BL=+0.068 | beta L=+1.09 S=-1.90 net=-0.81 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=38%  gross_margin=27%  net_income_growth=22%  pe=16%
+2019-07-01 10:00:00 2019-07  LONG=98 (GW=98 GL=0*)  SHORT=76 (BW=0 BL=76*)  mkt=DN(-4%)  scale=0.50x  train=36mo
+2019-08-01 10:00:00   DIAG 2019-08 | prob_spread=+0.022 (GW=0.540 GL=0.518) | quad_ret GW=+0.040 BW=+0.015 GL=-0.057 BL=-0.045 | beta L=+1.13 S=-1.25 net=-0.12 | gates GL=ON BW=OFF scale=0.50x | nan: ev_ebitda=38%  gross_margin=27%  net_income_growth=21%  pe=15%
+2019-08-01 10:00:00 2019-08  LONG=135 (GW=92 GL=43)  SHORT=75 (BW=0 BL=75*)  mkt=DN(-4%)  scale=0.50x  train=36mo
+2019-09-03 10:00:00   DIAG 2019-09 | prob_spread=-0.013 (GW=0.516 GL=0.529) | quad_ret GW=-0.051 BW=-0.091 GL=-0.068 BL=-0.053 | beta L=+1.36 S=-1.22 net=+0.14 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=38%  gross_margin=26%  net_income_growth=23%  pe=16%
+2019-09-03 10:00:00 2019-09  LONG=62 (GW=24 GL=38)  SHORT=184 (BW=99 BL=85)  mkt=DN(-13%)  scale=0.50x  train=36mo
+2019-10-01 10:00:00   DIAG 2019-10 | prob_spread=+0.033 (GW=0.542 GL=0.510) | quad_ret GW=-0.048 BW=-0.064 GL=+0.128 BL=+0.062 | beta L=+0.99 S=-2.01 net=-1.02 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=37%  gross_margin=27%  net_income_growth=23%  pe=16%
+2019-10-01 10:00:00 2019-10  LONG=75 (GW=75 GL=0*)  SHORT=110 (BW=0 BL=110*)  mkt=DN(-9%)  scale=0.50x  train=36mo
+2019-11-01 10:00:00   DIAG 2019-11 | prob_spread=+0.020 (GW=0.534 GL=0.514) | quad_ret GW=+0.037 BW=+0.058 GL=+0.008 BL=-0.001 | beta L=+0.97 S=-1.60 net=-0.63 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=37%  gross_margin=26%  net_income_growth=22%  pe=15%
+2019-11-01 10:00:00 2019-11  LONG=91 (GW=71 GL=20)  SHORT=101 (BW=0 BL=101*)  mkt=UP(+5%)  scale=1.20x  train=36mo
+2019-12-02 10:00:00   DIAG 2019-12 | prob_spread=+0.020 (GW=0.539 GL=0.520) | quad_ret GW=+0.013 BW=+0.051 GL=+0.079 BL=+0.079 | beta L=+1.79 S=-2.85 net=-1.06 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=37%  gross_margin=27%  net_income_growth=23%  pe=16%
+2019-12-02 10:00:00 2019-12  LONG=99 (GW=67 GL=32)  SHORT=90 (BW=0 BL=90*)  mkt=UP(+8%)  scale=1.20x  train=36mo
+2020-01-02 10:00:00   DIAG 2020-01 | prob_spread=+0.012 (GW=0.532 GL=0.519) | quad_ret GW=+0.003 BW=+0.060 GL=+0.111 BL=+0.171 | beta L=+1.36 S=-1.57 net=-0.21 | gates GL=ON BW=ON scale=0.83x | nan: ev_ebitda=37%  gross_margin=26%  net_income_growth=23%  pe=16%
+2020-01-02 10:00:00 2020-01  LONG=101 (GW=60 GL=41)  SHORT=147 (BW=64 BL=83)  mkt=UP(+25%)  scale=0.83x  train=36mo
+2020-02-03 10:00:00   DIAG 2020-02 | prob_spread=-0.013 (GW=0.515 GL=0.528) | quad_ret GW=+0.020 BW=-0.046 GL=-0.118 BL=-0.112 | beta L=+1.12 S=-1.11 net=+0.01 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=37%  gross_margin=27%  net_income_growth=23%  pe=16%
+2020-02-03 10:00:00 2020-02  LONG=104 (GW=24 GL=80)  SHORT=156 (BW=106 BL=50)  mkt=UP(+9%)  scale=1.20x  train=36mo
+2020-03-02 10:00:00   DIAG 2020-03 | prob_spread=-0.017 (GW=0.521 GL=0.538) | quad_ret GW=-0.092 BW=-0.042 GL=-0.057 BL=-0.003 | beta L=+1.08 S=-1.01 net=+0.08 | gates GL=OFF BW=ON scale=0.50x | nan: ev_ebitda=37%  gross_margin=27%  net_income_growth=23%  pe=17%
+2020-03-02 10:00:00 2020-03  LONG=37 (GW=37 GL=0*)  SHORT=130 (BW=93 BL=37)  mkt=DN(-6%)  scale=0.50x  train=36mo
+2020-04-01 10:00:00   DIAG 2020-04 | prob_spread=-0.010 (GW=0.536 GL=0.545) | quad_ret GW=-0.268 BW=-0.180 GL=-0.225 BL=-0.197 | beta L=+1.32 S=-0.92 net=+0.40 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=37%  gross_margin=27%  net_income_growth=23%  pe=16%
+2020-04-01 10:00:00 2020-04  LONG=28 (GW=28 GL=0*)  SHORT=20 (BW=0 BL=20*)  mkt=DN(-25%)  scale=0.50x  train=36mo
+2020-05-01 10:00:00   DIAG 2020-05 | prob_spread=+0.005 (GW=0.533 GL=0.529) | quad_ret GW=+0.321 BW=+0.143 GL=+0.244 BL=+0.205 | beta L=+0.99 S=-1.37 net=-0.38 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=37%  gross_margin=27%  net_income_growth=23%  pe=16%
+2020-05-01 10:00:00 2020-05  LONG=85 (GW=85 GL=0*)  SHORT=81 (BW=0 BL=81*)  mkt=DN(-16%)  scale=0.50x  train=36mo
+2020-06-01 10:00:00   DIAG 2020-06 | prob_spread=+0.013 (GW=0.537 GL=0.523) | quad_ret GW=+0.100 BW=+0.087 GL=+0.135 BL=+0.042 | beta L=+1.53 S=-2.24 net=-0.71 | gates GL=ON BW=OFF scale=0.50x | nan: ev_ebitda=36%  gross_margin=27%  net_income_growth=24%  pe=16%
+2020-06-01 10:00:00 2020-06  LONG=164 (GW=104 GL=60)  SHORT=65 (BW=0 BL=65*)  mkt=DN(-3%)  scale=0.50x  train=36mo
+2020-07-01 10:00:00   DIAG 2020-07 | prob_spread=+0.018 (GW=0.540 GL=0.522) | quad_ret GW=+0.058 BW=+0.058 GL=+0.090 BL=+0.078 | beta L=+1.60 S=-2.15 net=-0.56 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=36%  gross_margin=27%  net_income_growth=23%  pe=16%
+2020-07-01 10:00:00 2020-07  LONG=122 (GW=77 GL=45)  SHORT=120 (BW=44 BL=76)  mkt=DN(-6%)  scale=0.50x  train=36mo
+2020-08-03 10:00:00   DIAG 2020-08 | prob_spread=+0.026 (GW=0.550 GL=0.525) | quad_ret GW=+0.049 BW=+0.031 GL=-0.045 BL=-0.032 | beta L=+1.58 S=-1.60 net=-0.02 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=36%  gross_margin=26%  net_income_growth=24%  pe=16%
+2020-08-03 10:00:00 2020-08  LONG=108 (GW=58 GL=50)  SHORT=130 (BW=61 BL=69)  mkt=DN(-2%)  scale=0.50x  train=36mo
+2020-09-01 10:00:00   DIAG 2020-09 | prob_spread=+0.015 (GW=0.536 GL=0.521) | quad_ret GW=+0.035 BW=+0.135 GL=+0.161 BL=+0.114 | beta L=+0.93 S=-0.67 net=+0.26 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=36%  net_income_growth=27%  gross_margin=26%  pe=18%
+2020-09-01 10:00:00 2020-09  LONG=103 (GW=68 GL=35)  SHORT=151 (BW=59 BL=92)  mkt=UP(+8%)  scale=1.20x  train=36mo
+2020-10-01 10:00:00   DIAG 2020-10 | prob_spread=-0.001 (GW=0.518 GL=0.518) | quad_ret GW=+0.021 BW=-0.039 GL=-0.078 BL=-0.074 | beta L=+1.06 S=-1.05 net=+0.01 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=36%  gross_margin=27%  net_income_growth=27%  pe=18%
+2020-10-01 10:00:00 2020-10  LONG=78 (GW=24 GL=54)  SHORT=172 (BW=101 BL=71)  mkt=UP(+3%)  scale=1.20x  train=36mo
+2020-11-02 10:00:00   DIAG 2020-11 | prob_spread=+0.018 (GW=0.534 GL=0.517) | quad_ret GW=+0.011 BW=-0.011 GL=-0.014 BL=+0.014 | beta L=+1.23 S=-1.36 net=-0.13 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=36%  gross_margin=26%  net_income_growth=26%  pe=18%
+2020-11-02 10:00:00 2020-11  LONG=93 (GW=43 GL=50)  SHORT=151 (BW=79 BL=72)  mkt=DN(-2%)  scale=0.50x  train=36mo
+2020-12-01 10:00:00   DIAG 2020-12 | prob_spread=+0.019 (GW=0.542 GL=0.523) | quad_ret GW=+0.153 BW=+0.182 GL=+0.426 BL=+0.346 | beta L=+0.76 S=-2.17 net=-1.41 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=36%  gross_margin=27%  net_income_growth=26%  pe=17%
+2020-12-01 10:00:00 2020-12  LONG=62 (GW=62 GL=0*)  SHORT=74 (BW=0 BL=74*)  mkt=UP(+15%)  scale=1.20x  train=36mo
+2021-01-04 10:00:00   DIAG 2021-01 | prob_spread=+0.027 (GW=0.550 GL=0.524) | quad_ret GW=+0.136 BW=+0.055 GL=+0.110 BL=+0.098 | beta L=+1.57 S=-1.05 net=+0.51 | gates GL=ON BW=ON scale=0.69x | nan: ev_ebitda=36%  gross_margin=27%  net_income_growth=26%  pe=18%
+2021-01-04 10:00:00 2021-01  LONG=128 (GW=60 GL=68)  SHORT=142 (BW=75 BL=67)  mkt=UP(+20%)  scale=0.69x  train=36mo
+2021-02-01 10:00:00   DIAG 2021-02 | prob_spread=+0.018 (GW=0.546 GL=0.527) | quad_ret GW=+0.127 BW=+0.115 GL=+0.150 BL=+0.162 | beta L=+0.68 S=-0.25 net=+0.43 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=36%  gross_margin=27%  net_income_growth=26%  pe=18%
+2021-02-01 10:00:00 2021-02  LONG=169 (GW=84 GL=85)  SHORT=105 (BW=53 BL=52)  mkt=UP(+30%)  scale=1.50x  train=36mo
+2021-03-01 10:00:00   DIAG 2021-03 | prob_spread=-0.018 (GW=0.520 GL=0.538) | quad_ret GW=+0.042 BW=-0.009 GL=+0.181 BL=+0.115 | beta L=+0.97 S=-1.03 net=-0.05 | gates GL=ON BW=ON scale=1.24x | nan: ev_ebitda=36%  gross_margin=28%  net_income_growth=27%  pe=18%
+2021-03-01 10:00:00 2021-03  LONG=132 (GW=41 GL=91)  SHORT=148 (BW=99 BL=49)  mkt=UP(+51%)  scale=1.24x  train=36mo
+2021-04-01 10:00:00   DIAG 2021-04 | prob_spread=-0.011 (GW=0.547 GL=0.558) | quad_ret GW=-0.010 BW=-0.027 GL=+0.041 BL=-0.002 | beta L=+1.24 S=-2.24 net=-0.99 | gates GL=ON BW=ON scale=1.12x | nan: ev_ebitda=37%  gross_margin=29%  net_income_growth=26%  pe=18%
+2021-04-01 10:00:00 2021-04  LONG=117 (GW=28 GL=89)  SHORT=173 (BW=117 BL=56)  mkt=UP(+110%)  scale=1.12x  train=36mo
+2021-05-03 10:00:00   DIAG 2021-05 | prob_spread=-0.016 (GW=0.525 GL=0.541) | quad_ret GW=+0.006 BW=+0.003 GL=-0.002 BL=-0.044 | beta L=+0.84 S=-1.21 net=-0.37 | gates GL=ON BW=OFF scale=1.40x | nan: ev_ebitda=36%  gross_margin=28%  net_income_growth=26%  pe=18%
+2021-05-03 10:00:00 2021-05  LONG=96 (GW=13 GL=83)  SHORT=58 (BW=0 BL=58*)  mkt=UP(+82%)  scale=1.40x  train=36mo
+2021-06-01 10:00:00   DIAG 2021-06 | prob_spread=-0.018 (GW=0.518 GL=0.536) | quad_ret GW=+0.034 BW=+0.023 GL=+0.019 BL=-0.034 | beta L=+1.52 S=-0.55 net=+0.97 | gates GL=ON BW=OFF scale=1.42x | nan: ev_ebitda=36%  gross_margin=28%  net_income_growth=26%  pe=18%
+2021-06-01 10:00:00 2021-06  LONG=109 (GW=52 GL=57)  SHORT=83 (BW=0 BL=83*)  mkt=UP(+63%)  scale=1.42x  train=36mo
+2021-07-01 10:00:00   DIAG 2021-07 | prob_spread=+0.005 (GW=0.533 GL=0.528) | quad_ret GW=+0.040 BW=+0.095 GL=+0.014 BL=+0.039 | beta L=+1.13 S=-0.76 net=+0.37 | gates GL=ON BW=ON scale=0.98x | nan: ev_ebitda=35%  gross_margin=28%  net_income_growth=25%  pe=17%
+2021-07-01 10:00:00 2021-07  LONG=122 (GW=63 GL=59)  SHORT=150 (BW=73 BL=77)  mkt=UP(+63%)  scale=0.98x  train=36mo
+2021-08-02 10:00:00   DIAG 2021-08 | prob_spread=-0.010 (GW=0.521 GL=0.532) | quad_ret GW=-0.055 BW=-0.070 GL=-0.037 BL=-0.094 | beta L=+1.34 S=-1.40 net=-0.06 | gates GL=ON BW=ON scale=1.50x | nan: ev_ebitda=36%  gross_margin=28%  net_income_growth=25%  pe=17%
+2021-08-02 10:00:00 2021-08  LONG=102 (GW=44 GL=58)  SHORT=166 (BW=90 BL=76)  mkt=UP(+52%)  scale=1.50x  train=36mo
+2021-09-01 10:00:00   DIAG 2021-09 | prob_spread=-0.008 (GW=0.519 GL=0.527) | quad_ret GW=+0.026 BW=+0.038 GL=+0.019 BL=+0.078 | beta L=+2.07 S=-1.75 net=+0.32 | gates GL=OFF BW=ON scale=1.50x | nan: ev_ebitda=35%  gross_margin=28%  net_income_growth=27%  pe=18%
+2021-09-01 10:00:00 2021-09  LONG=41 (GW=41 GL=0*)  SHORT=185 (BW=97 BL=88)  mkt=UP(+45%)  scale=1.50x  train=36mo
+2021-10-01 10:00:00   DIAG 2021-10 | prob_spread=-0.005 (GW=0.517 GL=0.521) | quad_ret GW=+0.003 BW=-0.034 GL=-0.049 BL=-0.056 | beta L=+1.64 S=-1.43 net=+0.21 | gates GL=OFF BW=OFF scale=1.31x | nan: ev_ebitda=36%  gross_margin=28%  net_income_growth=26%  pe=18%
+2021-10-01 10:00:00 2021-10  LONG=40 (GW=40 GL=0*)  SHORT=92 (BW=0 BL=92*)  mkt=UP(+45%)  scale=1.31x  train=36mo
+2021-11-01 10:00:00   DIAG 2021-11 | prob_spread=+0.003 (GW=0.527 GL=0.524) | quad_ret GW=+0.085 BW=+0.037 GL=+0.032 BL=-0.039 | beta L=+1.48 S=-1.07 net=+0.41 | gates GL=OFF BW=ON scale=1.18x | nan: ev_ebitda=35%  gross_margin=27%  net_income_growth=26%  pe=18%
+2021-11-01 10:00:00 2021-11  LONG=57 (GW=57 GL=0*)  SHORT=179 (BW=81 BL=98)  mkt=UP(+50%)  scale=1.18x  train=36mo
+2021-12-01 10:00:00   DIAG 2021-12 | prob_spread=+0.001 (GW=0.530 GL=0.529) | quad_ret GW=-0.019 BW=-0.038 GL=-0.120 BL=-0.090 | beta L=+1.57 S=-1.39 net=+0.19 | gates GL=OFF BW=ON scale=1.50x | nan: ev_ebitda=36%  gross_margin=29%  net_income_growth=27%  pe=18%
+2021-12-01 10:00:00 2021-12  LONG=68 (GW=68 GL=0*)  SHORT=175 (BW=72 BL=103)  mkt=UP(+21%)  scale=1.50x  train=36mo
+2022-01-03 10:00:00   DIAG 2022-01 | prob_spread=+0.004 (GW=0.520 GL=0.516) | quad_ret GW=+0.011 BW=-0.014 GL=+0.025 BL=-0.010 | beta L=+1.73 S=-1.19 net=+0.54 | gates GL=OFF BW=OFF scale=1.02x | nan: ev_ebitda=36%  gross_margin=28%  net_income_growth=25%  pe=17%
+2022-01-03 10:00:00 2022-01  LONG=92 (GW=92 GL=0*)  SHORT=112 (BW=0 BL=112*)  mkt=UP(+16%)  scale=1.02x  train=36mo
+2022-02-01 10:00:00   DIAG 2022-02 | prob_spread=+0.011 (GW=0.531 GL=0.520) | quad_ret GW=-0.115 BW=-0.155 GL=-0.039 BL=-0.172 | beta L=+1.73 S=-1.77 net=-0.04 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=35%  gross_margin=27%  net_income_growth=25%  pe=17%
+2022-02-01 10:00:00 2022-02  LONG=86 (GW=86 GL=0*)  SHORT=104 (BW=0 BL=104*)  mkt=DN(-5%)  scale=0.50x  train=36mo
+2022-03-01 10:00:00   DIAG 2022-03 | prob_spread=+0.003 (GW=0.527 GL=0.524) | quad_ret GW=+0.048 BW=+0.016 GL=-0.053 BL=-0.071 | beta L=+1.09 S=-2.31 net=-1.22 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=34%  gross_margin=27%  net_income_growth=24%  pe=17%
+2022-03-01 10:00:00 2022-03  LONG=83 (GW=83 GL=0*)  SHORT=102 (BW=0 BL=102*)  mkt=DN(-7%)  scale=0.50x  train=36mo
+2022-04-01 10:00:00   DIAG 2022-04 | prob_spread=+0.004 (GW=0.524 GL=0.520) | quad_ret GW=+0.070 BW=+0.024 GL=-0.008 BL=+0.018 | beta L=+1.16 S=-1.87 net=-0.71 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=34%  gross_margin=27%  net_income_growth=24%  pe=16%
+2022-04-01 10:00:00 2022-04  LONG=91 (GW=91 GL=0*)  SHORT=100 (BW=0 BL=100*)  mkt=DN(-8%)  scale=0.50x  train=36mo
+2022-05-02 10:00:00   DIAG 2022-05 | prob_spread=-0.007 (GW=0.534 GL=0.540) | quad_ret GW=-0.083 BW=-0.097 GL=-0.153 BL=-0.248 | beta L=+1.10 S=-0.94 net=+0.17 | gates GL=OFF BW=ON scale=0.50x | nan: ev_ebitda=33%  gross_margin=26%  net_income_growth=23%  pe=15%
+2022-05-02 10:00:00 2022-05  LONG=82 (GW=82 GL=0*)  SHORT=90 (BW=50 BL=40)  mkt=DN(-17%)  scale=0.50x  train=36mo
+2022-06-01 10:00:00   DIAG 2022-06 | prob_spread=+0.008 (GW=0.534 GL=0.526) | quad_ret GW=+0.014 BW=-0.019 GL=-0.041 BL=-0.070 | beta L=+1.23 S=-1.71 net=-0.48 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=33%  gross_margin=26%  net_income_growth=22%  pe=15%
+2022-06-01 10:00:00 2022-06  LONG=85 (GW=85 GL=0*)  SHORT=95 (BW=0 BL=95*)  mkt=DN(-18%)  scale=0.50x  train=36mo
+2022-07-01 10:00:00   DIAG 2022-07 | prob_spread=-0.013 (GW=0.520 GL=0.532) | quad_ret GW=-0.135 BW=-0.057 GL=-0.013 BL=+0.010 | beta L=+1.12 S=-1.68 net=-0.56 | gates GL=OFF BW=OFF scale=0.42x | nan: ev_ebitda=33%  gross_margin=26%  net_income_growth=21%  pe=14%
+2022-07-01 10:00:00 2022-07  LONG=71 (GW=71 GL=0*)  SHORT=47 (BW=0 BL=47*)  mkt=DN(-26%)  scale=0.42x  train=36mo
+2022-08-01 10:00:00   DIAG 2022-08 | prob_spread=-0.006 (GW=0.517 GL=0.523) | quad_ret GW=+0.129 BW=+0.101 GL=+0.119 BL=+0.142 | beta L=+1.02 S=-1.50 net=-0.48 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=32%  gross_margin=26%  net_income_growth=21%  pe=14%
+2022-08-01 10:00:00 2022-08  LONG=56 (GW=56 GL=0*)  SHORT=90 (BW=0 BL=90*)  mkt=DN(-14%)  scale=0.50x  train=36mo
+2022-09-01 10:00:00   DIAG 2022-09 | prob_spread=-0.009 (GW=0.512 GL=0.520) | quad_ret GW=-0.019 BW=+0.018 GL=+0.024 BL=+0.016 | beta L=+1.55 S=-1.24 net=+0.31 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=33%  gross_margin=25%  net_income_growth=25%  pe=16%
+2022-09-01 10:00:00 2022-09  LONG=99 (GW=38 GL=61)  SHORT=163 (BW=93 BL=70)  mkt=DN(-18%)  scale=0.50x  train=36mo
+2022-10-03 10:00:00   DIAG 2022-10 | prob_spread=-0.019 (GW=0.512 GL=0.531) | quad_ret GW=-0.089 BW=-0.090 GL=-0.163 BL=-0.101 | beta L=+1.54 S=-1.09 net=+0.45 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=32%  gross_margin=25%  net_income_growth=24%  pe=15%
+2022-10-03 10:00:00 2022-10  LONG=148 (GW=52 GL=96)  SHORT=110 (BW=77 BL=33)  mkt=DN(-25%)  scale=0.50x  train=36mo
+2022-11-01 10:00:00   DIAG 2022-11 | prob_spread=-0.005 (GW=0.519 GL=0.524) | quad_ret GW=+0.173 BW=+0.145 GL=+0.075 BL=+0.037 | beta L=+1.03 S=-1.68 net=-0.65 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=33%  gross_margin=25%  net_income_growth=24%  pe=15%
+2022-11-01 10:00:00 2022-11  LONG=83 (GW=83 GL=0*)  SHORT=100 (BW=0 BL=100*)  mkt=DN(-21%)  scale=0.50x  train=36mo
+2022-12-01 10:00:00   DIAG 2022-12 | prob_spread=-0.008 (GW=0.516 GL=0.525) | quad_ret GW=+0.013 BW=+0.027 GL=+0.064 BL=+0.066 | beta L=+0.70 S=-1.64 net=-0.94 | gates GL=OFF BW=ON scale=0.50x | nan: ev_ebitda=34%  gross_margin=25%  net_income_growth=25%  pe=16%
+2022-12-01 10:00:00 2022-12  LONG=82 (GW=82 GL=0*)  SHORT=172 (BW=51 BL=121)  mkt=DN(-11%)  scale=0.50x  train=36mo
+2023-01-03 10:00:00   DIAG 2023-01 | prob_spread=+0.015 (GW=0.519 GL=0.504) | quad_ret GW=-0.061 BW=-0.021 GL=-0.088 BL=-0.087 | beta L=+1.00 S=-1.49 net=-0.50 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=33%  gross_margin=25%  net_income_growth=24%  pe=15%
+2023-01-03 10:00:00 2023-01  LONG=99 (GW=91 GL=8)  SHORT=163 (BW=40 BL=123)  mkt=DN(-20%)  scale=0.50x  train=36mo
+2023-02-01 10:00:00   DIAG 2023-02 | prob_spread=-0.006 (GW=0.526 GL=0.531) | quad_ret GW=+0.043 BW=+0.073 GL=+0.253 BL=+0.205 | beta L=+1.11 S=-1.47 net=-0.36 | gates GL=OFF BW=ON scale=0.50x | nan: ev_ebitda=33%  gross_margin=24%  net_income_growth=23%  pe=15%
+2023-02-01 10:00:00 2023-02  LONG=70 (GW=70 GL=0*)  SHORT=162 (BW=63 BL=99)  mkt=DN(-3%)  scale=0.50x  train=36mo
+2023-03-01 10:00:00   DIAG 2023-03 | prob_spread=-0.003 (GW=0.515 GL=0.519) | quad_ret GW=-0.000 BW=-0.009 GL=-0.067 BL=-0.072 | beta L=+1.11 S=-1.84 net=-0.73 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=33%  gross_margin=24%  net_income_growth=23%  pe=15%
+2023-03-01 10:00:00 2023-03  LONG=82 (GW=59 GL=23)  SHORT=182 (BW=73 BL=109)  mkt=DN(-6%)  scale=0.50x  train=36mo
+2023-04-03 10:00:00   DIAG 2023-04 | prob_spread=-0.005 (GW=0.523 GL=0.529) | quad_ret GW=-0.043 BW=-0.020 GL=-0.003 BL=-0.075 | beta L=+1.32 S=-1.61 net=-0.29 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=32%  gross_margin=24%  net_income_growth=22%  pe=15%
+2023-04-03 10:00:00 2023-04  LONG=116 (GW=76 GL=40)  SHORT=148 (BW=56 BL=92)  mkt=DN(-12%)  scale=0.50x  train=36mo
+2023-05-01 10:00:00   DIAG 2023-05 | prob_spread=+0.008 (GW=0.517 GL=0.510) | quad_ret GW=-0.042 BW=+0.032 GL=-0.049 BL=-0.018 | beta L=+1.02 S=-2.26 net=-1.24 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=32%  gross_margin=24%  net_income_growth=22%  pe=14%
+2023-05-01 10:00:00 2023-05  LONG=103 (GW=103 GL=0*)  SHORT=112 (BW=0 BL=112*)  mkt=DN(-7%)  scale=0.50x  train=36mo
+2023-06-01 10:00:00   DIAG 2023-06 | prob_spread=+0.010 (GW=0.524 GL=0.514) | quad_ret GW=+0.018 BW=+0.059 GL=+0.001 BL=+0.013 | beta L=+0.74 S=-1.68 net=-0.94 | gates GL=OFF BW=ON scale=0.50x | nan: ev_ebitda=31%  gross_margin=23%  net_income_growth=23%  pe=14%
+2023-06-01 10:00:00 2023-06  LONG=88 (GW=88 GL=0*)  SHORT=132 (BW=41 BL=91)  mkt=DN(-5%)  scale=0.50x  train=36mo
+2023-07-03 10:00:00   DIAG 2023-07 | prob_spread=-0.008 (GW=0.522 GL=0.530) | quad_ret GW=+0.024 BW=+0.105 GL=+0.104 BL=+0.115 | beta L=+1.08 S=-0.89 net=+0.19 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=32%  gross_margin=24%  net_income_growth=22%  pe=14%
+2023-07-03 10:00:00 2023-07  LONG=52 (GW=52 GL=0*)  SHORT=142 (BW=74 BL=68)  mkt=UP(+12%)  scale=1.20x  train=36mo
+2023-08-01 10:00:00   DIAG 2023-08 | prob_spread=-0.024 (GW=0.525 GL=0.550) | quad_ret GW=+0.054 BW=+0.039 GL=+0.129 BL=+0.185 | beta L=+1.41 S=-1.65 net=-0.24 | gates GL=ON BW=ON scale=0.96x | nan: ev_ebitda=31%  gross_margin=24%  net_income_growth=22%  pe=14%
+2023-08-01 10:00:00 2023-08  LONG=108 (GW=53 GL=55)  SHORT=142 (BW=72 BL=70)  mkt=UP(+8%)  scale=0.96x  train=36mo
+2023-09-01 10:00:00   DIAG 2023-09 | prob_spread=-0.006 (GW=0.529 GL=0.535) | quad_ret GW=-0.004 BW=-0.067 GL=-0.033 BL=-0.153 | beta L=+0.94 S=-1.56 net=-0.63 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=32%  net_income_growth=24%  gross_margin=23%  pe=15%
+2023-09-01 10:00:00 2023-09  LONG=101 (GW=64 GL=37)  SHORT=167 (BW=70 BL=97)  mkt=UP(+4%)  scale=1.20x  train=36mo
+2023-10-02 10:00:00   DIAG 2023-10 | prob_spread=-0.004 (GW=0.528 GL=0.533) | quad_ret GW=-0.054 BW=-0.089 GL=-0.097 BL=-0.109 | beta L=+1.08 S=-1.26 net=-0.18 | gates GL=ON BW=OFF scale=1.20x | nan: ev_ebitda=31%  net_income_growth=24%  gross_margin=23%  pe=14%
+2023-10-02 10:00:00 2023-10  LONG=80 (GW=55 GL=25)  SHORT=105 (BW=0 BL=105*)  mkt=UP(+8%)  scale=1.20x  train=36mo
+2023-11-01 10:00:00   DIAG 2023-11 | prob_spread=-0.001 (GW=0.528 GL=0.530) | quad_ret GW=-0.061 BW=-0.105 GL=-0.078 BL=-0.155 | beta L=+1.14 S=-1.35 net=-0.20 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=29%  net_income_growth=23%  gross_margin=22%  pe=14%
+2023-11-01 10:00:00 2023-11  LONG=59 (GW=59 GL=0*)  SHORT=96 (BW=0 BL=96*)  mkt=DN(-9%)  scale=0.50x  train=36mo
+2023-12-01 10:00:00   DIAG 2023-12 | prob_spread=-0.001 (GW=0.526 GL=0.526) | quad_ret GW=+0.133 BW=+0.120 GL=+0.149 BL=+0.076 | beta L=+1.11 S=-2.59 net=-1.49 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=30%  net_income_growth=24%  gross_margin=23%  pe=14%
+2023-12-01 10:00:00 2023-12  LONG=59 (GW=59 GL=0*)  SHORT=102 (BW=0 BL=102*)  mkt=DN(-3%)  scale=0.50x  train=36mo
+2024-01-02 10:00:00   DIAG 2024-01 | prob_spread=-0.011 (GW=0.536 GL=0.547) | quad_ret GW=+0.129 BW=+0.103 GL=+0.197 BL=+0.175 | beta L=+1.74 S=-2.61 net=-0.87 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  net_income_growth=24%  gross_margin=23%  pe=14%
+2024-01-02 10:00:00 2024-01  LONG=106 (GW=52 GL=54)  SHORT=156 (BW=79 BL=77)  mkt=UP(+16%)  scale=1.20x  train=36mo
+2024-02-01 10:00:00   DIAG 2024-02 | prob_spread=+0.018 (GW=0.543 GL=0.525) | quad_ret GW=+0.001 BW=-0.009 GL=-0.092 BL=-0.073 | beta L=+1.39 S=-2.11 net=-0.72 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  gross_margin=23%  net_income_growth=23%  pe=14%
+2024-02-01 10:00:00 2024-02  LONG=87 (GW=63 GL=24)  SHORT=171 (BW=66 BL=105)  mkt=UP(+2%)  scale=1.20x  train=36mo
+2024-03-01 10:00:00   DIAG 2024-03 | prob_spread=+0.024 (GW=0.551 GL=0.527) | quad_ret GW=+0.067 BW=+0.139 GL=-0.032 BL=+0.064 | beta L=+1.15 S=-1.52 net=-0.37 | gates GL=ON BW=ON scale=1.03x | nan: ev_ebitda=30%  gross_margin=23%  net_income_growth=22%  pe=13%
+2024-03-01 10:00:00 2024-03  LONG=82 (GW=67 GL=15)  SHORT=172 (BW=60 BL=112)  mkt=UP(+10%)  scale=1.03x  train=36mo
+2024-04-01 10:00:00   DIAG 2024-04 | prob_spread=+0.014 (GW=0.535 GL=0.521) | quad_ret GW=+0.053 BW=-0.005 GL=-0.059 BL=-0.002 | beta L=+1.14 S=-1.13 net=+0.01 | gates GL=OFF BW=ON scale=1.50x | nan: ev_ebitda=31%  gross_margin=23%  net_income_growth=23%  pe=14%
+2024-04-01 10:00:00 2024-04  LONG=43 (GW=43 GL=0*)  SHORT=191 (BW=85 BL=106)  mkt=UP(+22%)  scale=1.50x  train=36mo
+2024-05-01 10:00:00   DIAG 2024-05 | prob_spread=+0.029 (GW=0.536 GL=0.507) | quad_ret GW=-0.059 BW=-0.067 GL=-0.126 BL=-0.132 | beta L=+1.65 S=-2.07 net=-0.42 | gates GL=OFF BW=ON scale=1.20x | nan: ev_ebitda=30%  gross_margin=22%  net_income_growth=22%  pe=13%
+2024-05-01 10:00:00 2024-05  LONG=44 (GW=44 GL=0*)  SHORT=194 (BW=80 BL=114)  mkt=UP(+13%)  scale=1.20x  train=36mo
+2024-06-03 10:00:00   DIAG 2024-06 | prob_spread=+0.012 (GW=0.537 GL=0.525) | quad_ret GW=+0.053 BW=+0.049 GL=+0.082 BL=+0.099 | beta L=+1.15 S=-1.57 net=-0.42 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=29%  gross_margin=22%  net_income_growth=22%  pe=13%
+2024-06-03 10:00:00 2024-06  LONG=51 (GW=51 GL=0*)  SHORT=96 (BW=0 BL=96*)  mkt=UP(+19%)  scale=1.20x  train=36mo
+2024-07-01 10:00:00   DIAG 2024-07 | prob_spread=+0.027 (GW=0.539 GL=0.513) | quad_ret GW=-0.030 BW=-0.025 GL=-0.057 BL=-0.034 | beta L=+0.90 S=-0.95 net=-0.05 | gates GL=OFF BW=OFF scale=1.10x | nan: ev_ebitda=30%  gross_margin=23%  net_income_growth=22%  pe=13%
+2024-07-01 10:00:00 2024-07  LONG=58 (GW=58 GL=0*)  SHORT=123 (BW=0 BL=123*)  mkt=UP(+10%)  scale=1.10x  train=36mo
+2024-08-01 10:00:00   DIAG 2024-08 | prob_spread=+0.036 (GW=0.551 GL=0.515) | quad_ret GW=+0.105 BW=+0.040 GL=+0.149 BL=+0.125 | beta L=+0.86 S=-0.91 net=-0.05 | gates GL=ON BW=ON scale=0.88x | nan: ev_ebitda=31%  gross_margin=24%  net_income_growth=21%  pe=12%
+2024-08-01 10:00:00 2024-08  LONG=71 (GW=66 GL=5)  SHORT=177 (BW=58 BL=119)  mkt=UP(+15%)  scale=0.88x  train=36mo
+2024-09-03 10:00:00   DIAG 2024-09 | prob_spread=+0.028 (GW=0.540 GL=0.512) | quad_ret GW=+0.006 BW=+0.038 GL=-0.153 BL=-0.079 | beta L=+1.35 S=-1.75 net=-0.40 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  gross_margin=24%  net_income_growth=22%  pe=13%
+2024-09-03 10:00:00 2024-09  LONG=63 (GW=57 GL=6)  SHORT=201 (BW=75 BL=126)  mkt=UP(+18%)  scale=1.20x  train=36mo
+2024-10-01 10:00:00   DIAG 2024-10 | prob_spread=+0.025 (GW=0.532 GL=0.507) | quad_ret GW=+0.036 BW=+0.020 GL=+0.026 BL=+0.018 | beta L=+1.52 S=-1.82 net=-0.30 | gates GL=OFF BW=ON scale=1.50x | nan: ev_ebitda=31%  gross_margin=24%  net_income_growth=22%  pe=13%
+2024-10-01 10:00:00 2024-10  LONG=56 (GW=56 GL=0*)  SHORT=202 (BW=75 BL=127)  mkt=UP(+27%)  scale=1.50x  train=36mo
+2024-11-01 10:00:00   DIAG 2024-11 | prob_spread=+0.019 (GW=0.538 GL=0.519) | quad_ret GW=+0.007 BW=+0.000 GL=-0.010 BL=+0.008 | beta L=+0.98 S=-1.57 net=-0.59 | gates GL=OFF BW=ON scale=1.50x | nan: ev_ebitda=31%  gross_margin=24%  net_income_growth=22%  pe=12%
+2024-11-01 10:00:00 2024-11  LONG=31 (GW=31 GL=0*)  SHORT=208 (BW=98 BL=110)  mkt=UP(+33%)  scale=1.50x  train=36mo
+2024-12-02 10:00:00   DIAG 2024-12 | prob_spread=-0.008 (GW=0.520 GL=0.527) | quad_ret GW=+0.150 BW=+0.112 GL=+0.113 BL=+0.103 | beta L=+1.57 S=-1.80 net=-0.23 | gates GL=ON BW=ON scale=1.34x | nan: ev_ebitda=31%  gross_margin=25%  net_income_growth=22%  pe=12%
+2024-12-02 10:00:00 2024-12  LONG=61 (GW=16 GL=45)  SHORT=205 (BW=117 BL=88)  mkt=UP(+36%)  scale=1.34x  train=36mo
+2025-01-02 10:00:00   DIAG 2025-01 | prob_spread=+0.004 (GW=0.521 GL=0.516) | quad_ret GW=-0.105 BW=-0.093 GL=-0.050 BL=-0.023 | beta L=+1.29 S=-1.70 net=-0.40 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  gross_margin=25%  net_income_growth=21%  pe=12%
+2025-01-02 10:00:00 2025-01  LONG=52 (GW=29 GL=23)  SHORT=212 (BW=103 BL=109)  mkt=UP(+12%)  scale=1.20x  train=36mo
+2025-02-03 10:00:00   DIAG 2025-02 | prob_spread=+0.022 (GW=0.532 GL=0.509) | quad_ret GW=+0.044 BW=+0.025 GL=+0.038 BL=+0.045 | beta L=+1.24 S=-1.57 net=-0.33 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  gross_margin=24%  net_income_growth=21%  pe=12%
+2025-02-03 10:00:00 2025-02  LONG=80 (GW=68 GL=12)  SHORT=180 (BW=62 BL=118)  mkt=UP(+19%)  scale=1.20x  train=36mo
+2025-03-03 10:00:00   DIAG 2025-03 | prob_spread=+0.000 (GW=0.529 GL=0.529) | quad_ret GW=-0.064 BW=-0.082 GL=-0.020 BL=-0.077 | beta L=+1.93 S=-1.11 net=+0.82 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=30%  gross_margin=24%  net_income_growth=20%  pe=11%
+2025-03-03 10:00:00 2025-03  LONG=105 (GW=105 GL=0*)  SHORT=46 (BW=0 BL=46*)  mkt=UP(+7%)  scale=1.20x  train=36mo
+2025-04-01 10:00:00   DIAG 2025-04 | prob_spread=+0.005 (GW=0.525 GL=0.520) | quad_ret GW=-0.081 BW=-0.086 GL=-0.077 BL=-0.125 | beta L=+1.32 S=-1.24 net=+0.08 | gates GL=ON BW=OFF scale=0.50x | nan: ev_ebitda=30%  gross_margin=24%  net_income_growth=20%  pe=11%
+2025-04-01 10:00:00 2025-04  LONG=90 (GW=48 GL=42)  SHORT=83 (BW=0 BL=83*)  mkt=DN(-4%)  scale=0.50x  train=36mo
+2025-05-01 10:00:00   DIAG 2025-05 | prob_spread=+0.003 (GW=0.522 GL=0.519) | quad_ret GW=+0.023 BW=+0.020 GL=-0.059 BL=+0.018 | beta L=+1.12 S=-1.09 net=+0.03 | gates GL=OFF BW=OFF scale=0.50x | nan: ev_ebitda=31%  gross_margin=25%  net_income_growth=20%  pe=11%
+2025-05-01 10:00:00 2025-05  LONG=71 (GW=71 GL=0*)  SHORT=76 (BW=0 BL=76*)  mkt=DN(-1%)  scale=0.50x  train=36mo
+2025-06-02 10:00:00   DIAG 2025-06 | prob_spread=+0.025 (GW=0.542 GL=0.517) | quad_ret GW=+0.072 BW=+0.104 GL=+0.055 BL=+0.064 | beta L=+0.86 S=-1.58 net=-0.72 | gates GL=OFF BW=OFF scale=1.20x | nan: ev_ebitda=29%  gross_margin=24%  net_income_growth=20%  pe=11%
+2025-06-02 10:00:00 2025-06  LONG=46 (GW=46 GL=0*)  SHORT=122 (BW=0 BL=122*)  mkt=UP(+3%)  scale=1.20x  train=36mo
+2025-07-01 10:00:00   DIAG 2025-07 | prob_spread=+0.018 (GW=0.534 GL=0.516) | quad_ret GW=+0.021 BW=+0.095 GL=-0.001 BL=+0.083 | beta L=+1.10 S=-1.83 net=-0.73 | gates GL=OFF BW=ON scale=1.10x | nan: ev_ebitda=30%  gross_margin=24%  net_income_growth=20%  pe=11%
+2025-07-01 10:00:00 2025-07  LONG=54 (GW=54 GL=0*)  SHORT=152 (BW=70 BL=82)  mkt=UP(+8%)  scale=1.10x  train=36mo
+2025-08-01 10:00:00   DIAG 2025-08 | prob_spread=+0.019 (GW=0.535 GL=0.516) | quad_ret GW=-0.006 BW=+0.020 GL=+0.058 BL=+0.069 | beta L=+1.80 S=-2.73 net=-0.93 | gates GL=ON BW=ON scale=0.50x | nan: ev_ebitda=32%  gross_margin=25%  net_income_growth=20%  pe=12%
+2025-08-01 10:00:00 2025-08  LONG=75 (GW=56 GL=19)  SHORT=117 (BW=40 BL=77)  mkt=DN(-0%)  scale=0.50x  train=36mo
+2025-09-02 10:00:00   DIAG 2025-09 | prob_spread=+0.003 (GW=0.524 GL=0.521) | quad_ret GW=+0.051 BW=+0.094 GL=+0.166 BL=+0.088 | beta L=+1.89 S=-2.04 net=-0.15 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  gross_margin=25%  net_income_growth=23%  pe=12%
+2025-09-02 10:00:00 2025-09  LONG=66 (GW=38 GL=28)  SHORT=144 (BW=67 BL=77)  mkt=UP(+9%)  scale=1.20x  train=36mo
+2025-10-01 10:00:00   DIAG 2025-10 | prob_spread=+0.008 (GW=0.522 GL=0.514) | quad_ret GW=+0.079 BW=+0.108 GL=+0.020 BL=+0.064 | beta L=+1.57 S=-1.88 net=-0.31 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  gross_margin=25%  net_income_growth=23%  pe=12%
+2025-10-01 10:00:00 2025-10  LONG=52 (GW=29 GL=23)  SHORT=158 (BW=76 BL=82)  mkt=UP(+11%)  scale=1.20x  train=36mo
+2025-11-03 10:00:00   DIAG 2025-11 | prob_spread=+0.003 (GW=0.516 GL=0.513) | quad_ret GW=-0.041 BW=+0.083 GL=-0.016 BL=+0.088 | beta L=+1.47 S=-1.97 net=-0.50 | gates GL=ON BW=ON scale=1.12x | nan: ev_ebitda=31%  gross_margin=25%  net_income_growth=23%  pe=12%
+2025-11-03 10:00:00 2025-11  LONG=79 (GW=40 GL=39)  SHORT=127 (BW=63 BL=64)  mkt=UP(+12%)  scale=1.12x  train=36mo
+2025-12-01 10:00:00   DIAG 2025-12 | prob_spread=+0.002 (GW=0.517 GL=0.515) | quad_ret GW=+0.000 BW=-0.038 GL=-0.007 BL=+0.063 | beta L=+1.67 S=-1.97 net=-0.29 | gates GL=ON BW=ON scale=1.20x | nan: ev_ebitda=31%  gross_margin=25%  net_income_growth=22%  pe=12%
+2025-12-01 10:00:00 2025-12  LONG=77 (GW=43 GL=34)  SHORT=131 (BW=61 BL=70)  mkt=UP(+5%)  scale=1.20x  train=36mo
+2026-01-01 00:00:00 POS|2025-12|INOD|LONG|GW|2.8409|0.007792
+2026-01-01 00:00:00 POS|2025-12|AGX|LONG|GW|1.2466|0.007792
+2026-01-01 00:00:00 POS|2025-12|CRDO|LONG|GW|3.2730|0.007792
+2026-01-01 00:00:00 POS|2025-12|LIF|LONG|GW|1.2313|0.007792
+2026-01-01 00:00:00 POS|2025-12|ACMR|LONG|GW|1.1422|0.007792
+2026-01-01 00:00:00 POS|2025-12|UUUU|LONG|GW|2.1433|0.007792
+2026-01-01 00:00:00 POS|2025-12|KTOS|LONG|GW|2.7690|0.007792
+2026-01-01 00:00:00 POS|2025-12|SANM|LONG|GW|1.0156|0.007792
+2026-01-01 00:00:00 POS|2025-12|ADPT|LONG|GW|2.5974|0.007792
+2026-01-01 00:00:00 POS|2025-12|PPTA|LONG|GW|1.4039|0.007792
+2026-01-01 00:00:00 POS|2025-12|ATRO|LONG|GW|1.7089|0.007792
+2026-01-01 00:00:00 POS|2025-12|RYTM|LONG|GW|1.3041|0.007792
+2026-01-01 00:00:00 POS|2025-12|RMBS|LONG|GW|1.4857|0.007792
+2026-01-01 00:00:00 POS|2025-12|OSIS|LONG|GW|0.8976|0.007792
+2026-01-01 00:00:00 POS|2025-12|IESC|LONG|GW|0.9781|0.007792
+2026-01-01 00:00:00 POS|2025-12|LMND|LONG|GW|2.2570|0.007792
+2026-01-01 00:00:00 POS|2025-12|LQDA|LONG|GW|1.0354|0.007792
+2026-01-01 00:00:00 POS|2025-12|BTSG|LONG|GW|1.1572|0.007792
+2026-01-01 00:00:00 POS|2025-12|RIGL|LONG|GW|1.0248|0.007792
+2026-01-01 00:00:00 POS|2025-12|PRLB|LONG|GW|0.9195|0.007792
+2026-01-01 00:00:00 POS|2025-12|IRTC|LONG|GW|1.4284|0.007792
+2026-01-01 00:00:00 POS|2025-12|ATEC|LONG|GW|2.1290|0.007792
+2026-01-01 00:00:00 POS|2025-12|NUVB|LONG|GW|1.2409|0.007792
+2026-01-01 00:00:00 POS|2025-12|XERS|LONG|GW|1.9783|0.007792
+2026-01-01 00:00:00 POS|2025-12|FULC|LONG|GW|1.8889|0.007792
+2026-01-01 00:00:00 POS|2025-12|GHM|LONG|GW|1.0473|0.007792
+2026-01-01 00:00:00 POS|2025-12|HRTG|LONG|GW|1.1785|0.007792
+2026-01-01 00:00:00 POS|2025-12|RLGY|LONG|GW|1.5896|0.007792
+2026-01-01 00:00:00 POS|2025-12|IDCC|LONG|GW|1.6584|0.007792
+2026-01-01 00:00:00 POS|2025-12|TPC|LONG|GW|1.6375|0.007792
+2026-01-01 00:00:00 POS|2025-12|SNTA|LONG|GW|0.9429|0.007792
+2026-01-01 00:00:00 POS|2025-12|STRL|LONG|GW|1.6435|0.007792
+2026-01-01 00:00:00 POS|2025-12|WLDN|LONG|GW|0.9920|0.007792
+2026-01-01 00:00:00 POS|2025-12|TTMI|LONG|GW|2.2118|0.007792
+2026-01-01 00:00:00 POS|2025-12|MRCY|LONG|GW|1.3007|0.007792
+2026-01-01 00:00:00 POS|2025-12|CMCL|LONG|GW|0.9256|0.007792
+2026-01-01 00:00:00 POS|2025-12|ORN|LONG|GW|0.8907|0.007792
+2026-01-01 00:00:00 POS|2025-12|ARQT|LONG|GW|1.9036|0.007792
+2026-01-01 00:00:00 POS|2025-12|FET|LONG|GW|1.2430|0.007792
+2026-01-01 00:00:00 POS|2025-12|REAL|LONG|GW|3.1242|0.007792
+2026-01-01 00:00:00 POS|2025-12|GMTX|LONG|GW|0.8402|0.007792
+2026-01-01 00:00:00 POS|2025-12|LASR|LONG|GW|1.4512|0.007792
+2026-01-01 00:00:00 POS|2025-12|XMTR|LONG|GW|1.5298|0.007792
+2026-01-01 00:00:00 POS|2025-12|TNDM|LONG|GL|-0.5374|0.007792
+2026-01-01 00:00:00 POS|2025-12|PTLO|LONG|GL|-0.5971|0.007792
+2026-01-01 00:00:00 POS|2025-12|MYGN|LONG|GL|-0.6398|0.007792
+2026-01-01 00:00:00 POS|2025-12|GDYN|LONG|GL|-0.4950|0.007792
+2026-01-01 00:00:00 POS|2025-12|KROS|LONG|GL|-0.7523|0.007792
+2026-01-01 00:00:00 POS|2025-12|CODI|LONG|GL|-0.6652|0.007792
+2026-01-01 00:00:00 POS|2025-12|NRIX|LONG|GL|-0.5577|0.007792
+2026-01-01 00:00:00 POS|2025-12|TRDA|LONG|GL|-0.6033|0.007792
+2026-01-01 00:00:00 POS|2025-12|MAX|LONG|GL|-0.4327|0.007792
+2026-01-01 00:00:00 POS|2025-12|ANIK|LONG|GL|-0.6075|0.007792
+2026-01-01 00:00:00 POS|2025-12|HYH|LONG|GL|-0.4947|0.007792
+2026-01-01 00:00:00 POS|2025-12|ARVN|LONG|GL|-0.6464|0.007792
+2026-01-01 00:00:00 POS|2025-12|NABL|LONG|GL|-0.3841|0.007792
+2026-01-01 00:00:00 POS|2025-12|EWTX|LONG|GL|-0.5203|0.007792
+2026-01-01 00:00:00 POS|2025-12|BVS|LONG|GL|-0.4816|0.007792
+2026-01-01 00:00:00 POS|2025-12|EGBN|LONG|GL|-0.3581|0.007792
+2026-01-01 00:00:00 POS|2025-12|SCVL|LONG|GL|-0.4670|0.007792
+2026-01-01 00:00:00 POS|2025-12|LPI|LONG|GL|-0.4276|0.007792
+2026-01-01 00:00:00 POS|2025-12|LGIH|LONG|GL|-0.5934|0.007792
+2026-01-01 00:00:00 POS|2025-12|SLP|LONG|GL|-0.4243|0.007792
+2026-01-01 00:00:00 POS|2025-12|SM|LONG|GL|-0.4933|0.007792
+2026-01-01 00:00:00 POS|2025-12|THS|LONG|GL|-0.5096|0.007792
+2026-01-01 00:00:00 POS|2025-12|INBK|LONG|GL|-0.5070|0.007792
+2026-01-01 00:00:00 POS|2025-12|DNLI|LONG|GL|-0.4150|0.007792
+2026-01-01 00:00:00 POS|2025-12|HELE|LONG|GL|-0.6960|0.007792
+2026-01-01 00:00:00 POS|2025-12|BRP|LONG|GL|-0.5529|0.007792
+2026-01-01 00:00:00 POS|2025-12|DAWN|LONG|GL|-0.5135|0.007792
+2026-01-01 00:00:00 POS|2025-12|EOLS|LONG|GL|-0.5784|0.007792
+2026-01-01 00:00:00 POS|2025-12|QTRX|LONG|GL|-0.5884|0.007792
+2026-01-01 00:00:00 POS|2025-12|CDNA|LONG|GL|-0.3761|0.007792
+2026-01-01 00:00:00 POS|2025-12|RXST|LONG|GL|-0.8322|0.007792
+2026-01-01 00:00:00 POS|2025-12|JANX|LONG|GL|-0.4884|0.007792
+2026-01-01 00:00:00 POS|2025-12|IIPR|LONG|GL|-0.5774|0.007792
+2026-01-01 00:00:00 POS|2025-12|ANF|LONG|GL|-0.4688|0.007792
+2026-01-01 00:00:00 POS|2025-12|TLS|SHORT|BW|0.9552|0.004580
+2026-01-01 00:00:00 POS|2025-12|CRNC|SHORT|BW|2.4537|0.004580
+2026-01-01 00:00:00 POS|2025-12|VPCC|SHORT|BW|5.2101|0.004580
+2026-01-01 00:00:00 POS|2025-12|VSAT|SHORT|BW|2.7919|0.004580
+2026-01-01 00:00:00 POS|2025-12|PARR|SHORT|BW|1.3947|0.004580
+2026-01-01 00:00:00 POS|2025-12|ACHR|SHORT|BW|2.2786|0.004580
+2026-01-01 00:00:00 POS|2025-12|NNE|SHORT|BW|1.1998|0.004580
+2026-01-01 00:00:00 POS|2025-12|REZI|SHORT|BW|1.1538|0.004580
+2026-01-01 00:00:00 POS|2025-12|CIFR|SHORT|BW|2.4611|0.004580
+2026-01-01 00:00:00 POS|2025-12|MYRG|SHORT|BW|0.9311|0.004580
+2026-01-01 00:00:00 POS|2025-12|COMM|SHORT|BW|1.3507|0.004580
+2026-01-01 00:00:00 POS|2025-12|SOUN|SHORT|BW|1.9698|0.004580
+2026-01-01 00:00:00 POS|2025-12|CVI|SHORT|BW|0.8397|0.004580
+2026-01-01 00:00:00 POS|2025-12|TRVI|SHORT|BW|2.3270|0.004580
+2026-01-01 00:00:00 POS|2025-12|EVLV|SHORT|BW|2.0397|0.004580
+2026-01-01 00:00:00 POS|2025-12|INXB|SHORT|BW|3.8156|0.004580
+2026-01-01 00:00:00 POS|2025-12|MASS|SHORT|BW|1.2684|0.004580
+2026-01-01 00:00:00 POS|2025-12|AEVA|SHORT|BW|2.8683|0.004580
+2026-01-01 00:00:00 POS|2025-12|OMAM|SHORT|BW|0.8655|0.004580
+2026-01-01 00:00:00 POS|2025-12|IONQ|SHORT|BW|2.4312|0.004580
+2026-01-01 00:00:00 POS|2025-12|JOBY|SHORT|BW|2.2315|0.004580
+2026-01-01 00:00:00 POS|2025-12|KOD|SHORT|BW|4.0751|0.004580
+2026-01-01 00:00:00 POS|2025-12|HIMS|SHORT|BW|1.0204|0.004580
+2026-01-01 00:00:00 POS|2025-12|AVAH|SHORT|BW|0.9960|0.004580
+2026-01-01 00:00:00 POS|2025-12|PLPC|SHORT|BW|0.8701|0.004580
+2026-01-01 00:00:00 POS|2025-12|AAOI|SHORT|BW|1.1373|0.004580
+2026-01-01 00:00:00 POS|2025-12|APEI|SHORT|BW|1.2629|0.004580
+2026-01-01 00:00:00 POS|2025-12|DXPE|SHORT|BW|1.4805|0.004580
+2026-01-01 00:00:00 POS|2025-12|FUBO|SHORT|BW|1.0615|0.004580
+2026-01-01 00:00:00 POS|2025-12|SHLS|SHORT|BW|0.9813|0.004580
+2026-01-01 00:00:00 POS|2025-12|SLDP|SHORT|BW|3.3810|0.004580
+2026-01-01 00:00:00 POS|2025-12|SMR|SHORT|BW|0.9623|0.004580
+2026-01-01 00:00:00 POS|2025-12|CDXC|SHORT|BW|0.9809|0.004580
+2026-01-01 00:00:00 POS|2025-12|TDUP|SHORT|BW|11.6437|0.004580
+2026-01-01 00:00:00 POS|2025-12|REVG|SHORT|BW|1.1399|0.004580
+2026-01-01 00:00:00 POS|2025-12|UTI|SHORT|BW|0.9428|0.004580
+2026-01-01 00:00:00 POS|2025-12|OPRX|SHORT|BW|2.5944|0.004580
+2026-01-01 00:00:00 POS|2025-12|GRPN|SHORT|BW|1.0097|0.004580
+2026-01-01 00:00:00 POS|2025-12|MLYS|SHORT|BW|1.8878|0.004580
+2026-01-01 00:00:00 POS|2025-12|SATS|SHORT|BW|1.9122|0.004580
+2026-01-01 00:00:00 POS|2025-12|HUT|SHORT|BW|2.0169|0.004580
+2026-01-01 00:00:00 POS|2025-12|BBAI|SHORT|BW|2.9884|0.004580
+2026-01-01 00:00:00 POS|2025-12|BELFB|SHORT|BW|0.9855|0.004580
+2026-01-01 00:00:00 POS|2025-12|BKSY|SHORT|BW|2.0537|0.004580
+2026-01-01 00:00:00 POS|2025-12|TTI|SHORT|BW|1.2744|0.004580
+2026-01-01 00:00:00 POS|2025-12|BWMN|SHORT|BW|1.1341|0.004580
+2026-01-01 00:00:00 POS|2025-12|MNMD|SHORT|BW|0.9414|0.004580
+2026-01-01 00:00:00 POS|2025-12|EYE|SHORT|BW|1.7129|0.004580
+2026-01-01 00:00:00 POS|2025-12|CELC|SHORT|BW|3.7014|0.004580
+2026-01-01 00:00:00 POS|2025-12|CPS|SHORT|BW|1.8167|0.004580
+2026-01-01 00:00:00 POS|2025-12|PGY|SHORT|BW|1.2093|0.004580
+2026-01-01 00:00:00 POS|2025-12|VICR|SHORT|BW|0.8998|0.004580
+2026-01-01 00:00:00 POS|2025-12|PRAX|SHORT|BW|1.7291|0.004580
+2026-01-01 00:00:00 POS|2025-12|PRCH|SHORT|BW|6.0275|0.004580
+2026-01-01 00:00:00 POS|2025-12|EGAN|SHORT|BW|1.6335|0.004580
+2026-01-01 00:00:00 POS|2025-12|QBTS|SHORT|BW|27.5333|0.004580
+2026-01-01 00:00:00 POS|2025-12|RGTI|SHORT|BW|25.3612|0.004580
+2026-01-01 00:00:00 POS|2025-12|ROOT|SHORT|BW|0.9382|0.004580
+2026-01-01 00:00:00 POS|2025-12|SEZL|SHORT|BW|0.9082|0.004580
+2026-01-01 00:00:00 POS|2025-12|DV|SHORT|BW|0.9234|0.004580
+2026-01-01 00:00:00 POS|2025-12|SSRM|SHORT|BW|2.5240|0.004580
+2026-01-01 00:00:00 POS|2025-12|KFRC|SHORT|BL|-0.5293|0.004580
+2026-01-01 00:00:00 POS|2025-12|PTC|SHORT|BL|-0.4138|0.004580
+2026-01-01 00:00:00 POS|2025-12|PRCT|SHORT|BL|-0.6052|0.004580
+2026-01-01 00:00:00 POS|2025-12|KNF|SHORT|BL|-0.3666|0.004580
+2026-01-01 00:00:00 POS|2025-12|XPOF|SHORT|BL|-0.4772|0.004580
+2026-01-01 00:00:00 POS|2025-12|FUN|SHORT|BL|-0.4362|0.004580
+2026-01-01 00:00:00 POS|2025-12|AHS|SHORT|BL|-0.4843|0.004580
+2026-01-01 00:00:00 POS|2025-12|ALMS|SHORT|BL|-0.6077|0.004580
+2026-01-01 00:00:00 POS|2025-12|SMPL|SHORT|BL|-0.4181|0.004580
+2026-01-01 00:00:00 POS|2025-12|LMNR|SHORT|BL|-0.4604|0.004580
+2026-01-01 00:00:00 POS|2025-12|ACVA|SHORT|BL|-0.4938|0.004580
+2026-01-01 00:00:00 POS|2025-12|APOG|SHORT|BL|-0.5082|0.004580
+2026-01-01 00:00:00 POS|2025-12|SPSC|SHORT|BL|-0.3849|0.004580
+2026-01-01 00:00:00 POS|2025-12|ASF|SHORT|BL|-0.4460|0.004580
+2026-01-01 00:00:00 POS|2025-12|LOVE|SHORT|BL|-0.5375|0.004580
+2026-01-01 00:00:00 POS|2025-12|ASGN|SHORT|BL|-0.5257|0.004580
+2026-01-01 00:00:00 POS|2025-12|MLR|SHORT|BL|-0.3971|0.004580
+2026-01-01 00:00:00 POS|2025-12|MRTN|SHORT|BL|-0.3661|0.004580
+2026-01-01 00:00:00 POS|2025-12|RXO|SHORT|BL|-0.3951|0.004580
+2026-01-01 00:00:00 POS|2025-12|SBTX|SHORT|BL|-0.4009|0.004580
+2026-01-01 00:00:00 POS|2025-12|BHVNW|SHORT|BL|-0.6500|0.004580
+2026-01-01 00:00:00 POS|2025-12|BWS|SHORT|BL|-0.6091|0.004580
+2026-01-01 00:00:00 POS|2025-12|NSIT|SHORT|BL|-0.4988|0.004580
+2026-01-01 00:00:00 POS|2025-12|BLMN|SHORT|BL|-0.5233|0.004580
+2026-01-01 00:00:00 POS|2025-12|NX|SHORT|BL|-0.5116|0.004580
+2026-01-01 00:00:00 POS|2025-12|GB|SHORT|BL|-0.4896|0.004580
+2026-01-01 00:00:00 POS|2025-12|CCOI|SHORT|BL|-0.4315|0.004580
+2026-01-01 00:00:00 POS|2025-12|OXM|SHORT|BL|-0.4783|0.004580
+2026-01-01 00:00:00 POS|2025-12|ALKT|SHORT|BL|-0.4173|0.004580
+2026-01-01 00:00:00 POS|2025-12|HY|SHORT|BL|-0.4364|0.004580
+2026-01-01 00:00:00 POS|2025-12|AVBP|SHORT|BL|-0.4198|0.004580
+2026-01-01 00:00:00 POS|2025-12|BXC|SHORT|BL|-0.3653|0.004580
+2026-01-01 00:00:00 POS|2025-12|CBT|SHORT|BL|-0.3605|0.004580
+2026-01-01 00:00:00 POS|2025-12|DENN|SHORT|BL|-0.3761|0.004580
+2026-01-01 00:00:00 POS|2025-12|AHH|SHORT|BL|-0.3684|0.004580
+2026-01-01 00:00:00 POS|2025-12|PSFE|SHORT|BL|-0.4836|0.004580
+2026-01-01 00:00:00 POS|2025-12|PUBM|SHORT|BL|-0.4442|0.004580
+2026-01-01 00:00:00 POS|2025-12|SLVM|SHORT|BL|-0.4963|0.004580
+2026-01-01 00:00:00 POS|2025-12|CABO|SHORT|BL|-0.5423|0.004580
+2026-01-01 00:00:00 POS|2025-12|CAPR|SHORT|BL|-0.6775|0.004580
+2026-01-01 00:00:00 POS|2025-12|FOXF|SHORT|BL|-0.4040|0.004580
+2026-01-01 00:00:00 POS|2025-12|FC|SHORT|BL|-0.5757|0.004580
+2026-01-01 00:00:00 POS|2025-12|NOG|SHORT|BL|-0.3626|0.004580
+2026-01-01 00:00:00 POS|2025-12|WEAV|SHORT|BL|-0.5119|0.004580
+2026-01-01 00:00:00 POS|2025-12|FLXS|SHORT|BL|-0.3890|0.004580
+2026-01-01 00:00:00 POS|2025-12|FREQ|SHORT|BL|-0.3926|0.004580
+2026-01-01 00:00:00 POS|2025-12|VRNS|SHORT|BL|-0.4364|0.004580
+2026-01-01 00:00:00 POS|2025-12|LNTH|SHORT|BL|-0.4925|0.004580
+2026-01-01 00:00:00 POS|2025-12|RICK|SHORT|BL|-0.4415|0.004580
+2026-01-01 00:00:00 POS|2025-12|FWRD|SHORT|BL|-0.4842|0.004580
+2026-01-01 00:00:00 POS|2025-12|IBTA|SHORT|BL|-0.5517|0.004580
+2026-01-01 00:00:00 POS|2025-12|ALT|SHORT|BL|-0.4294|0.004580
+2026-01-01 00:00:00 POS|2025-12|TRNS|SHORT|BL|-0.3785|0.004580
+2026-01-01 00:00:00 POS|2025-12|UNIT|SHORT|BL|-0.3549|0.004580
+2026-01-01 00:00:00 POS|2025-12|KRUS|SHORT|BL|-0.4165|0.004580
+2026-01-01 00:00:00 POS|2025-12|KIDS|SHORT|BL|-0.3701|0.004580
+2026-01-01 00:00:00 POS|2025-12|AMPH|SHORT|BL|-0.5285|0.004580
+2026-01-01 00:00:00 POS|2025-12|PACS|SHORT|BL|-0.7019|0.004580
+2026-01-01 00:00:00 POS|2025-12|AMEH|SHORT|BL|-0.4071|0.004580
+2026-01-01 00:00:00 POS|2025-12|JACK|SHORT|BL|-0.6670|0.004580
+2026-01-01 00:00:00 POS|2025-12|SPT|SHORT|BL|-0.6155|0.004580
+2026-01-01 00:00:00 POS|2025-12|PLAY|SHORT|BL|-0.5884|0.004580
+2026-01-01 00:00:00 POS|2025-12|ICFI|SHORT|BL|-0.5022|0.004580
+2026-01-01 00:00:00 POS|2025-12|TBK|SHORT|BL|-0.3909|0.004580
+2026-01-01 00:00:00 POS|2025-12|EPC|SHORT|BL|-0.4505|0.004580
+2026-01-01 00:00:00 POS|2025-12|VERA|SHORT|BL|-0.3798|0.004580
+2026-01-01 00:00:00 POS|2025-12|JJSF|SHORT|BL|-0.4550|0.004580
+2026-01-01 00:00:00 POS|2025-12|HPP|SHORT|BL|-0.4573|0.004580
+2026-01-01 00:00:00 POS|2025-12|ARCT|SHORT|BL|-0.5176|0.004580
+2026-01-01 00:00:00 POS|2025-12|KELYA|SHORT|BL|-0.4105|0.004580
+2026-01-01 00:00:00 =================================================================
+2026-01-01 00:00:00 PHASE 2 — DIAGNOSTIC SUMMARY
+2026-01-01 00:00:00   Live rebalances : 159
+2026-01-01 00:00:00 
+  [SIGNAL QUALITY — probability spread GW-GL]
+2026-01-01 00:00:00   Mean spread  : +0.0012  (0 = random, >0.10 = useful)
+2026-01-01 00:00:00   Pct positive : 44.7%
+2026-01-01 00:00:00   Mean P(GW)   : 0.5257
+2026-01-01 00:00:00   Mean P(GL)   : 0.5245
+2026-01-01 00:00:00 
+  [REALIZED QUADRANT RETURNS — monthly avg]
+2026-01-01 00:00:00   Good Winners : +0.0151  (Longed)
+2026-01-01 00:00:00   Good Losers  : +0.0192  (Longed — reversal trade)
+2026-01-01 00:00:00   Bad  Winners : +0.0123  (Shorted — drag when positive)
+2026-01-01 00:00:00   Bad  Losers  : +0.0098  (Shorted — drag when positive)
+2026-01-01 00:00:00   Avg long  (GW+GL)/2 : +0.0172
+2026-01-01 00:00:00   Avg short (BW+BL)/2 : +0.0110
+2026-01-01 00:00:00   L/S spread          : +0.0061  (long - short; positive = strategy adds value)
+2026-01-01 00:00:00 
+  [BETA LEAKAGE]
+2026-01-01 00:00:00   Mean net beta   : -0.191  (target ~0)
+2026-01-01 00:00:00   Std  net beta   : 0.433  (low = stable neutrality)
+2026-01-01 00:00:00   Min / Max beta  : -1.486 / +0.966
+2026-01-01 00:00:00 
+  [LEG GATING — 2-month rolling realized return filter]
+2026-01-01 00:00:00   GL gated out : 57/159 months (36%)
+2026-01-01 00:00:00   BW gated out : 55/159 months (35%)
+2026-01-01 00:00:00 
+  [VOL SCALING — target 10%, cap 1.2x (1.5x when IWM 12m>+20%)]
+2026-01-01 00:00:00   Mean scale : 1.04x
+2026-01-01 00:00:00   Min  scale : 0.42x
+2026-01-01 00:00:00   Max  scale : 1.50x
+2026-01-01 00:00:00   Pct >1.0x  : 68%  (levered months)
+2026-01-01 00:00:00   Pct <1.0x  : 31%  (de-risked months)
+2026-01-01 00:00:00 
+  [FEATURE DATA QUALITY]
+2026-01-01 00:00:00   (Per-feature NaN rates logged monthly — grep 'nan:' in backtest log)
+2026-01-01 00:00:00 
+  [FEATURE IMPORTANCES — ensemble avg (10 runs)]
+2026-01-01 00:00:00     cs_mean_ret_6m         0.0740
+2026-01-01 00:00:00     cs_mean_ret_3m         0.0737
+2026-01-01 00:00:00     cs_mean_ret_12_1       0.0723
+2026-01-01 00:00:00     roa                    0.0699
+2026-01-01 00:00:00     roe                    0.0687
+2026-01-01 00:00:00 =================================================================
+2026-01-01 00:00:00 Algorithm Id:(c9902db217ddd10a1c62c13a482965ef) completed in 429.40 seconds at 31k data points per second. Processing total of 13,358,516 data points.
+2026-01-01 00:00:00 Due to numerical precision issues in the factor file, data for the following symbols was adjust to a later starting date: [PTGI, 12/30/2050], [SBT, 12/30/2050], [TCBX, 12/30/2050]

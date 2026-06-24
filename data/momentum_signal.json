@@ -1,11 +1,992 @@
 {
-  "last_updated": null,
-  "rebalance_date": null,
+  "last_updated": "2026-01-01T00:00:00Z",
+  "rebalance_date": "2026-01",
   "portfolio_size": 10000000,
-  "long_positions": [],
-  "short_positions": [],
-  "equity_curve": [],
-  "regime_flag": null,
-  "sharpe_rolling_12m": null,
-  "post_2020_note": ""
+  "long_positions": [
+    {
+      "ticker": "CRDO",
+      "quadrant": "GW",
+      "momentum_12_1": 3.273,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "REAL",
+      "quadrant": "GW",
+      "momentum_12_1": 3.1242,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "INOD",
+      "quadrant": "GW",
+      "momentum_12_1": 2.8409,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "KTOS",
+      "quadrant": "GW",
+      "momentum_12_1": 2.769,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "ADPT",
+      "quadrant": "GW",
+      "momentum_12_1": 2.5974,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "LMND",
+      "quadrant": "GW",
+      "momentum_12_1": 2.257,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "TTMI",
+      "quadrant": "GW",
+      "momentum_12_1": 2.2118,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "UUUU",
+      "quadrant": "GW",
+      "momentum_12_1": 2.1433,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "ATEC",
+      "quadrant": "GW",
+      "momentum_12_1": 2.129,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "XERS",
+      "quadrant": "GW",
+      "momentum_12_1": 1.9783,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "ARQT",
+      "quadrant": "GW",
+      "momentum_12_1": 1.9036,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "FULC",
+      "quadrant": "GW",
+      "momentum_12_1": 1.8889,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "ATRO",
+      "quadrant": "GW",
+      "momentum_12_1": 1.7089,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "IDCC",
+      "quadrant": "GW",
+      "momentum_12_1": 1.6584,
+      "weight": 0.007792
+    },
+    {
+      "ticker": "STRL",
+      "quadrant": "GW",
+      "momentum_12_1": 1.6435,
+      "weight": 0.007792
+    }
+  ],
+  "short_positions": [
+    {
+      "ticker": "QBTS",
+      "quadrant": "BW",
+      "momentum_12_1": 27.5333,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "RGTI",
+      "quadrant": "BW",
+      "momentum_12_1": 25.3612,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "TDUP",
+      "quadrant": "BW",
+      "momentum_12_1": 11.6437,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "PRCH",
+      "quadrant": "BW",
+      "momentum_12_1": 6.0275,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "VPCC",
+      "quadrant": "BW",
+      "momentum_12_1": 5.2101,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "KOD",
+      "quadrant": "BW",
+      "momentum_12_1": 4.0751,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "INXB",
+      "quadrant": "BW",
+      "momentum_12_1": 3.8156,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "CELC",
+      "quadrant": "BW",
+      "momentum_12_1": 3.7014,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "SLDP",
+      "quadrant": "BW",
+      "momentum_12_1": 3.381,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "BBAI",
+      "quadrant": "BW",
+      "momentum_12_1": 2.9884,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "AEVA",
+      "quadrant": "BW",
+      "momentum_12_1": 2.8683,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "VSAT",
+      "quadrant": "BW",
+      "momentum_12_1": 2.7919,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "OPRX",
+      "quadrant": "BW",
+      "momentum_12_1": 2.5944,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "SSRM",
+      "quadrant": "BW",
+      "momentum_12_1": 2.524,
+      "weight": 0.00458
+    },
+    {
+      "ticker": "CIFR",
+      "quadrant": "BW",
+      "momentum_12_1": 2.4611,
+      "weight": 0.00458
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2012-10",
+      "strategy": 1.0,
+      "baseline": 1.0
+    },
+    {
+      "date": "2012-11",
+      "strategy": 1.010627,
+      "baseline": 1.005973
+    },
+    {
+      "date": "2012-12",
+      "strategy": 0.995651,
+      "baseline": 0.995627
+    },
+    {
+      "date": "2013-01",
+      "strategy": 1.034329,
+      "baseline": 1.015892
+    },
+    {
+      "date": "2013-02",
+      "strategy": 1.030402,
+      "baseline": 1.014008
+    },
+    {
+      "date": "2013-03",
+      "strategy": 1.040883,
+      "baseline": 1.037234
+    },
+    {
+      "date": "2013-04",
+      "strategy": 1.047834,
+      "baseline": 1.055021
+    },
+    {
+      "date": "2013-05",
+      "strategy": 1.012269,
+      "baseline": 1.027185
+    },
+    {
+      "date": "2013-06",
+      "strategy": 1.007528,
+      "baseline": 1.011075
+    },
+    {
+      "date": "2013-07",
+      "strategy": 1.007276,
+      "baseline": 1.019918
+    },
+    {
+      "date": "2013-08",
+      "strategy": 0.991029,
+      "baseline": 1.005977
+    },
+    {
+      "date": "2013-09",
+      "strategy": 0.999006,
+      "baseline": 1.020031
+    },
+    {
+      "date": "2013-10",
+      "strategy": 1.014275,
+      "baseline": 1.027779
+    },
+    {
+      "date": "2013-11",
+      "strategy": 1.019928,
+      "baseline": 1.030468
+    },
+    {
+      "date": "2013-12",
+      "strategy": 1.025557,
+      "baseline": 1.017779
+    },
+    {
+      "date": "2014-01",
+      "strategy": 1.007288,
+      "baseline": 1.03002
+    },
+    {
+      "date": "2014-02",
+      "strategy": 0.999412,
+      "baseline": 1.05211
+    },
+    {
+      "date": "2014-03",
+      "strategy": 1.00702,
+      "baseline": 1.01475
+    },
+    {
+      "date": "2014-04",
+      "strategy": 1.036936,
+      "baseline": 0.996433
+    },
+    {
+      "date": "2014-05",
+      "strategy": 1.045445,
+      "baseline": 1.000997
+    },
+    {
+      "date": "2014-06",
+      "strategy": 1.038786,
+      "baseline": 1.015227
+    },
+    {
+      "date": "2014-07",
+      "strategy": 1.053982,
+      "baseline": 1.010073
+    },
+    {
+      "date": "2014-08",
+      "strategy": 1.086112,
+      "baseline": 1.021874
+    },
+    {
+      "date": "2014-09",
+      "strategy": 1.076707,
+      "baseline": 1.024975
+    },
+    {
+      "date": "2014-10",
+      "strategy": 1.07517,
+      "baseline": 1.024534
+    },
+    {
+      "date": "2014-11",
+      "strategy": 1.078438,
+      "baseline": 1.025717
+    },
+    {
+      "date": "2014-12",
+      "strategy": 1.09138,
+      "baseline": 1.022075
+    },
+    {
+      "date": "2015-01",
+      "strategy": 1.076499,
+      "baseline": 1.054141
+    },
+    {
+      "date": "2015-02",
+      "strategy": 1.051949,
+      "baseline": 1.033062
+    },
+    {
+      "date": "2015-03",
+      "strategy": 1.082436,
+      "baseline": 1.065658
+    },
+    {
+      "date": "2015-04",
+      "strategy": 1.081026,
+      "baseline": 1.01713
+    },
+    {
+      "date": "2015-05",
+      "strategy": 1.070888,
+      "baseline": 1.059379
+    },
+    {
+      "date": "2015-06",
+      "strategy": 1.085115,
+      "baseline": 1.063938
+    },
+    {
+      "date": "2015-07",
+      "strategy": 1.094345,
+      "baseline": 1.131765
+    },
+    {
+      "date": "2015-08",
+      "strategy": 1.113777,
+      "baseline": 1.138645
+    },
+    {
+      "date": "2015-09",
+      "strategy": 1.100035,
+      "baseline": 1.121175
+    },
+    {
+      "date": "2015-10",
+      "strategy": 1.04847,
+      "baseline": 1.101355
+    },
+    {
+      "date": "2015-11",
+      "strategy": 1.066484,
+      "baseline": 1.130825
+    },
+    {
+      "date": "2015-12",
+      "strategy": 1.070825,
+      "baseline": 1.132365
+    },
+    {
+      "date": "2016-01",
+      "strategy": 1.039779,
+      "baseline": 1.13252
+    },
+    {
+      "date": "2016-02",
+      "strategy": 1.040545,
+      "baseline": 1.122246
+    },
+    {
+      "date": "2016-03",
+      "strategy": 1.02962,
+      "baseline": 1.102209
+    },
+    {
+      "date": "2016-04",
+      "strategy": 0.992862,
+      "baseline": 1.048777
+    },
+    {
+      "date": "2016-05",
+      "strategy": 1.006148,
+      "baseline": 1.088329
+    },
+    {
+      "date": "2016-06",
+      "strategy": 1.003628,
+      "baseline": 1.092387
+    },
+    {
+      "date": "2016-07",
+      "strategy": 1.013645,
+      "baseline": 1.083952
+    },
+    {
+      "date": "2016-08",
+      "strategy": 1.023037,
+      "baseline": 1.051548
+    },
+    {
+      "date": "2016-09",
+      "strategy": 1.035507,
+      "baseline": 1.04906
+    },
+    {
+      "date": "2016-10",
+      "strategy": 1.065571,
+      "baseline": 1.061135
+    },
+    {
+      "date": "2016-11",
+      "strategy": 1.084249,
+      "baseline": 1.073142
+    },
+    {
+      "date": "2016-12",
+      "strategy": 1.083831,
+      "baseline": 1.054855
+    },
+    {
+      "date": "2017-01",
+      "strategy": 1.062233,
+      "baseline": 1.056549
+    },
+    {
+      "date": "2017-02",
+      "strategy": 1.061818,
+      "baseline": 1.028013
+    },
+    {
+      "date": "2017-03",
+      "strategy": 1.021741,
+      "baseline": 0.994316
+    },
+    {
+      "date": "2017-04",
+      "strategy": 1.031511,
+      "baseline": 0.999078
+    },
+    {
+      "date": "2017-05",
+      "strategy": 1.067209,
+      "baseline": 1.005141
+    },
+    {
+      "date": "2017-06",
+      "strategy": 1.081517,
+      "baseline": 0.996823
+    },
+    {
+      "date": "2017-07",
+      "strategy": 1.083781,
+      "baseline": 1.021467
+    },
+    {
+      "date": "2017-08",
+      "strategy": 1.092061,
+      "baseline": 1.056519
+    },
+    {
+      "date": "2017-09",
+      "strategy": 1.069857,
+      "baseline": 1.049282
+    },
+    {
+      "date": "2017-10",
+      "strategy": 1.115807,
+      "baseline": 1.082189
+    },
+    {
+      "date": "2017-11",
+      "strategy": 1.092608,
+      "baseline": 1.057463
+    },
+    {
+      "date": "2017-12",
+      "strategy": 1.091554,
+      "baseline": 1.055988
+    },
+    {
+      "date": "2018-01",
+      "strategy": 1.097696,
+      "baseline": 1.081141
+    },
+    {
+      "date": "2018-02",
+      "strategy": 1.103124,
+      "baseline": 1.099081
+    },
+    {
+      "date": "2018-03",
+      "strategy": 1.107698,
+      "baseline": 1.094358
+    },
+    {
+      "date": "2018-04",
+      "strategy": 1.123892,
+      "baseline": 1.09866
+    },
+    {
+      "date": "2018-05",
+      "strategy": 1.14859,
+      "baseline": 1.112203
+    },
+    {
+      "date": "2018-06",
+      "strategy": 1.128295,
+      "baseline": 1.102317
+    },
+    {
+      "date": "2018-07",
+      "strategy": 1.139744,
+      "baseline": 1.106961
+    },
+    {
+      "date": "2018-08",
+      "strategy": 1.183836,
+      "baseline": 1.120969
+    },
+    {
+      "date": "2018-09",
+      "strategy": 1.172173,
+      "baseline": 1.117929
+    },
+    {
+      "date": "2018-10",
+      "strategy": 1.196007,
+      "baseline": 1.121457
+    },
+    {
+      "date": "2018-11",
+      "strategy": 1.189102,
+      "baseline": 1.120619
+    },
+    {
+      "date": "2018-12",
+      "strategy": 1.266892,
+      "baseline": 1.146213
+    },
+    {
+      "date": "2019-01",
+      "strategy": 1.203439,
+      "baseline": 1.094345
+    },
+    {
+      "date": "2019-02",
+      "strategy": 1.196415,
+      "baseline": 1.068158
+    },
+    {
+      "date": "2019-03",
+      "strategy": 1.215403,
+      "baseline": 1.090158
+    },
+    {
+      "date": "2019-04",
+      "strategy": 1.222872,
+      "baseline": 1.089027
+    },
+    {
+      "date": "2019-05",
+      "strategy": 1.294308,
+      "baseline": 1.133295
+    },
+    {
+      "date": "2019-06",
+      "strategy": 1.297667,
+      "baseline": 1.129901
+    },
+    {
+      "date": "2019-07",
+      "strategy": 1.331865,
+      "baseline": 1.190418
+    },
+    {
+      "date": "2019-08",
+      "strategy": 1.337018,
+      "baseline": 1.188644
+    },
+    {
+      "date": "2019-09",
+      "strategy": 1.358279,
+      "baseline": 1.101701
+    },
+    {
+      "date": "2019-10",
+      "strategy": 1.362746,
+      "baseline": 1.135949
+    },
+    {
+      "date": "2019-11",
+      "strategy": 1.352848,
+      "baseline": 1.127461
+    },
+    {
+      "date": "2019-12",
+      "strategy": 1.2638,
+      "baseline": 1.073515
+    },
+    {
+      "date": "2020-01",
+      "strategy": 1.289785,
+      "baseline": 1.13128
+    },
+    {
+      "date": "2020-02",
+      "strategy": 1.257544,
+      "baseline": 1.127337
+    },
+    {
+      "date": "2020-03",
+      "strategy": 1.22153,
+      "baseline": 1.171235
+    },
+    {
+      "date": "2020-04",
+      "strategy": 1.272039,
+      "baseline": 1.116582
+    },
+    {
+      "date": "2020-05",
+      "strategy": 1.27473,
+      "baseline": 1.118391
+    },
+    {
+      "date": "2020-06",
+      "strategy": 1.251634,
+      "baseline": 1.087296
+    },
+    {
+      "date": "2020-07",
+      "strategy": 1.263402,
+      "baseline": 1.138659
+    },
+    {
+      "date": "2020-08",
+      "strategy": 1.28011,
+      "baseline": 1.115154
+    },
+    {
+      "date": "2020-09",
+      "strategy": 1.306972,
+      "baseline": 1.170841
+    },
+    {
+      "date": "2020-10",
+      "strategy": 1.305817,
+      "baseline": 1.171812
+    },
+    {
+      "date": "2020-11",
+      "strategy": 1.312852,
+      "baseline": 1.044764
+    },
+    {
+      "date": "2020-12",
+      "strategy": 1.351821,
+      "baseline": 1.071772
+    },
+    {
+      "date": "2021-01",
+      "strategy": 1.354746,
+      "baseline": 1.053017
+    },
+    {
+      "date": "2021-02",
+      "strategy": 1.394704,
+      "baseline": 0.972431
+    },
+    {
+      "date": "2021-03",
+      "strategy": 1.439348,
+      "baseline": 0.931623
+    },
+    {
+      "date": "2021-04",
+      "strategy": 1.431906,
+      "baseline": 0.957039
+    },
+    {
+      "date": "2021-05",
+      "strategy": 1.495135,
+      "baseline": 0.956669
+    },
+    {
+      "date": "2021-06",
+      "strategy": 1.467825,
+      "baseline": 0.973216
+    },
+    {
+      "date": "2021-07",
+      "strategy": 1.504394,
+      "baseline": 0.986212
+    },
+    {
+      "date": "2021-08",
+      "strategy": 1.486151,
+      "baseline": 0.986869
+    },
+    {
+      "date": "2021-09",
+      "strategy": 1.521146,
+      "baseline": 1.000352
+    },
+    {
+      "date": "2021-10",
+      "strategy": 1.65324,
+      "baseline": 1.030661
+    },
+    {
+      "date": "2021-11",
+      "strategy": 1.71476,
+      "baseline": 1.071607
+    },
+    {
+      "date": "2021-12",
+      "strategy": 1.740595,
+      "baseline": 1.058898
+    },
+    {
+      "date": "2022-01",
+      "strategy": 1.79608,
+      "baseline": 1.078032
+    },
+    {
+      "date": "2022-02",
+      "strategy": 1.860854,
+      "baseline": 1.130872
+    },
+    {
+      "date": "2022-03",
+      "strategy": 1.892257,
+      "baseline": 1.157699
+    },
+    {
+      "date": "2022-04",
+      "strategy": 1.974517,
+      "baseline": 1.236803
+    },
+    {
+      "date": "2022-05",
+      "strategy": 1.99554,
+      "baseline": 1.290029
+    },
+    {
+      "date": "2022-06",
+      "strategy": 1.902081,
+      "baseline": 1.215423
+    },
+    {
+      "date": "2022-07",
+      "strategy": 1.899671,
+      "baseline": 1.216357
+    },
+    {
+      "date": "2022-08",
+      "strategy": 1.88292,
+      "baseline": 1.204726
+    },
+    {
+      "date": "2022-09",
+      "strategy": 1.840864,
+      "baseline": 1.233075
+    },
+    {
+      "date": "2022-10",
+      "strategy": 1.828208,
+      "baseline": 1.285949
+    },
+    {
+      "date": "2022-11",
+      "strategy": 1.822628,
+      "baseline": 1.293905
+    },
+    {
+      "date": "2022-12",
+      "strategy": 1.813171,
+      "baseline": 1.307768
+    },
+    {
+      "date": "2023-01",
+      "strategy": 1.798067,
+      "baseline": 1.234118
+    },
+    {
+      "date": "2023-02",
+      "strategy": 1.824211,
+      "baseline": 1.278577
+    },
+    {
+      "date": "2023-03",
+      "strategy": 1.810079,
+      "baseline": 1.314076
+    },
+    {
+      "date": "2023-04",
+      "strategy": 1.792505,
+      "baseline": 1.318599
+    },
+    {
+      "date": "2023-05",
+      "strategy": 1.788044,
+      "baseline": 1.331401
+    },
+    {
+      "date": "2023-06",
+      "strategy": 1.764574,
+      "baseline": 1.301149
+    },
+    {
+      "date": "2023-07",
+      "strategy": 1.715598,
+      "baseline": 1.247217
+    },
+    {
+      "date": "2023-08",
+      "strategy": 1.787294,
+      "baseline": 1.284332
+    },
+    {
+      "date": "2023-09",
+      "strategy": 1.842175,
+      "baseline": 1.31178
+    },
+    {
+      "date": "2023-10",
+      "strategy": 1.95769,
+      "baseline": 1.354725
+    },
+    {
+      "date": "2023-11",
+      "strategy": 1.963472,
+      "baseline": 1.370317
+    },
+    {
+      "date": "2023-12",
+      "strategy": 1.951714,
+      "baseline": 1.353972
+    },
+    {
+      "date": "2024-01",
+      "strategy": 1.950513,
+      "baseline": 1.419901
+    },
+    {
+      "date": "2024-02",
+      "strategy": 1.859911,
+      "baseline": 1.458918
+    },
+    {
+      "date": "2024-03",
+      "strategy": 1.940997,
+      "baseline": 1.502106
+    },
+    {
+      "date": "2024-04",
+      "strategy": 2.003432,
+      "baseline": 1.546866
+    },
+    {
+      "date": "2024-05",
+      "strategy": 1.994506,
+      "baseline": 1.533734
+    },
+    {
+      "date": "2024-06",
+      "strategy": 2.036532,
+      "baseline": 1.555483
+    },
+    {
+      "date": "2024-07",
+      "strategy": 1.960663,
+      "baseline": 1.490288
+    },
+    {
+      "date": "2024-08",
+      "strategy": 2.029263,
+      "baseline": 1.587092
+    },
+    {
+      "date": "2024-09",
+      "strategy": 2.049701,
+      "baseline": 1.589316
+    },
+    {
+      "date": "2024-10",
+      "strategy": 2.071194,
+      "baseline": 1.60432
+    },
+    {
+      "date": "2024-11",
+      "strategy": 2.158258,
+      "baseline": 1.627038
+    },
+    {
+      "date": "2024-12",
+      "strategy": 2.127032,
+      "baseline": 1.586462
+    },
+    {
+      "date": "2025-01",
+      "strategy": 2.142198,
+      "baseline": 1.571557
+    },
+    {
+      "date": "2025-02",
+      "strategy": 2.156193,
+      "baseline": 1.557589
+    },
+    {
+      "date": "2025-03",
+      "strategy": 2.23719,
+      "baseline": 1.574175
+    },
+    {
+      "date": "2025-04",
+      "strategy": 2.229726,
+      "baseline": 1.611126
+    },
+    {
+      "date": "2025-05",
+      "strategy": 2.241286,
+      "baseline": 1.640068
+    },
+    {
+      "date": "2025-06",
+      "strategy": 2.181228,
+      "baseline": 1.640091
+    },
+    {
+      "date": "2025-07",
+      "strategy": 2.058922,
+      "baseline": 1.599032
+    },
+    {
+      "date": "2025-08",
+      "strategy": 2.055753,
+      "baseline": 1.594854
+    },
+    {
+      "date": "2025-09",
+      "strategy": 2.014528,
+      "baseline": 1.620934
+    },
+    {
+      "date": "2025-10",
+      "strategy": 1.899447,
+      "baseline": 1.609124
+    },
+    {
+      "date": "2025-11",
+      "strategy": 1.891262,
+      "baseline": 1.581047
+    },
+    {
+      "date": "2025-12",
+      "strategy": 1.824344,
+      "baseline": 1.533532
+    },
+    {
+      "date": "2026-01",
+      "strategy": 1.824552,
+      "baseline": 1.532215
+    }
+  ],
+  "post_2020_note": "Hybrid overlays: GL persistence gate suppressed 36% of months, BW gate suppressed 35%. Vol scaling (Barroso-Santa Clara 2015) averages 1.04\u00d7 \u2014 strategy levered 68% of months, de-risked 31%. Market state DOWN regime (IWM 12m < 0) halves exposure; weights shown are post-scaling. Mean net beta \u22120.191."
 }

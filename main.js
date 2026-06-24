@@ -290,10 +290,11 @@ async function initESChart() {
     return;
   }
 
-  // When we have a live z_score time series the dashboard handles it;
-  // on the main page, show EU vs US session avg P&L as a bar comparison
-  const ss = data.session_stats;
-  if (!ss) {
+  // Bar chart: EU Session avg P&L vs OOS Overall avg P&L (V1, W3+W4)
+  // Shows that European session is the primary alpha driver
+  const ss  = data.session_stats;
+  const oos = data.oos_summary;
+  if (!ss || !ss.european || !oos || oos.avg_pnl_lot == null) {
     pendingChart(canvas, 'Signal data pending');
     return;
   }
@@ -301,39 +302,33 @@ async function initESChart() {
   new Chart(canvas, {
     type: 'bar',
     data: {
-      labels: ['European Session', 'US Session'],
+      labels: ['EU Session (OOS)', 'OOS Overall'],
       datasets: [{
-        data:            [ss.european.avg_pnl, ss.us.avg_pnl],
-        backgroundColor: ['rgba(46,204,113,0.25)', 'rgba(122,144,168,0.15)'],
-        borderColor:     ['#2ecc71', '#3d5166'],
+        data:            [ss.european.avg_pnl, oos.avg_pnl_lot],
+        backgroundColor: ['rgba(46,204,113,0.25)', 'rgba(74,158,255,0.15)'],
+        borderColor:     ['#2ecc71', '#4a9eff'],
         borderWidth:     1
       }]
     },
     options: {
-      ...CHART_DEFAULTS,
+      responsive:          true,
+      maintainAspectRatio: false,
+      animation:           { duration: 400 },
+      plugins: {
+        legend:  { display: false },
+        tooltip: { callbacks: { label: ctx => ' Avg net/lot: +$' + ctx.parsed.y.toFixed(2) } }
+      },
       scales: {
         x: {
           display: true,
-          ticks:   {
-            color: '#7a90a8',
-            font:  { family: "'IBM Plex Mono', monospace", size: 10 }
-          },
-          grid: { display: false }
+          ticks:   { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 10 } },
+          grid:    { display: false }
         },
         y: {
-          ...CHART_DEFAULTS.scales.y,
-          ticks: {
-            ...CHART_DEFAULTS.scales.y.ticks,
-            callback: v => '+$' + v.toFixed(1)
-          }
-        }
-      },
-      plugins: {
-        ...CHART_DEFAULTS.plugins,
-        tooltip: {
-          callbacks: {
-            label: ctx => ' Avg P&L: +$' + ctx.parsed.y.toFixed(2) + '/trade'
-          }
+          display: true,
+          grid:    { color: 'rgba(30,45,66,0.6)' },
+          ticks:   { color: '#7a90a8', font: { family: "'IBM Plex Mono', monospace", size: 10 },
+                     callback: v => '+$' + v.toFixed(1) }
         }
       }
     }

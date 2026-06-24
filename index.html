@@ -235,7 +235,7 @@
           <div class="card-title">Russell 2000 Deep Momentum</div>
           <div class="card-subtitle">XGBoost 4-Quadrant Long/Short Reclassifier · May – Jun 2026</div>
           <p class="card-thesis">
-            Bimodality-motivated 4-quadrant XGBoost reclassifier on 12-1 momentum (Russell 2000, $10M notional, monthly rebalance). 10-member ensemble, 36-month rolling window, 19 cross-sectionally ranked features. Primary alpha: GL quadrant (bottom-decile reversal, +1.90%/mo) — orthogonal to the momentum factor.
+            Bimodality-motivated 4-quadrant XGBoost reclassifier on 12-1 momentum (Russell 2000, $10M notional, monthly rebalance). 10-member ensemble, 36-month rolling window, 19 cross-sectionally ranked features. Primary alpha: GL quadrant (bottom-decile reversal, +1.92%/mo) — orthogonal to the momentum factor.
           </p>
 
           <div class="card-chart-container">
@@ -247,31 +247,31 @@
               <div class="metrics-col-label results">Key Results</div>
               <div class="metric-row">
                 <span class="metric-key">Sharpe</span>
-                <span class="metric-value positive">0.235 vs 0.126</span>
+                <span class="metric-value positive">0.143 vs 0.046</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">GL Alpha</span>
-                <span class="metric-value positive">+1.90%/mo</span>
+                <span class="metric-value positive">+1.92%/mo</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">Drawdown</span>
-                <span class="metric-value positive">-8.1pp</span>
+                <span class="metric-value positive">-5.5pp</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">Vol</span>
-                <span class="metric-value positive">↓ 40%</span>
+                <span class="metric-value positive">↓ 27%</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">Rebalances</span>
-                <span class="metric-value">147 (WF)</span>
+                <span class="metric-value">159 (WF)</span>
               </div>
             </div>
             <div>
               <div class="metrics-col-label breaks">Where It Breaks</div>
               <ul class="breaks-list">
-                <li>Post-2020 rate-hike beta drag (Sharpe +0.418 → -0.042)</li>
-                <li>L/S spread intact (+0.85% post vs +0.86% pre-2020) — not signal decay</li>
-                <li>vol_12m importance rose (0.071→0.116), displacing cross-sectional signals</li>
+                <li>XGB probability spread (GW−GL) = +0.0004 — near-random; model is a volatility-regime filter, not a stock picker (vol_12m dominant feature, importance 0.1132)</li>
+                <li>Market state gate halves exposure in DOWN regimes (IWM 12m &lt; 0); alpha concentrated in UP-market states — returns are regime-dependent (Cooper et al. 2004)</li>
+                <li>Momentum crash risk (Daniel-Moskowitz 2016): crashes cluster in high-vol post-bear periods; market state gate mitigates but does not eliminate sharp reversal exposure</li>
               </ul>
             </div>
           </div>
@@ -281,7 +281,7 @@
             <div class="formula-content" style="display:none">
               <p>12-1 momentum signal:</p>
               <div>$\text{mom}_{12,1} = \frac{P_{t-21}}{P_{t-252}} - 1$</div>
-              <p style="margin-top:10px">4-quadrant classification (Winner/Loser × Growth/Value):</p>
+              <p style="margin-top:10px">4-quadrant classification (Momentum Decile × XGBoost Outperformance Prediction):</p>
               <div>$Q_i = \text{XGB}(\mathbf{x}_i),\quad \mathbf{x}_i \in \mathbb{R}^{19}$, cross-sectionally ranked</div>
               <p style="margin-top:10px">GL quadrant (bottom-decile reversal):</p>
               <div>$\text{GL}: \text{mom}_{12,1} &lt; q_{10} \;\cap\; \hat{p}(\text{reversal}) &gt; \tau$</div>
@@ -308,7 +308,7 @@
           <div class="card-title">ES Futures Calendar Spread Mean-Reversion</div>
           <div class="card-subtitle">Fair Value Deviation · Sep 2024 – Jun 2025 · 4 Roll Windows</div>
           <p class="card-thesis">
-            Fair Value deviation-based mean-reversion on ES calendar spread (SOFR + div yield + expiry differential). Databento MBP-10 nanosecond data. High-conviction entry at |z_fill| &gt; 3 (bias-corrected). European session is a structural alpha source across all 4 roll windows.
+            Fair Value deviation-based mean-reversion on ES calendar spread (SOFR + div yield + expiry differential). Databento MBP-10 nanosecond data. Primary entry at |z| &gt; 2.5; HC add-on doubles position when |z_fill| &gt; 3.0. European session is a structural alpha source across all 4 roll windows.
           </p>
 
           <div class="card-chart-container">
@@ -320,15 +320,15 @@
               <div class="metrics-col-label results">Key Results</div>
               <div class="metric-row">
                 <span class="metric-key">Net P&amp;L/lot</span>
-                <span class="metric-value positive">+$2.86</span>
+                <span class="metric-value positive">+$2.47</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">EU Session</span>
-                <span class="metric-value positive">+$4.9/trade (n=170)</span>
+                <span class="metric-value positive">+$3.90/lot (n=90)</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">EU p-value</span>
-                <span class="metric-value positive">0.0008</span>
+                <span class="metric-value positive">0.013</span>
               </div>
               <div class="metric-row">
                 <span class="metric-key">OOS Sharpe</span>
@@ -336,7 +336,7 @@
               </div>
               <div class="metric-row">
                 <span class="metric-key">OOS p-value</span>
-                <span class="metric-value positive">0.0265 (n=670)</span>
+                <span class="metric-value positive">0.006 (n=299)</span>
               </div>
             </div>
             <div>
@@ -353,11 +353,11 @@
             <button class="formula-toggle" onclick="toggleFormula(this)">Show Model Equations ↓</button>
             <div class="formula-content" style="display:none">
               <p>Fair value of calendar spread:</p>
-              <div>$FV = S \cdot e^{(r - q)(T_2 - T_1)}$</div>
-              <p style="margin-top:10px">Deviation z-score (bias-corrected):</p>
-              <div>$z = \dfrac{(\text{Observed} - FV) - \mu_{\text{bias}}}{\hat{\sigma}_{\text{rolling}}}$</div>
-              <p style="margin-top:10px">Entry signal (high-conviction):</p>
-              <div>$|z_{\text{fill}}| > 3.0$</div>
+              <div>$FV = S \cdot (r_f - q) \cdot \Delta T$</div>
+              <p style="margin-top:10px">Deviation z-score (10-min rolling window):</p>
+              <div>$z = \dfrac{(\text{Observed} - FV) - \mu_{10\text{min}}}{\hat{\sigma}_{10\text{min}}}$</div>
+              <p style="margin-top:10px">Entry signal · HC add-on:</p>
+              <div>$|z| > 2.5 \;\text{(primary)} \quad |z_{\text{fill}}| > 3.0 \;\text{(HC: 2× lots)}$</div>
             </div>
           </div>
 
@@ -545,6 +545,6 @@
 </main>
 
 <script src="coinbase_ws.js"></script>
-<script src="main.js"></script>
+<script src="main.js?v=2"></script>
 </body>
 </html>

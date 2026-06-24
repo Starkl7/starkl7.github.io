@@ -1,0 +1,30 @@
+name: Update Momentum Signal
+on:
+  schedule:
+    - cron: '0 6 1 * *'  # 1st of every month at 6am UTC
+  workflow_dispatch:       # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run momentum signal
+        run: python scripts/update_momentum.py
+
+      - name: Commit updated signal
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/momentum_signal.json data/meta.json
+          git diff --staged --quiet || git commit -m "feat: monthly momentum signal update $(date -u +%Y-%m-%d)"
+          git push
